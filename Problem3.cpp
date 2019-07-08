@@ -24,9 +24,9 @@ public:
                 std::istream_iterator<std::string>(iss), {}
         };
         map<char,string>::iterator it;
-        string s = "";
-        if(result.size()!=pattern.size()){return false;}
-        for(int x = 0; x<result.size();x++){
+        int size = result.size();
+        if(size!=pattern.size()){return false;}
+        for(int x = 0; x<size;x++){
             it = hashmap.find(pattern[x]);
             auto check = hashset.insert(result[x]);
             if(it==hashmap.end() && check.second){
@@ -34,11 +34,6 @@ public:
             }else if(hashmap[pattern[x]]!=result[x]){
                 return false;
             }
-//            if(x!=result.size()-1){
-//                s += hashmap[pattern[x]]+" ";
-//            }else{
-//                s += hashmap[pattern[x]];
-//            }
         }
         return true;
     }
