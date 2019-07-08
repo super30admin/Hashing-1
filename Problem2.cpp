@@ -16,24 +16,20 @@ private:
     set<char> hashset;
 public:
     bool isIsomorphic(string s, string t) {
-        string str = ""; map<char,char>::iterator it;
+        map<char,char>::iterator it;
         for(int x =0; x<s.size(); x++){
             it = hashmap.find(s[x]);
             auto check = hashset.insert(t[x]);
-            if((hashmap.empty() || it==hashmap.end()) && check.second){
+            if((it==hashmap.end()) && check.second){
                 hashmap.insert(pair<char,char>(s[x],t[x]));
-                str += hashmap.at(s[x]);
-            }
-            if(it!=hashmap.end()){
-                str += hashmap.at(s[x]);
+            }else if(hashmap[s[x]]!=t[x]){
+                return false;
             }
         }
-        if(t==str){
-            return true;
-        }
-        return false;
+        return true;
     }
 };
+
 
 int main(){
     Solution s; cout<<s.isIsomorphic("ab","aa")<<endl;
