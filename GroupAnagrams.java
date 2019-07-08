@@ -1,3 +1,6 @@
+//Time Complexity: O(nlog(n))
+//Space Complexity:O(n)
+
 class Solution {
     public List<List<String>> groupAnagrams(String[] strs) {
         if(strs == null || strs.length ==0)
