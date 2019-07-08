@@ -1,3 +1,6 @@
+//Time Complexity: O(1)
+//Space Complexity:O(1)
+
 //USing Arrays is faster than HashMaps, as HashMaps use Arrays underlying
 
 public boolean isIsomorphic (String s, String t) {
