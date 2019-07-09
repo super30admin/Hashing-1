@@ -17,6 +17,9 @@ private:
 public:
     bool isIsomorphic(string s, string t) {
         map<char,char>::iterator it;
+        if(s.size()!=t.size()){
+            return false; //corrected during class.
+        }
         for(int x =0; x<s.size(); x++){
             it = hashmap.find(s[x]);
             auto check = hashset.insert(t[x]);
