@@ -1,4 +1,4 @@
-# Day5
+# Hashing-1
 
 ## Problem 1:
 Given an array of strings, group anagrams together.
