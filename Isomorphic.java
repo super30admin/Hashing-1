@@ -15,6 +15,9 @@ import java.util.HashMap;
  * Space Complexity: O(M + N), where M and N are lengths of string s and t
  * respectively. Time Complexity: O(M + N)
  * 
+ * Runtime: 11 ms, faster than 42.82% of Java online submissions for Isomorphic Strings.
+ * Memory Usage: 36.4 MB, less than 100.00% of Java online submissions for Isomorphic Strings.
+ * 
  * Another approach with same tc but better performance would be to use a
  * character array to preserve mappings. Overhead of computing hashes is reduced.
  */

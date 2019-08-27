@@ -12,6 +12,10 @@ import java.util.Arrays;
  * Time Complexity: O(N*K*log K), where N is the number of token,
  * K is length of longest token
  * 
+ * Leetcode Result:
+ * Runtime: 9 ms, faster than 79.09% of Java online submissions for Group Anagrams.
+ * Memory Usage: 42.4 MB, less than 89.47% of Java online submissions for Group Anagrams.
+ * 
  * Another Approach: 
  *      1. Using prime number, first 26 primes are mapped to each
  *         letter a-z, prime products of anagrams are equal.
