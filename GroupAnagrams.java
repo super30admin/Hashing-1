@@ -4,10 +4,18 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 /**
- * Idea is to use a HashMap, key would be sorted version of the token.
- * Anagrams have the same frequency of letters in them, hence sorted token would be same.
- * Space Complexity: O(N*K), where N is the number of token, K is length of longest token
- * Time Complexity: O(N*K*log K), where N is the number of token, K is length of longest token
+ * Idea is to use a HashMap, key would be sorted version of the token. Anagrams
+ * have the same frequency of letters in them, hence sorted token would be same.
+ * 
+ * Space Complexity: O(N*K), where N is the number of token, K is length of
+ * longest token 
+ * Time Complexity: O(N*K*log K), where N is the number of token,
+ * K is length of longest token
+ * 
+ * Another Approach: 
+ *      1. Using prime number, first 26 primes are mapped to each
+ *         letter a-z, prime products of anagrams are equal.
+ * 
  */
 public class GroupAnagrams {
     /**
