@@ -18,10 +18,20 @@ import java.util.HashMap;
  * Runtime: 11 ms, faster than 42.82% of Java online submissions for Isomorphic Strings.
  * Memory Usage: 36.4 MB, less than 100.00% of Java online submissions for Isomorphic Strings.
  * 
+ * 
  * Another approach with same tc but better performance would be to use a
  * character array to preserve mappings. Overhead of computing hashes is reduced.
+ * 
+ * Runtime: 5 ms, faster than 77.44% of Java online submissions for Isomorphic Strings.
+ * Memory Usage: 35.9 MB, less than 100.00% of Java online submissions for Isomorphic Strings.
  */
 public class Isomorphic {
+
+    public static void main(String args[]) {
+        String s = "egg", t = "add";
+        System.out.println(isIsomorphicArr(s, t));
+    }
+
     /**
      * 
      * @param s
@@ -47,6 +57,30 @@ public class Isomorphic {
                 }
             } else {
                 hashmapTS.put(t.charAt(i), s.charAt(i));
+            }
+        }
+        return true;
+    }
+
+    public static boolean isIsomorphicArr(String s, String t) {
+        char[] mapST = new char[128];
+        for(int i = 0; i < s.length(); i++) {
+            if(mapST[s.charAt(i)] != 0) {
+                if(mapST[s.charAt(i)] != t.charAt(i)) {
+                    return false;
+                } 
+            } else {
+                mapST[s.charAt(i)] = t.charAt(i);
+            }
+        }
+        char[] mapTS = new char[128];
+        for(int i = 0; i < t.length(); i++) {
+            if(mapTS[t.charAt(i)] != 0) {
+                if(mapTS[t.charAt(i)] != s.charAt(i)) {
+                    return false;
+                } 
+            } else {
+                mapTS[t.charAt(i)] = s.charAt(i);
             }
         }
         return true;
