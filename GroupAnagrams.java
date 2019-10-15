@@ -1,4 +1,3 @@
-package map;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -6,13 +5,7 @@ import java.util.List;
 
 public class GroupAnagrams {
 
-	// Write a function isAnagram which will check if two strings are anagram or not
-	// keep passing each string with next string as input to this function , if it
-	// returns true, addd to list
-	// Brute Force solution
-	// TC: O(N*N*K) -> where N = strings in input arrays and K is the length of the
-	// each string in array
-	// SC: O(N) -> including output list
+	
 
 	public List<List<String>> groupAnagrams(String[] strs) {
 
@@ -61,3 +54,7 @@ public class GroupAnagrams {
 		return true;
 	}
 }
+
+	// Brute Force approach
+	// Time Complexity: O(n*n*k)
+	// Space Complexity: O(n) 
