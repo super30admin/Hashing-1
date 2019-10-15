@@ -2,6 +2,8 @@
 Use two hashmaps and store the mapping of each element of s to the corresponding element in t . 
 if a mapping already exists check if is the same as the elements in the arrays
 
+Time complexity : O(n)
+Space Complexity : O(n)
 """
 
 class Solution(object):
