@@ -1,5 +1,3 @@
-package map;
-
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
@@ -40,3 +38,6 @@ public class WordPattern {
 		return true;
 	}
 }
+
+//Space complexity: O(n)
+//Time complexity: O(n)
