@@ -1,3 +1,8 @@
+// Time Complexity : O(n^2) 
+// Space Complexity : Not sure. Need to learn how to calculate.
+// Did this code successfully run on Leetcode : Yes.
+// Any problem you faced while coding this : No.
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
