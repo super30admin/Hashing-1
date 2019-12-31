@@ -1,5 +1,5 @@
 Time Complexiy-O(n) Here 'n' is the size of str 
-Space Complexity-O(m) Here 'm' is the size of pattern
+Space Complexity-O(1) As maximum number of distinct values that can be mapped is equal to 26 and it is constant.
 Did the code run on Leetcode? Yes
 
 #include <iostream>
