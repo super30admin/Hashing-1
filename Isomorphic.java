@@ -1,7 +1,17 @@
-package com.exmaple.problems;
 
 import java.util.*;
 
+//Time Complexity : O(N) for all operations 
+//Space Complexity : O(1) for all operations
+//Did this code successfully run on Leetcode : Yes
+//Any problem you faced while coding this : No
+
+
+//Your code here along with comments explaining your approach
+
+/*
+HashMap works on principle of Hashing.We 
+*/ 
 public class Isomorphic {
 
 	public boolean isIsomorphic(String s, String t) {
@@ -27,7 +37,7 @@ public class Isomorphic {
 			if (!map2.containsKey(tChar)) {
 				map2.put(tChar, sChar);
 			} else {
-				if (!map2.get(tChar).equals(sChar))
+				if (!map2.get(	tChar).equals(sChar))
 					return false;
 			}
 		}

@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-//Time Complexity : O(N) for all operations 
+//Time Complexity : O(N K Log K) for all Sorting and O (N K ) for prime product approach 
 //Space Complexity : O(1) for all operations
 //Did this code successfully run on Leetcode : Yes
 //Any problem you faced while coding this : No
