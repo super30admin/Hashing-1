@@ -1,7 +1,16 @@
-package com.exmaple.problems;
-
 import java.util.*;
 
+//Time Complexity : O(N) for all operations 
+//Space Complexity : O(1) for all operations
+//Did this code successfully run on Leetcode : Yes
+//Any problem you faced while coding this : No
+
+
+//Your code here along with comments explaining your approach
+
+/*
+HashMap works on principle of Hashing.We 
+*/ 
 public class WordPattern {
 
 	public boolean wordPattern(String pattern, String str) {
