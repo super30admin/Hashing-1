@@ -1,39 +1,40 @@
-# Time Complexity : O(n)
-# Space Complexity : O(n)
+# Time Complexity : O(N) (Where N is length of Pattern)
+# Space Complexity : O(NK) (Where K is longest word in str)
 # Did this code successfully run on Leetcode : Yes
-# Any problem you faced while coding this :
-#    - I started with storing pattern as key and inputarray as value but it was failing some test cases. 
-#      Then I did the opposite storing inutstr as key but It was also failing some cases.
-#      Using both simulteneously solves the problem but I was wondering If it can be done using only one hashtable.
+# Three line explanation of solution in plain english:
+# * Same approch as problem 205 but in one loop.
+# - Start with every charcter in pattern and same indexed word from str.
+# - If mapping from pattern -> word exist check it's mapping is correct (If mapping is incorrect return False), otherwise assign new mapping. Do the same task for word -> pattern.
+# - In the end return True.
 
-# Your code here along with comments explaining your approach
+class Solution:
+    def wordPattern(self, pattern: str, str: str) -> bool:
+#       Initialize two dictionaries.
+        front, back = {}, {}
+#       Split the str to get word list
+        split_string = str.split(' ')
 
-def same_pattern(pattern, inputstr):
-    # amking array of words by splitting string from space. 
-    inputarr = str.split(' ')
-    hash1 = dict() 
-    hash2 = dict()
-    # Checking that both lengths are same
-    maxi = len(pattern)
-    maxj = len(inputarr) 
-    if maxi != maxj:
-        return False
-    i = 0
-    while(i < maxi):
-        # if character of pattern already in the hashtable compare it's value to inputstr
-        if (inputarr[i] in hash1):
-            if (hash1[inputarr[i]] != pattern[i]):
-                #not same then return because pattern breaks here.
-                return False
-        else:
-        # if character is not in hashtable store it.
-            hash1[inputarr[i]] = pattern[i]
-            
-        # do the same thing but store inputstr words as key into another hashtable
-        if (pattern[i] in hash2):
-            if (hash2[pattern[i]] != inputarr[i]):
-                return False
-        else:
-            hash2[pattern[i]] = inputarr[i]
-        i += 1
-    return True
+#       If length of pattern and split string is differnt that means mapping is wrong
+        if len(pattern) != len(split_string):
+            return False
+        
+#       Run loop till index is smaller than length of pattern.
+        for index in range(len(pattern)):
+#           Check pattern -> word mapping in front dictionary
+            if (split_string[index] in front):
+#               If mapping is incorrect return False
+                if (front[split_string[index]] != pattern[index]):
+                    return False
+#           If mapping does not exist tahn assign new mapping.
+            else:
+                front[split_string[index]] = pattern[index]
+                
+#           Do the same above steps for word -> pattern mapping.
+            if (pattern[index] in back):
+                if (back[pattern[index]] != split_string[index]):
+                    return False
+            else:
+                back[pattern[index]] = split_string[index]
+
+#       In the end return True because two way mappign didn't return false.
+        return True
