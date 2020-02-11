@@ -28,6 +28,7 @@ class Solution:
     def wordPattern(self, pattern: str, str1: str) -> bool:
         mydict = {}
 
+
         str2 = str1.split(' ')
         if len(pattern) != len(str2):
             return False
