@@ -1,7 +1,7 @@
 '''
 Time Complexity : O(n)  Iterate through the string
 
-Space Complexity : O(n)
+Space Complexity : O(n) String is used in Hashmap hence O(n)
 
 Did this code successfully run on Leetcode : Yes
 
@@ -16,6 +16,11 @@ exists as a value in the dictionary then return False else assign the word of th
 the first character.
 
 If loop exits without returning false return True.
+
+Solution 2 (EfficientwordPattern):
+Split the words using space and generate a list of words instead of using the string directly.
+Use 2 Hashmaps one to check if first string maps correctly to second string and second string maps correct to first string
+Much simpler than 1
 '''
 
 
@@ -36,5 +41,29 @@ class Solution:
                     return False
                 else:
                     mydict[i] = j
+
+        return True
+
+    def EfficientwordPattern(self, s: str, t: str) -> bool:
+        mydict = {}
+        oppDict = {}
+
+        t = t.split(' ')
+
+        if len(pattern) != len(t):
+            return False
+
+        for i, j in zip(s, t):
+            if i not in mydict.keys():
+                mydict[i] = j
+            else:
+                if j != mydict[i]:
+                    return False
+
+            if j not in oppDict.keys():
+                oppDict[j] = i
+            else:
+                if i != oppDict[j]:
+                    return False
 
         return True

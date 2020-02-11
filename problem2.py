@@ -1,11 +1,13 @@
 '''
 Time Complexity : O(n) Iterate through the string
 
-Space Complexity : O(n)
+Space Complexity : O(1) Since single character as key in hashing
 
 Did this code successfully run on Leetcode : Yes
 
-Explanation: Create Hashmap (dictionary in  python)
+Explanation:
+Solution 1 (isIsomorphic):
+Create Hashmap (dictionary in  python)
 
 We use the character of the first string as key for the hashmap (dictionary in python).
 
@@ -15,6 +17,10 @@ exists as a value in the dictionary then return False else assign the character 
 value of the first character.
 
 If loop exits without returning false return True.
+
+Solution 2 (efficientIsIsomorphic):
+Use 2 Hashmaps one to check if first string maps correctly to second string and second string maps correct to first string
+Much simpler than 1
 '''
 
 
@@ -30,5 +36,27 @@ class Solution:
                     return False
                 else:
                     mydict[i] = j
+
+        return True
+
+    def efficientIsIsomorphic(self, s: str, t: str) -> bool:
+        mydict = {}
+        oppDict = {}
+
+        if len(s) != len(t):
+            return False
+
+        for i, j in zip(s, t):
+            if i not in mydict.keys():
+                mydict[i] = j
+            else:
+                if j != mydict[i]:
+                    return False
+
+            if j not in oppDict.keys():
+                oppDict[j] = i
+            else:
+                if i != oppDict[j]:
+                    return False
 
         return True
