@@ -1,6 +1,6 @@
 // Time complexity: O(N) where N is the size of the pattern
-// Space complexity: O(N) (array created after space indented string split is auxilliary space) cMap may be of max size 26, 
-// but sMap can extend to size more than 26. We return false in that case immediately, so that is considered constant.
+// Space complexity: O(N) (array created after space indented string split is auxilliary space) cMap (char -> string) may be of max size 26, 
+// but sMap (string -> char) can extend to size more than 26. We return false in that case immediately, so that is considered constant.
 // Submission on leetcode successful: Yes
 
 /*
