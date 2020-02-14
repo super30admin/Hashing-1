@@ -1,6 +1,6 @@
 
 /*
--Time Complexity : O(nlong) as we are traversing over n strings in a list and sorting each string to find anagram
+-Time Complexity : O(n*klogk) as we are traversing over n strings in a list and sorting each string to find anagram. k is maximum string length
 -Auxiliary Space : O(n)
 -Did this code successfully run on Leetcode :Yes
 -Any problem you faced while coding this : No
