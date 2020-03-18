@@ -1,5 +1,5 @@
-// Time Complexity : O(n)
-// Space Complexity : O(1)
+// Time Complexity : O(n)*O(nlogn) + O(n) which will be O(n^2logn)
+// Space Complexity : O(n)
 // Did this code successfully run on Leetcode : Yes
 // Any problem you faced while coding this : Yes, at first I referenced this solution as it was my first hashing question.
 
