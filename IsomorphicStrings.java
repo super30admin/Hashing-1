@@ -1,5 +1,5 @@
 // Time Complexity : O(n)
-// Space Complexity : O(k) // for 2 arrays
+// Space Complexity : O(1) // for 2 arrays - 256
 // Did this code successfully run on Leetcode : yes
 // Any problem you faced while coding this : no
 
