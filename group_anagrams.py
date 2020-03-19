@@ -1,5 +1,5 @@
 """
-// Time Complexity : O(n2)
+// Time Complexity : O(nm) , m is the length of the string
 // Space Complexity : O(n)
 // Did this code successfully run on Leetcode : No
 // Any problem you faced while coding this : Yes
