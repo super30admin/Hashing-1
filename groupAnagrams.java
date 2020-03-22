@@ -29,3 +29,13 @@ class Solution {
         return result;
     }
 }
+
+/*
+Time Complexity: 
+o( nlogm )
+m- maxinmum size of a word
+n- number of words
+Space Complexity:
+o(N)
+N = unique number of words in the given array
+*/
