@@ -1,5 +1,5 @@
-// Time Complexity : O(n)
-// Space Complexity : O(n)
+// Time Complexity : O(nK) where n is the input and k is the max length of the input string
+// Space Complexity : O(nK) where n is the input and k is the max length of the input string
 // Did this code successfully run on Leetcode : Yes
 // Any problem you faced while coding this :
 
