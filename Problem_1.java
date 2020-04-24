@@ -1,5 +1,6 @@
 /**
 Time complexity : O(nk), where n is total number of strings and k is maximum length of string
+Space Complexity : O(nk), size of hashmap
 Algorithm: 1. Need to maintain a map of string and its anagrams.
            2. Iterate over each string, calulate the number of characters and create a string of counts of characters in that string.
            3. store this newly created string as a key in hashmap and a string itself as a on of value in hashmap's values list.
