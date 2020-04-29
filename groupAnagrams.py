@@ -17,12 +17,5 @@ def groupAnagrams(strs: [str]):
     for value in map.values():
         result.append(value)
     return result
-
-
-class Solution:
-    pass
-
-
-test = Solution()
 print(groupAnagrams(["eat", "tea", "tan", "ate", "nat", "bat"]))
 print(groupAnagrams(['cat', 'dog', 'tac', 'god', 'act']))
