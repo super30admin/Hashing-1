@@ -7,6 +7,7 @@
 ##Any problem you faced while coding this : No
 def groupAnagrams(strs: [str]):
     map = {}  # dictionary for anagram subsets
+
     for str in strs:
         sorted_word = "".join(sorted(str))
         if sorted_word not in map:
