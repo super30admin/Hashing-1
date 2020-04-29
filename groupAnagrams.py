@@ -1,8 +1,8 @@
 ## Given an array of strings, group anagrams together.
 ##Example: Input: ["eat", "tea", "tan", "ate", "nat", "bat"], Output: [ ["ate","eat","tea"], ["nat","tan"], ["bat"] ]
 ##Note: All inputs will be in lowercase. The order of your output does not matter.
-##Time Complexity :
-##Space Complexity :
+##Time Complexity : O(N K log K)
+##Space Complexity : O (N K)
 ##Did this code successfully run on Leetcode : Yes
 ##Any problem you faced while coding this : No
 def groupAnagrams(strs: [str]):
