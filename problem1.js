@@ -1,7 +1,7 @@
 // ## Problem 1:
 
-// Time Complexity : O(n log(n))
-// Space Complexity : O(n)
+// Time Complexity : O(n klog(k))
+// Space Complexity : O(m k)
 // Did this code successfully run on Leetcode : Yes
 
 // Given an array of strings, group anagrams together.

@@ -1,7 +1,7 @@
 // ## Problem 2:
 
 // Time Complexity : O(n)
-// Space Complexity : O(n)
+// Space Complexity : O(52) or O(1)
 // Did this code successfully run on Leetcode : Yes
 
 // Given two strings s and t, determine if they are isomorphic.
@@ -25,18 +25,16 @@
 // You may assume both s and t have the same length.
 
 let isIsomorphic = function(s, t) {
-    var isIsomorphic = function(s, t) {
-        if(s.length !== t.length) return false;
-         let mapS = new Map(); mapT = new Map();
-         for(let i = 0; i < s.length; i++) {
-             if(mapS.has(s[i]) || mapT.has(t[i])) {
-                 if(mapS.get(s[i]) !== t[i] || mapT.get(t[i]) !== s[i]) return false;
-             }
-             else {
-                 mapS.set(s[i], t[i]);
-                 mapT.set(t[i], s[i]);
-             }
-         }
-         return true;
-     };
+    if(s.length !== t.length) return false;
+    let mapS = new Map(); mapT = new Map();
+    for(let i = 0; i < s.length; i++) {
+        if(mapS.has(s[i]) || mapT.has(t[i])) {
+            if(mapS.get(s[i]) !== t[i] || mapT.get(t[i]) !== s[i]) return false;
+        }
+        else {
+            mapS.set(s[i], t[i]);
+            mapT.set(t[i], s[i]);
+        }
+    }
+    return true;
 }
