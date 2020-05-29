@@ -1,0 +1,25 @@
+class Solution(object):
+    def isIsomorphic(self, s, t):
+        """
+        :type s: str
+        :type t: str
+        :rtype: bool
+        """
+        #intialise the hashmap and mapval as empty list which will be used to store key value
+        hashmap = {}
+        mapval = {}
+        #parse the whole length of string
+        for i in xrange(len(s)):
+            #to check if char at S is already present in hashmap
+            if s[i] in hashmap:
+                #check if matches the key values which is t
+                if hashmap[s[i]] != t[i]:
+                    return False
+                 #check if t has already been mapped 
+            elif t[i] in mapval:
+                return False
+            #if both the characters are new then add to hasmap and mark the mapval of the t value as true
+            else:
+                hashmap[s[i]] = t[i]
+                mapval[t[i]] = True
+        return True
