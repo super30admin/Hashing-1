@@ -1,6 +1,6 @@
 
 // Time Complexity: 
-// Space complexity: O(NM) N = len of strs, M = Max len of strs
+// Space complexity: O(NM) N = len of strs, M = Max len of string in strs
 // Code worked in Leetcode
 //Any problems while coding it?: Time complexity. 
 import java.util.ArrayList;
