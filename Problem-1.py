@@ -6,10 +6,7 @@ class Solution:
         for i in range(len(input)):
             word = ''.join(sorted(input[i]))
             d[word].append(input[i])
-        return list(d.values())
-
-                
-        
+        return list(d.values())        
 
 if __name__ == "__main__":
     input = ["eat", "tea", "tan", "ate", "nat", "bat"]
