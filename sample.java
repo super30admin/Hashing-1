@@ -1,6 +1,6 @@
 //Problem-1
-// Time Complexity : O(nslogs) where n is no of elements in the string array and s is the size of the string
-// Space Complexity : O(n)
+// Time Complexity : O(nslogs *s) where n is no of elements in the string array and s is the size of the string. s is multiplied as the strings are stored in hashmap using ascii value so to calculate the ascii value for whole string, each character is traversed so O(s) i.e avg length of string
+// Space Complexity : O(ns) as n strings are stored of length s
 // Did this code successfully run on Leetcode : Yes
 // Any problem you faced while coding this : None
 
@@ -26,7 +26,7 @@ class Solution {
 }
 
 //Problem-2
-// Time Complexity : O(n) 
+// Time Complexity : O(n) as need to iterate over the string array as well as the complexity for containsValue is O(n) since it checks all keys and their corresponding values.
 // Space Complexity : O(n)
 // Did this code successfully run on Leetcode : Yes
 // Any problem you faced while coding this : None
@@ -46,6 +46,7 @@ class Solution {
             if(!map.containsKey(ch1)) // if map does not contain the key
             {
                 if(!map.containsValue(ch2)) // if map does not contain the value
+               // the complexity for containsValue is O(n) since it checks all keys and their corresponding values.
                     map.put(ch1,ch2); // put key and value in the map
                 else
                     return false; // if map contains the value at different key, returning false
@@ -62,7 +63,7 @@ class Solution {
 
 //Problem-3
 // Time Complexity : O(n) 
-// Space Complexity : O(n^2)
+// Space Complexity : O(n+n) = O(n)
 // Did this code successfully run on Leetcode : Yes
 // Any problem you faced while coding this : None
 
