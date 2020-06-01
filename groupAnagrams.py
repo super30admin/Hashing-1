@@ -1,5 +1,5 @@
 # Time Complexity : O(nk), where n is len(strs) and k is the length of each string in strs
-# Space Complexity : O(n), where n is len(strs)
+# Space Complexity : O(n)
 # Did this code successfully run on Leetcode : Yes!
 # Any problem you faced while coding this : No
 
