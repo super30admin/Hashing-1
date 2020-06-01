@@ -1,3 +1,8 @@
+//This problem takes time O(n) where n is the length of string pattern
+// and size complexity is O(n + m) where again n is size of string pattern and m is the no of words on splitting the string with empty space
+//we use the same approach as we did in previous problem. we map each character in a pattern to a word in the array.
+// If the character is already mapped to another word or the word already exists we return false; else we return true.
+
 import java.util.*;
 
 class Patterns{

@@ -1,3 +1,7 @@
+// This problem takes O(n) time where n is the length of the string and max of O(n) space for storing the character of string in hashmap
+// we are mapping each character of first string to each character of second string and we also check if is get same value when character gets repeated
+
+
 import java.util.*;
 
 class Isomorphic{

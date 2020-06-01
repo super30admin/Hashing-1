@@ -1,3 +1,10 @@
+//I guess this solution takes O(n) time and O(mn) space where m is the number of characters in each word
+// and n is the number of words for storing it in the list
+
+//In this approach I have a hashmap storing the sorted charcters as a string as Key and correspoing words as their value
+//so that we can get the anagrams by looping with the keys from hashmap.
+
+
 import java.util.*;
 
 class Anagrams{
