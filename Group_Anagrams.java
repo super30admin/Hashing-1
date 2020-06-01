@@ -18,7 +18,7 @@
 
                 char[] tempArray = strs[i].toCharArray();
                 Arrays.sort(tempArray);
-				//sorting a string and taking it as a key
+				//sorting a st
                 String key = String.valueOf(tempArray);
 
                 if(!map.containsKey(key))
