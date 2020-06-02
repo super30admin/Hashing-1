@@ -1,7 +1,7 @@
-// Time Complexity : O(N K Log K)
+// Time Complexity : O(N K*K Log K)
 // Space Complexity : O(NK)
 // Did this code successfully run on Leetcode : Yes
-// Any problem you faced while coding this : COuld not optimize it 
+// Any problem you faced while coding this : No
 
 
 // Your code here along with comments explaining your approach
