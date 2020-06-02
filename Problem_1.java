@@ -4,7 +4,7 @@
 
 /*
 * Your code here along with comments explaining your approach : 
-* I have used primeProduct and HaskMap for implementation.
+* I have used primeProduct and HashMap for implementation.
 */
 
 class Solution {
