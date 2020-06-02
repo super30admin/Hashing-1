@@ -1,12 +1,25 @@
+// Time Complexity :O(n)
+//Space Complexity : O(n) 
+//Did this code successfully run on Leetcode : Yes
+
+/*
+* Your code here along with comments explaining your approach : 
+* I have used a HashMap and a HashSet for implementation.
+*/
+
 class Solution {
     public boolean wordPattern(String pattern, String str) {
         Map<Character,String> hm = new HashMap<Character,String>();
         String[] arr = str.split(" ");
         char[] p = pattern.toCharArray();
+        
+        // Edge case
         if(arr.length != p.length){
             return false;
         }
         Set<String> set = new HashSet<>();
+        
+        // Logic
         for(int i = 0; i<p.length;i++ ){
             if(hm.containsKey(p[i])){
                 System.out.println(p[i] + " - "+ hm.get(p[i])+" - "+arr[i]);
