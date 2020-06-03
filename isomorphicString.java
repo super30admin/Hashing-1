@@ -1,7 +1,7 @@
 /**
 Time complexity : O(n) n= no of strings 
 Space complexity : O(1)
-Did it run on Leetcode : NO some test case failed
+Did it run on Leetcode : Yes
 
  */
 
