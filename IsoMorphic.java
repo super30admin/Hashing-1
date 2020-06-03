@@ -1,5 +1,5 @@
 /*
- 
+ N is the size of input array
 Time Complexity : O(N)
     Space Complexity : O(1)
     Is worked on Leetcode : YES
