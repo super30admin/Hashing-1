@@ -3,7 +3,8 @@ class Solution {
         if(s.length() != t.length()){
             return false;
         }
-        HashMap<Character, Character> map = new HashMap<Character, Character>();                       HashMap<Character, Character> map2 = new HashMap<Character, Character>();
+        HashMap<Character, Character> map = new HashMap<Character, Character>();                       
+        HashMap<Character, Character> map2 = new HashMap<Character, Character>();
 
        for(int i= 0; i < s.length(); i++){
            if(!map.containsKey(s.charAt(i))){
