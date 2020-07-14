@@ -1,7 +1,7 @@
 #Problem 1 : https://leetcode.com/problems/group-anagrams/
 #Test Cases Passed on LeetCode
 #Space Complexity-O(n)
-#Time Complexity-O(n)
+#Time Complexity-O(nklogk) if k=avg size of word
 class Solution:
     def groupAnagrams(self, strs):
         strs1=strs.copy()
