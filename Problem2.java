@@ -1,7 +1,7 @@
 // Time Complexity : O(n)
 //      n: length of string
 // Space Complexity : O(1)
-//      Since it is hashmap of charater 
+//      Since it is hashmap of characters
 //          we will have space O(26+26) = O(52) = O(1)
 // Did this code successfully run on Leetcode : yes
 // Any problem you faced while coding this : Requirement of second hashmap
