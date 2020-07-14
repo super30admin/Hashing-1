@@ -32,3 +32,36 @@ public class GroupAnagrams {
 		System.out.println("Output:" +groupAnagrams(s));
 	}
 }
+
+
+
+/*--------------------------------------------Using Prime Multiplication--------------------------------------*/
+/*
+class Solution {
+    public List<List<String>> groupAnagrams(String[] strs) {
+        int[] primeNo = {2,3,5,7,11,13,17,19,23,29,31,37,41,43,47,53,59,61,67,71,73,79,83,89,97,101,103};
+        if(strs == null || strs.length == 0)
+            return new ArrayList<>();
+        
+        HashMap<Long, List<String>> map = new HashMap<>();
+        for(String s : strs){
+            long prime = calculateP(s, primeNo);
+            
+            if(!map.containsKey(prime)){
+                map.put(prime, new ArrayList<>());                
+            }
+            map.get(prime).add(s);
+        }
+        return new ArrayList<>(map.values());
+    }
+    
+    private Long calculateP(String s, int[] primeNo){
+        long multiplication =1;
+        for(int i=0; i< s.length(); i++){
+            char c = s.charAt(i);
+            multiplication = multiplication * (primeNo[c-'a']);
+        }
+        return multiplication;
+    }
+}
+*/
