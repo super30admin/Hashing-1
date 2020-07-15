@@ -1,6 +1,6 @@
 # APPROACH - 1: (MY APPROACH) DIDN'T WORK  
-# Time Complexity : O(max(s, t)) - s is the length of s ad t is the length of t 
-# Space Complexity : O(max(s, t))
+# Time Complexity : O(max(s log s, t log t)) - s is the length of s ad t is the length of t, sort function is used
+# Space Complexity : O(1) as the length of both the hashmaps is constant (max : 26)
 # Did this code successfully run on Leetcode : NO
 # Any problem you faced while coding this : None
 #
@@ -46,7 +46,7 @@ class Solution:
   
 # APPROACH - 2: CORRECT APPROACH  
 # Time Complexity : O(s) or O(t) - s is the length of s ad t is the length of t and to be a valid case to check, s == t.
-# Space Complexity : O(s) or O(t) due to hash_s and hash_t
+# Space Complexity : O(1) as the length of both the hashmaps is constant (max : 26)
 # Did this code successfully run on Leetcode : Yes
 # Any problem you faced while coding this : None
 #
