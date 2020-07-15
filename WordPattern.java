@@ -1,3 +1,11 @@
+// Time Complexity : O(n) 
+// Space Complexity : O(n) -- not sure
+// Did this code successfully run on Leetcode : yes
+// Any problem you faced while coding this : No
+
+// Approach:
+// Very similar to approach to isomorphic strings. Replaced second string characters by words in the giver array.
+
 class Solution {
     public boolean wordPattern(String pattern, String str) {
         String[] s = str.split(" ");
