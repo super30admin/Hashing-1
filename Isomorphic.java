@@ -1,3 +1,15 @@
+// Time Complexity : O(n)) 
+// Space Complexity : O(n) -- please confirm, not sure about this.
+// Did this code successfully run on Leetcode : yes
+// Any problem you faced while coding this : No
+
+// Approach:
+// 1. I used HashMap to store the characters of the string. 
+// 2. Every character from first string was stored as a key and corresponding character from second string as the value. This will cover the cases like 'abc' and 
+// 'def'
+// 3. To cover cases like 'abc' and 'bcf', two hashmaps are required, as the corresponding character in second string can have another corresponding character 
+// in the pattern. Like, here in this example, a is mapped to b,  but b is not mapped to a but c.
+
 class Solution {
     public boolean isIsomorphic(String s, String t) {
         if(s.length() != t.length()){
