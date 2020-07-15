@@ -47,6 +47,7 @@ class Solution:
 # 1. Build a dict - anagrams where key is the sorted version of word and value is the list of words having same sorted version as the key
 # 2. Go through each word and get it sorted -> compare with the keys of the dict and add it to list where it matches (if the key exists) or create a new entry.
 # 3. Return the values of the dict
+# 4. IMPROVEMENT: Instead of sorting the same string thrice, just store the sorted string. 
 
 class Solution:
     
