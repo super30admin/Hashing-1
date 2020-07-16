@@ -1,6 +1,6 @@
 # APPROACH 1: (MY APPROACH BEFORE CLASS)
 # Time Complexity : O(sk) or O(pk) where s is the length of str and p is the length of pattern. for valid cases s == p.
-# Space Complexity : O(pk) as number of entries in set is p and k is the length of the longest string in str
+# Space Complexity : O(k) as number of entries in set is p (constant as max can only be 26) and k is the length of the longest (average) string in str
 # Did this code successfully run on Leetcode : Yes
 # Any problem you faced while coding this : First, checked only correspondence one way and not both way. 
 #
@@ -48,8 +48,8 @@ class Solution:
 
 # APPROACH 2: CLASS APPROACH (SIMILAR TO 1)
 # Time Complexity : O(sk) or O(pk) where s is the length of str and p is the length of pattern, for valid cases s == p. Addidng words to hashmap is not constant time operation.
-# Space Complexity : O(sk) as number of entries in hash_pattern is p (constant, max is 26), key is always of length 1 and k is the length of the longest string in str (values). 
-#                        Similarly, number of entries in hash_str is s, length of key is the length of longest string, k and value is of constant length.
+# Space Complexity : O(k) as number of entries in either of the hashes is p or s (both need to be same for valid cases) (constant as max can only be 26) and k is the length of 
+#                    the longest (average) string in str
 # Did this code successfully run on Leetcode : Yes
 # Any problem you faced while coding this : None
 #
