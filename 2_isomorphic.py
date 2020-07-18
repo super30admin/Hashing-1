@@ -1,5 +1,5 @@
 # time complexity = O(n)
-# space complexity = O(n)
+# space complexity = O(1) # as hashmap will have max 26 letters only
 
 
 def isomorphic(s,t):
