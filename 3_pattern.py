@@ -1,4 +1,4 @@
-# time complexity = O(n)
+# time complexity = O(nk) where n is the number of words in the string and k is the average length of the words
 # space complexity = O(n)
 
 def isomorphic(s,t):
