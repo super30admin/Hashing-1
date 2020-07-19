@@ -1,6 +1,7 @@
 # APPROACH - 1  - MY APPROACH (BEFORE CLASS) 
 # Time Complexity : get_hash() - O(k) where k is the length of the longest word. groupAnagrams - O(nk) where n is the total number of words. 
-# Space Complexity : O(n) - keys of the dict are of constant length - 26. It's O(n), what if each of the words in the list are unique anagrams. 
+# Space Complexity : O(n) - keys of the dict are of constant length - 26. It's O(n), what if each of the words in the list are unique anagrams. (I THINK IT SHOULD BE O(nk) 
+# as n words to be added to hashmap each having avaerage length of k.
 # Did this code successfully run on Leetcode : Yes
 # Any problem you faced while coding this : None
 #
@@ -68,7 +69,8 @@ class Solution:
 
 # APPROACH - 3 - PRIME NUMBERS
 # Time Complexity : groupAnagrams - O(nk) where n is the total number of words and k is the length of the longest word. 
-# Space Complexity : O(n) - keys of the dict are of constant length - 26. It's O(n), what if each of the words in the list are unique anagrams. 
+# Space Complexity : O(n) - keys of the dict are of constant length - 26. It's O(n), what if each of the words in the list are unique anagrams. (I THINK IT SHOULD BE O(nk) 
+# as n words to be added to hashmap each having avaerage length of k.
 # Did this code successfully run on Leetcode : Yes
 # Any problem you faced while coding this : None
 #
