@@ -6,8 +6,8 @@
 
 class Solution:
 
-    #we will split the words, based on the spaces and create a list of words.
-    #We perform the same isomorphic string method to solve this. where in place of another string we will use another list of words.
+    # we will split the words, based on the spaces and create a list of words. We perform the same isomorphic string
+    # method to solve this. where in place of another string we will use another list of words.
     def wordPattern(self, pattern: str, str: str) -> bool:
 
         words = str.split(" ")

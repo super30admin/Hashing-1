@@ -12,10 +12,10 @@
 
 class Solution:
 
-    #Simple Hash Method
-    #For each word we will sort the word
-    #create a key in the dictionary with the sorted word, and will add that word to the value of that key
-    #Words with the same chars will hash into same key and added to the list
+    # Simple Hash Method
+    # For each word we will sort the word
+    # create a key in the dictionary with the sorted word, and will add that word to the value of that key
+    # Words with the same chars will hash into same key and added to the list
     def groupAnagrams(self, strs: list[str]) -> list[list[str]]:
 
         HashMap = {}
@@ -39,8 +39,9 @@ class Solution:
 
     # using PrimeHash method
 
-    # here instead of sorting and creating the key,  we will allocate a prime number for each word
-    # we will multiply all the char's corresponding prime numbers and the value will be unique for those chars in a string and it will become the key
+    # here instead of sorting and creating the key,  we will allocate a prime number for each word we will multiply
+    # all the char's corresponding prime numbers and the value will be unique for those chars in a string and it will
+    # become the key
 
     def groupAnagrams2(self, strs: list[str]) -> list[list[str]]:
 

@@ -5,18 +5,15 @@
 # Any problem you faced while coding this : No
 
 
-
 class Solution:
-
 
     def isIsomorphic(self, s: str, t: str) -> bool:
 
         HashMap = {}
 
-        #we iterate throug each word and if it is in the key of dictionary,
-            #if not we create a new key with the word and store the correspinding t value
-            #if it is present in the key, we will check, if the value of the key is same as the value of corresponding t position
-            #if it is we will continue, other wise we will return false.
+        # we iterate through each word and if it is in the key of dictionary, if not we create a new key with the word
+        # and store the corresponding t value if it is present in the key, we will check, if the value of the key is
+        # same as the value of corresponding t position if it is we will continue, other wise we will return false.
         # we will iterate through each word separately with the same conditions.
 
         for i in range(len(s)):
