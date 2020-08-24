@@ -1,0 +1,117 @@
+// Problem 1
+// Time Complexity : O(n)
+// Space Complexity : O(n)
+// Did this code successfully run on Leetcode : Yes
+// Any problem you faced while coding this : No
+
+
+// Your code here along with comments explaining your approach
+// Algorithm
+// 1 - create data structure HashMap
+// 2 - convert string to char Array
+// 3 - sort char Array
+// 4 - add the string to HashMap
+class Solution {
+    public List<List<String>> groupAnagrams(String[] strs) {
+        // 1
+        Map<String, List<String>> map = new HashMap<>();
+        
+        for (String s : strs) {
+            // 2
+            char[] chArr = s.toCharArray();
+
+            // 3
+            Arrays.sort(chArr);
+            String key = new String(chArr);
+
+            // 4
+            if (!map.containsKey(key)) {
+                map.put(key, new ArrayList<>());
+            }
+            map.get(key).add(s);
+        }
+        
+        List<List<String>> result = new ArrayList<>();
+        for (String s : map.keySet()) {
+            result.add(map.get(s));
+        }
+        
+        return result;
+    }
+}
+
+// Problem 2
+// Time Complexity : O(n)
+// Space Complexity : O(n)
+// Did this code successfully run on Leetcode : Yes
+// Any problem you faced while coding this : No
+
+
+// Your code here along with comments explaining your approach
+// Algorithm
+// 1 - initiliaze arrays
+// 2 - compare count on respective char indexes
+// 3 - add 1 to respective char index
+class Solution {
+    public boolean isIsomorphic(String s, String t) {
+        // 1
+        int[] sArray = new int[256];
+        int[] tArray = new int[256];
+        
+        for (int i=0; i<s.length(); i++) {
+            // 2
+            if (sArray[s.charAt(i)] != tArray[t.charAt(i)]) {
+                return false;
+            }
+
+            // 3
+            sArray[s.charAt(i)] = i+1;
+            tArray[t.charAt(i)] = i+1;
+        }
+        
+        return true;
+    }
+}
+
+// Problem 3
+// Time Complexity : O(n)
+// Space Complexity : O(n)
+// Did this code successfully run on Leetcode : Yes
+// Any problem you faced while coding this : No
+
+
+// Your code here along with comments explaining your approach
+// Algorithm
+// 1 - create data structure HashMap
+// 2 - check for map containsKey and if value equals string
+// 3 - if not containsKey, check if value present or add to map
+class Solution {
+    public boolean wordPattern(String pattern, String str) {
+        String[] strArray = str.split(" ");
+        if (strArray.length != pattern.length()) {
+            return false;
+        }
+        
+        // 1
+        Map<Character, String> map = new HashMap<>();
+        
+        for (int i=0; i<strArray.length; i++) {
+            char key = pattern.charAt(i);
+
+            // 2
+            if (map.containsKey(key)) {
+                if (!map.get(key).equals(strArray[i])) {
+                    return false;
+                }
+            } else {
+                // 3
+                if (map.containsValue(strArray[i])) {
+                    return false;
+                }
+                map.put(key, strArray[i]);
+            }
+        }
+        
+        return true;
+    }
+}
