@@ -1,3 +1,5 @@
+#Used an approach very similar to problem_2
+
 class solution:
     def __init__(self, pattern, string):
         self.pattern = pattern
