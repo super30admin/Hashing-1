@@ -1,3 +1,13 @@
+    /*  Explanation
+    Time Complexity for operators : n*l
+    Extra Space Complexity for operators : o(n)
+    Did this code successfully run on Leetcode : Yes
+    Any problem you faced while coding this : No
+    Initillay I calaculted the multiplication of each character's assignmed prime value
+    It will unique if the next string is anagram of previous one.
+    Then, verified if that multiplciation is not part of hashmap if not then put it as a first element else 
+    get the list and add this new anagram to list and update the hashmap
+    */
 import java.util.*;
 class groupAnagrams {
     public List<List<String>> groupAnagrams(String[] strs) {
