@@ -47,5 +47,5 @@ import java.util.*;
         public static void main(String args[]){
             isomorphic gr = new isomorphic();
             System.out.println(gr.isIsomorphic("foo","bar"));
-    }
+        }
     }
