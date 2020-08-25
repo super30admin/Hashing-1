@@ -1,3 +1,13 @@
+// TC: O(N) where N represents the number of words in String or  characters in pattern
+// SC: O(M) where M represents the number of unique characters in String.
+
+// We will split the String to form a String array so that we can easily map character with String.
+// Consider 2 HashMap where we are storing each character of pattern with first string of String, if the character of pattern already exists, we check 
+// if its corresponding string is also same as existing character value. if not we return false;
+// In second map we store the corresponding string with character, since we are checking for one on one mapping, we are checking both sides,  
+//  we check if the string is mapped to expected character, if not we return false.
+
+
 import java.util.*;
 
 public class word_pattern {
