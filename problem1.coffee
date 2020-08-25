@@ -13,18 +13,20 @@
 #   output should be [[ate, eat, tea], [nat, tan]] which are the values so
 #   return hashmap.map((key, value) => value) will return the results as an array of arrays
 
-groupAnagrams = (inputs) ->
+strToKey = (string) ->
   primeArray = [2,3,5,7,11,13,17,19,23,29,31,37,41,43,47,53,59,67,71,73,79,83,89,97,101,103]
   # map a-z into primeArray via character.charCodeAt() - 'a'.charCodeAt()
   # 'a' => 0, 'b' => 1, ..., 'z' => 103
+  aCharCodeAt = 'a'.charCodeAt()
+  string.split('').reduce(
+    ((acc, char) ->
+      acc *= primeArray[char.charCodeAt() - aCharCodeAt]
+    ), 1)
 
+groupAnagrams = (inputs) ->
   hashmap = inputs.reduce(
     ((acc, input) ->
-      aCharCodeAt = 'a'.charCodeAt()
-      mapping = input.split('').reduce(
-        ((acc, char) ->
-          acc *= primeArray[char.charCodeAt() - aCharCodeAt]
-        ), 1)
+      mapping = strToKey(input)
       if not acc.has(mapping)
         acc.set(mapping, [])
       acc.set(mapping, [acc.get(mapping)..., input])

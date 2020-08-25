@@ -12,19 +12,24 @@
 //   { 73: [ate, eat, tea], 966: [nat, tan], etc}
 //   output should be [[ate, eat, tea], [nat, tan]] which are the values so
 //   return hashmap.map((key, value) => value) will return the results as an array of arrays
-var groupAnagrams;
+var groupAnagrams, strToKey;
 
-groupAnagrams = function(inputs) {
-  var hashmap, primeArray;
+strToKey = function(string) {
+  var aCharCodeAt, primeArray;
   primeArray = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 67, 71, 73, 79, 83, 89, 97, 101, 103];
   // map a-z into primeArray via character.charCodeAt() - 'a'.charCodeAt()
   // 'a' => 0, 'b' => 1, ..., 'z' => 103
+  aCharCodeAt = 'a'.charCodeAt();
+  return string.split('').reduce((function(acc, char) {
+    return acc *= primeArray[char.charCodeAt() - aCharCodeAt];
+  }), 1);
+};
+
+groupAnagrams = function(inputs) {
+  var hashmap;
   hashmap = inputs.reduce((function(acc, input) {
-    var aCharCodeAt, mapping;
-    aCharCodeAt = 'a'.charCodeAt();
-    mapping = input.split('').reduce((function(acc, char) {
-      return acc *= primeArray[char.charCodeAt() - aCharCodeAt];
-    }), 1);
+    var mapping;
+    mapping = strToKey(input);
     if (!acc.has(mapping)) {
       acc.set(mapping, []);
     }
