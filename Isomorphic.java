@@ -1,14 +1,15 @@
 // Time Complexity :O(n)
-// Space Complexity :O(1)
+// Space Complexity :O(n)
 // Did this code successfully run on Leetcode : Yes
 // Any problem you faced while coding this : No
 
 
-class Isomorphic
+class Isomorphic 
 {
     public boolean isIsomorphic(String s, String t) 
     {
-        HashMap<Character, Character> hm = new HashMap();
+        HashMap<Character, Character> hm = new HashMap<>();
+        HashMap<Character, Character> hm2 = new HashMap<>(); 
         
         if(s.length()!=t.length())
             return false;
@@ -17,21 +18,26 @@ class Isomorphic
         {
             char s1 = s.charAt(i);
             char t1 = t.charAt(i);
-            if(hm.containsKey(s1))
+            if(!hm.containsKey(s1))
             {
-                if(hm.get(s1)!=t1)
-                    return false;
+                hm.put(s1,t1);
             }
-            else if(hm.containsValue(t1))
+            else if(hm.get(s1)!=t1)
             {
                 return false;
             }
-            hm.put(s1,t1);
+            
+            if(!hm2.containsKey(t1))
+                hm2.put(t1,s1);
+            else if(hm2.get(t1)!=s1)
+                return false;
         }
         return true;
         
     }
-	public static void main (String[] args) throws java.lang.Exception
+}	
+
+public static void main (String[] args) throws java.lang.Exception
 	{
 		String s = "egg";
 		String t = "add";
