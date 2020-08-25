@@ -28,13 +28,13 @@ public class WordPattern_LC290 {
 
         for (int i = 0; i < strings.length; i++) {
             char c = pattern.charAt(i);
-            if (!strMap.containsKey(strings[i]))        // Add new mapping
+            if (!strMap.containsKey(strings[i]))            // Add new mapping
                 strMap.put(strings[i], c);
-            else if (!strMap.get(strings[i]).equals(c))      // Mapping exists but mismatch spotted
+            else if (!strMap.get(strings[i]).equals(c))     // Mapping exists but mismatch spotted
                 return false;
-            if (!charMap.containsKey(c))                // Add new mapping
+            if (!charMap.containsKey(c))                    // Add new mapping
                 charMap.put(c, strings[i]);
-            else if (!charMap.get(c).equals(strings[i]))     // Mapping exists but mismatch spotted
+            else if (!charMap.get(c).equals(strings[i]))    // Mapping exists but mismatch spotted
                 return false;
         }
         return true;
