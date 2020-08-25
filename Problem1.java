@@ -4,7 +4,7 @@
  *                      K is the size of the longest string.
  * Space Complexity -> O(N), as we are using a hashmap to store seen values
  * Approach -> We go through each string in the array (this would take O(N) time), and
- *             convert each string a char array, and sort the characters, and convert
+ *             convert each string a char array, and sort the characters(takes K log K time), and convert
  *             it back to string, and store it in a hashmap. We store each string with the same
  *             sorted structure in a list, and return these lists as a new list.
  */
