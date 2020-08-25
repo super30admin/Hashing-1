@@ -1,7 +1,8 @@
-# Time Complexity : O()
-# Space Complexity : O()
+# Time Complexity : O() = for n strings do O(generate key) = n * O(l) where l is the max length of a string entry
+# Space Complexity : O() = O(primeArray) + O(hashmap) = O(26) + O(n) = O(n)
 # Did this code successfully run on Leetcode : NA
 # Any problem you faced while coding this :
+#   Not being familiar with how to map over a Map in javascript, ie Array.from(hashmap.keys())
 
 # Approach:
 # for each string in input
