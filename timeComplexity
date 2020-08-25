@@ -1,0 +1,15 @@
+Group Anagrams - 
+
+TimeComplexity: O(nxm) where n is number of items in the input list and m is the lenght of each element in the list
+SpaceComplexity: O(1)
+
+Isomorphic Strings - 
+
+TimeComplexity: O(n) where n is number of items in the input list and m is the lenght of each element in the list
+SpaceComplexity: size of 2 hashmaps
+
+
+Word Pattern - 
+
+TimeComplexity: O(n) where n is number of items in the input list and m is the lenght of each element in the list
+SpaceComplexity: size of 2 hashmaps
