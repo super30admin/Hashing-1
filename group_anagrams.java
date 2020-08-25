@@ -12,8 +12,8 @@ import java.util.*;
 public class group_anagrams {
 	
 	public List<List<String>> groupanagram(String[] arr){
-		
-		if(arr.length==0)
+		//Edge cases
+		if(arr== null || arr.length==0)
 			return new ArrayList();
 		HashMap<String, List> map = new HashMap();
 		int[] cnt = new int[26];
