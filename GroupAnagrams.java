@@ -6,6 +6,11 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+//Time Complexity : O(n)
+//Space Complexity : O(n)
+//Did this code successfully run on Leetcode : yes
+//Any problem you faced while coding this :
+// logic behind this was bit tricky to formulate.
 public class GroupAnagrams {
 	public List<List<String>> groupAnagrams(String[] strs) {
 		int first = 0;
