@@ -1,5 +1,8 @@
-// Time Complexity : O(N)
-// Space Complexity :O(M) where M is the length of the string
+// Time Complexity : O(Nk)
+// Space Complexity :O(Nk) where N is the length of pattern and k is the average length of all the words in str.
+//Adding a string to hashmap does not take constant time. The hashmaps have to take into account the length of 
+//the words as well.
+
 // Did this code successfully run on Leetcode : Yes
 // Any problem you faced while coding this :
 

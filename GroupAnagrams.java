@@ -1,5 +1,6 @@
-// Time Complexity : O(n * l) where l is the length of the string
-// Space Complexity :O(n * l)
+// Time Complexity : O(N * L) where N is the length of the array of prime numbers and 
+// L is average length of a string in the input.
+// Space Complexity :O(N * L)
 // Did this code successfully run on Leetcode : Yes
 // Any problem you faced while coding this :
 

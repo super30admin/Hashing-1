@@ -1,5 +1,5 @@
 // Time Complexity : O(N)
-// Space Complexity :O(M) where M is the length of the string
+// Space Complexity :O(1) As there would be 26 distint characters in the HashMap worst case
 // Did this code successfully run on Leetcode : Yes
 // Any problem you faced while coding this :
 
