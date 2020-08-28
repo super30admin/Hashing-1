@@ -1,5 +1,5 @@
 // Time Complexity : O(n) + O(n), where n is the length of the string. Beacuse of the for loop and contain values
-// Space Complexity : The keys and values are character so O(n) + O(n) where n is the length of character.
+// Space Complexity : The keys and values are character so O(1) for 26 char in the hashmap.
 // Did this code successfully run on Leetcode :
 // Any problem you faced while coding this :
 

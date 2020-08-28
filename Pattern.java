@@ -1,5 +1,5 @@
-// Time Complexity : O(n) + O(n), where n is the length of the string. Beacuse of the for loop and contain values
-// Space Complexity : The key is character and value is string. it will be O(n) + O(n*l) where n is the number of characters and l is the length of string
+// Time Complexity :O(n*k), where is the number of words and k is the average length of the words.
+// Space Complexity : O(n*k), where is the number of words and k is the average length of the words. same for both
 // Did this code successfully run on Leetcode : yes
 // Any problem you faced while coding this :
 

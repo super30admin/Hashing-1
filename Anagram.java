@@ -1,5 +1,5 @@
-// Time Complexity : O(n)+O(n) since we have to traverse all the strings in the list and then return the values of all the strings by traversing hashmap.values
-// Space Complexity : since we are using a hashmap therefore the worst possible case is that it has to create a hashmap of all the strings in the list anda integer array of 26 so O(n+n)
+// Time Complexity : O(n*k), where is the number of words and k is the average length of the words.
+// Space Complexity : O(n*k), where is the number of words and k is the average length of the words. both are same
 // Did this code successfully run on Leetcode : yes
 // Any problem you faced while coding this :
 
