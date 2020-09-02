@@ -1,6 +1,6 @@
 
-// Time Complexity : O(log n)
-// Space Complexity : O(1)
+// Time Complexity : O(n * k) , n = length of string array, k = length of the strings
+// Space Complexity : O(n)
 // Did this code successfully run on Leetcode : Yes
 
 // In order to group anagrams together, we use an approach where each letter is mapped to a unique value.

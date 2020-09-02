@@ -1,8 +1,8 @@
 import java.util.HashMap;
 import java.util.HashSet;
 
-// Time Complexity : O(log n)
-// Space Complexity : O(1)
+// Time Complexity : O(n) , n = length of the strings
+// Space Complexity : O(n) 
 // Did this code successfully run on Leetcode : Yes
 
 // In this problem I use a map to store the one to one mapping between characters. 
