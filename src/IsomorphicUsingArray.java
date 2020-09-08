@@ -1,4 +1,7 @@
 public class IsomorphicUsingArray {
+
+
+
 	public boolean isIsomorphic(String s, String t) {
 		if (s.length() != t.length() || s == null || t == null)
 			return false;
