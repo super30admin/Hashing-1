@@ -19,3 +19,4 @@ class Solution:
         
         # Return values 
         return dic.values()
+    
