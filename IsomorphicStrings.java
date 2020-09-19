@@ -1,9 +1,6 @@
 package Trees_Graphs;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 public class IsomorphicStrings {
@@ -16,16 +13,16 @@ public class IsomorphicStrings {
 			return false;
 		}
 		
-		Map<Character, List<Character>> map = new HashMap<>();
+		Map<Character, Character> map = new HashMap<>();
 		
 		for(int i = 0 ; i<s.length() ; i++)
 		{
 			if(!map.containsKey(s.charAt(i)))
 			{
-				map.put(s.charAt(i), new ArrayList<Character>(Arrays.asList(t.charAt(i))));
+				map.put(s.charAt(i), t.charAt(i));
 				
 			}
-			else if(map.get(s.charAt(i)).contains(t.charAt(i)))
+			else if(map.get(s.charAt(i)) == t.charAt(i))
 			{
 				continue;
 			}
