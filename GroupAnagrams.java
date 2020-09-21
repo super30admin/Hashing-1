@@ -1,5 +1,5 @@
-// Time Complexity : best case - O(1)
-// Space Complexity : O(N)  - As we considered a HashMap
+// Time Complexity : best case - O(Nklogk) - klogk for sorting each string and N is the array length
+// Space Complexity : O(N)  - As we considered a HashMap 
 // Did this code successfully run on Leetcode : Yes
 // Any problem you faced while coding this : No
 

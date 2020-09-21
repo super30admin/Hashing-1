@@ -1,4 +1,4 @@
-// Time Complexity : best case - O(1) 
+// Time Complexity : best case - O(N) 
 // Space Complexity : O(N) - N size of HashMap
 // Did this code successfully run on Leetcode : Yes
 // Any problem you faced while coding this : No
