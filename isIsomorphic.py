@@ -13,8 +13,8 @@ def isIsomorphic(s,t) -> bool:
     
     we can access any dictionary key directly.
     
-    ### Time Complexity: O(n)
-    len of strings
+    ### Time Complexity: O(k.n)
+    hashmap values we are iterating over to check of reverse mapping exist.
     
     ### Space Complexity: O(1)
     """
