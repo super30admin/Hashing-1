@@ -9,19 +9,23 @@ def groupAnagrams(strs):
         eg. ["eat","tea","tan","ate","nat","bat"]
         onsorted eat -> aet and tea -> aet. Comparison will give you a match. append into res[0]. If mismatch found append to res.
         res = [[eat]]
-       ### Time Complexity: O(N.NLog(N))
+       ### Time Complexity: O(N.kLog(k))
         NLog(N) to call sorted() everytime.
-       ### Space Complexity: O(N)
+       ### Space Complexity: O(K.N)
 
-        #2. Optimized solution:
+        #2. ~ Optimized solution:
         Utilize defaultdict from python. We are improving previous solution by reducing 
-        ### Time Complexity: O(K.Nlog(N)) -> O(N.log(N))
-        ### Space Complexity: O(N)
+        ### Time Complexity: O(N.Klog(K))
+        ### Space Complexity: O(K.N)
         # passed on leetcode
 
         """
         words_dict = defaultdict(list)
         result=[]
+
+        #base case
+        if(strs==None or len(strs)==0): return []
+
         for i in strs:
             key=sorted(i) #O(Nlog(N))
             value=''.join(key) #O(1)
