@@ -8,4 +8,4 @@ class Solution:
             dic[''.join(sorted(string))] += [string]
 
         return dic.values()
-        
+        #tc, sc ---> o(n)
