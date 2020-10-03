@@ -59,3 +59,39 @@ public:
         return check_isomorphism(s,t);
     }
 };
+
+
+class Solution {
+public:
+    bool isIsomorphic(string s, string t) {
+        //edge
+        if(s.length()==0 && t.length()==0){
+            return true;
+        }
+        
+        //logic
+        unordered_map <char, char> my_map;
+        int i=0;
+        for(auto c:s){
+            if(my_map.find(c)!=my_map.end()){
+                if(my_map[c] != t[i])
+                    return false;
+            } else{
+                 my_map[c] = t[i];
+            }
+            i++;
+        }
+        my_map.clear();
+        i=0;
+        for(auto c:t){
+            if(my_map.find(c)!=my_map.end()){
+                if(my_map[c] != s[i])
+                    return false;
+            } else{
+                 my_map[c] = s[i];
+            }
+            i++;
+        }
+        return true;
+    }
+};
