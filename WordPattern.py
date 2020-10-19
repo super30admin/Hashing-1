@@ -1,6 +1,8 @@
 #Time Complexity : O(n) where n is the length of input string (as both strings have to be of the same length)
 #Space Complexity : O(2n) as we require two DS i.e. HashMap and Set but HashMap can contain max 26 keys as it only contains all unique letters => O(n) where n is number of unique words in the input string
+#Did this code successfully run on Leetcode : Yes
 #Any problem you faced while coding this : No
+
 
 class Solution:
     def wordPattern(self, pattern: str, str: str) -> bool:
