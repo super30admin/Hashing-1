@@ -1,5 +1,5 @@
-# // Time Complexity : O(n) 
-# // Space Complexity : O(n)
+# // Time Complexity : O(nk) where k is length of the strings 
+# // Space Complexity : O(n*26) -> O(n), tuples of size 26 are used to encode each string
 # // Did this code successfully run on Leetcode : Yes
 # // Any problem you faced while coding this : No
 
@@ -21,7 +21,7 @@ class Solution(object):
             array = [0]*26
             for char in s:
                 array[ord(char) - ord('a')] += 1
-                
+            # Convert arr to a tuple or a string(immmutable), arrays are not hashable(mutable) hence cannot be used in a dictionary   
             return tuple(array)
         
         s_map = defaultdict(list)

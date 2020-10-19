@@ -1,40 +1,41 @@
-# // Time Complexity : O(n)
-# // Space Complexity : O(n)
-# // Did this code successfully run on Leetcode : Yes
-# // Any problem you faced while coding this : No
+# Time Complexity: O(n) where n is the length of the string
+# Space Complexity: O(n) where n is length of the string
+# Did this run on Leetcode: Yes
+# Any problems faced: No
+# Approach:
+ # - Store mapping for exery character in the pattern with every word in the string and vice versa
+ # - If there is a mismatch at any point return False
 
-# // Your code here along with comments explaining your approach
-# Initialize two maps
-# Traverse over the strings, store the character from first string as a key and char from second string as value in one map and vice versa in the other.
-# Check if the char from one string maches the value from other and return False if there is a mismatch.
-
-class Solution:
-    def isIsomorphic(self, s:str, t:str) -> bool:
-        
-        if not s and not t:
-            return True
-        
-        if len(s) == 0:
-            return len(t) == 0
-        
+class Solution(object):
+    def isIsomorphic(self, s, t):
+        """
+        :type s: str
+        :type t: str
+        :rtype: bool
+        """
+        # Edge Case
         if len(s) != len(t):
             return False
         
-        s_map = {}
-        t_map = {}
+        # Maps to store character mappings
+        # use default dict to avoid missing KeyError
+        s_map = collections.defaultdict(str)
+        t_map = collections.defaultdict(str)
         
         for i in range(len(s)):
-            c1 = s[i]
-            c2 = t[i]
-            
-            if c1 in s_map:
-                if s_map[c1] != c2:
-                    return False
-            if c2 in t_map:
-                if t_map[c2] != c1:
+            s_char = s[i]
+            t_char = t[i]
+            if s_char in s_map:
+                if s_map[s_char] != t_char:
                     return False
                 
-            s_map[c1] = c2
-            t_map[c2] = c1
+            if t_char in t_map:
+                if t_map[t_char] != s_char:
+                    return False
+                
+            s_map[s_char] = t_char
+            t_map[t_char] = s_char
             
         return True
+            
+            
