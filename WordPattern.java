@@ -1,7 +1,7 @@
 // Time Complexity : O(N)
 // Space Complexity : O(N)
 // Did this code successfully run on Leetcode : Yes
-// Any problem you faced while coding this : No
+// Any problem you faced while coding this : Yes, difficult to understand that two maps are required.
 class Solution {
     public boolean wordPattern(String pattern, String s) {
         if(pattern.length() == 1) return true;
