@@ -3,7 +3,7 @@
 //Did this code successfully run on Leetcode : Yes
 //Any problem you faced while coding this :
             //1. Yes, I had to use 3rd map to save the pair of a char from 'pattern' and a word from 's'.
-            //1. When number of characters in 'pattern' is not equal to number of words in 's', it took me time to figure out the conditions that are written at the bottom of the function.
+            //2. When number of characters in 'pattern' is not equal to number of words in 's', it took me time to figure out the conditions that are written at the bottom of the function.
 
 
 class Solution {
