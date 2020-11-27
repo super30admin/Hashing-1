@@ -1,11 +1,11 @@
-49. Group Anagrams
+// Time Complexity : O(n*k^2logk)
+// Space Complexity : O(N) -> where N is the length of array
+// Did this code successfully run on Leetcode : Yes, with poor time & space complecity
+// Any problem you faced while coding this : Need to solve using Optimized approaach
 
-Given an array of strings strs, group the anagrams together. You can return the answer in any order.
-An Anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once.
-Example 1:
 
-Input: strs = ["eat","tea","tan","ate","nat","bat"]
-Output: [["bat"],["nat","tan"],["ate","eat","tea"]]
+// Your code here along with comments explaining your approach
+Approach: 1. Sort each string and use it as key in HashMap -> Match sorted string with key and add to the List of values if a match is found. So basically grouping all similar patterns to a matching sorted key.
 
 SOlution:
 
