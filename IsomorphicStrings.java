@@ -34,3 +34,6 @@ class Solution {
         return true;
     }
 }
+
+//Time complexity : O(N) where N is the length of string
+//space complexity : O(M) where M is the distinct characters in a string, this extra space is requored to store values in the hashmap

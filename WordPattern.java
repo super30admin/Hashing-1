@@ -25,3 +25,6 @@ class Solution {
         return true;
     }
 }
+
+//Time complexity : O(N) where N is the length of pattern
+//Space complexity : O(S+L) where S is the number of distinct characters to be stored in the hashmap and L is the number of strings after doing split.

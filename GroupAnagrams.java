@@ -27,3 +27,6 @@ class Solution {
         return res;
     }
 }
+
+//Time complexity : O(N*M) N is the number of Strings in string array M is the maximum length of string
+//Space complexity : extra space needed is for hashmap, so it is the unique types of words possible it is O(N) here N is the number of different words which are not anagrams 
