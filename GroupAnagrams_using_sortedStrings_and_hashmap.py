@@ -5,16 +5,16 @@
 
 class Solution:
     def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
-        a={}
+        hashmap={}
         for i in strs:
             x=sorted(i)
             x=tuple(x)
-            if x in a:
-                a[x].append(i)
+            if x in hashmap:
+                hashmap[x].append(i)
             else:
-                a[x]=[]
-                a[x].append(i)
-        sub=[]
-        for i in a:
-            sub.append(a[i])
-        return sub
+                hashmap[x]=[]
+                hashmap[x].append(i)
+        subgroup=[]
+        for i in hashmap:
+            subgroup.append(hashmap[i])
+        return subgroup
