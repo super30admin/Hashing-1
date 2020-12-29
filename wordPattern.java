@@ -12,7 +12,6 @@ class Solution {
         if(strs.length != pattern.length()) {
             return false;
         }
-        
         Map<Character, String> patternMap = new HashMap<>();
         Map<String, Character> strMap = new HashMap<>();
         
@@ -31,7 +30,6 @@ class Solution {
             patternMap.put(ch, str);
             strMap.put(str, ch);
         }
-        
         return true;
     }
 }
