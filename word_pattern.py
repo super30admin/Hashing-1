@@ -1,5 +1,5 @@
-# Time Complexity : O(N) N: Number of words
-# Space Complexity : O(M) M: Number of unique charater 
+# Time Complexity : O(N) N: Number of words in s
+# Space Complexity : O(M) M: Number of unique charater in pattern and words in s 
 # Did this code successfully run on Leetcode : Yes
 # Any problem you faced while coding this : No
 
