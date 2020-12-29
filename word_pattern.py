@@ -14,6 +14,7 @@ class Solution:
         
         for x in range(len(words)):
             if pattern[x] not in dic:
+                # if we have a same word in s
                 if words[x] in dic.values():
                     return False
                 dic[pattern[x]] = words[x]
