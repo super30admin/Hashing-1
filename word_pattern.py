@@ -1,8 +1,7 @@
-
-
-
-
-
+# Time Complexity : O(N) N: Number of words
+# Space Complexity : O(M) M: Number of unique charater 
+# Did this code successfully run on Leetcode : Yes
+# Any problem you faced while coding this : No
 
 class Solution:
     def wordPattern(self, pattern: str, s: str) -> bool:
