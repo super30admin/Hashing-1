@@ -1,5 +1,5 @@
 // Time Complexity : The time complexity is O(n) where n is the length of the pattern or number of number of words.
-// Space Complexity : The space complexity is O(n) where n is the number of distinct characters or distinct words.
+// Space Complexity : The space complexity is O(k) where k is the length of the longest string.
 // Did this code successfully run on Leetcode : Yes
 // Any problem you faced while coding this : No
 

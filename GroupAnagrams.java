@@ -8,43 +8,34 @@
 class Solution {
     public List<List<String>> groupAnagrams(String[] strs) {
 
+        int[] hash = {2,3,5,7,11,13,17,19,23,29,31,37,41,43,47,53,59,61,67,71,73,79,83,89,97,101};
+
         List<List<String>> output = new LinkedList<>();
-        int[] hash = new int[26];
 
-        Map<String,List<String>> map = new HashMap<>();
+        Map<Long,List> map = new HashMap<>();
 
-        for(int i=0;i<strs.length;i++){
+        for(String s:strs){
 
-            Arrays.fill(hash,0);
+            long count = 1;
 
-            //Traverse through the length of string to till the hash array
-            for(int j=0;j<strs[i].length();j++){
-                hash[strs[i].charAt(j) - 'a']++;
+            //Traverse through the length of string to get the hash of the string
+            for(int i=0;i<s.length();i++){
+                count *= hash[s.charAt(i) - 'a'];
             }
-
-            StringBuilder s = new StringBuilder();
-
-            // create a string which is used as key in map by traversing through hash array
-            for(int j=0;j<hash.length;j++){
-                s.append('#');
-                s.append(hash[j]);
-            }
-
-            String str = s.toString();
 
             // Add the string in map based on the key
-            if(!map.containsKey(str)){
-                map.put(str,new LinkedList<>());
+            if(!map.containsKey(count)){
+                map.put(count,new LinkedList<>());
             }
 
-            map.get(str).add(strs[i]);
+            map.get(count).add(s);
 
         }
 
         // Traverse through the map to add the Lists to the output
-        for(String str:map.keySet()){
+        for(long each:map.keySet()){
 
-            output.add(map.get(str));
+            output.add(map.get(each));
 
         }
 

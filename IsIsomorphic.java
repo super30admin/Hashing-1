@@ -1,5 +1,5 @@
 // Time Complexity : The time complexity is O(n) where n is the length of the string. Here the length of both the strings are equal.
-// Space Complexity : The space complexity is O(n) where n is the number of distinct characters.
+// Space Complexity : The space complexity is O(1) since at the most the number of characters stored in the map is 26 irrespective of the length of the string.
 // Did this code successfully run on Leetcode : Yes
 // Any problem you faced while coding this : No
 
