@@ -27,36 +27,32 @@ class GroupAnagrams {
       if(strs == null || strs.length < 1) return new ArrayList<List<String>>();
 
 
-      HashMap<String, Integer> asciiValuesMap = new HashMap<String, Integer>();
+HashMap<Long, ArrayList<String>> asciiValuesMap = new HashMap<>();
 
-        for(String curr : strs){
+for(String curr : strs){
+  long primeVal = getPrimeProduct(curr);
 
-            int sum = 0;
-            for (int  i = 0; i < curr.length() ; i++) {
-              sum += curr.charAt(i);
-            }
-            asciiValuesMap.put(curr,sum);
-        }
 
-        List<List<String>> output = new ArrayList<List<String>>();
-        Set<Integer> addeditemset = new HashSet<>();
-        for(int i = 0; i < strs.length ; i++){
-          if(addeditemset.contains(i)){
-            continue;
-          }
-          List<String> currentRow = new ArrayList<String>();
-          currentRow.add(strs[i]);
+  if(!asciiValuesMap.containsKey(primeVal)){
+      asciiValuesMap.put(primeVal, new ArrayList<>());
+  }
 
-          for(int j = i+1; j < strs.length; j++){
-            if(asciiValuesMap.get(strs[i]).intValue() == asciiValuesMap.get(strs[j]).intValue()){
-                currentRow.add(strs[j]);
-                addeditemset.add(j);
-            }
-          }
-          output.add(currentRow);
-        }
+  asciiValuesMap.get(primeVal).add(curr);
+}
 
-        return output;
-    }
+return new ArrayList<>(asciiValuesMap.values());
+}
+
+private static long getPrimeProduct(String str){
+long result = 1;
+int[] primes = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101, 103, 107, 109, 113, 127,
+131, 137, 139, 149, 151, 157, 163, 167, 173, 179, 181, 191, 193, 197, 199};
+for (int i = 0 ; i < str.length(); i++) {
+int ind = str.charAt(i) - 'a';
+result = result * primes[str.charAt(i) - 'a'];
+}
+
+return result;
+}
 
 }
