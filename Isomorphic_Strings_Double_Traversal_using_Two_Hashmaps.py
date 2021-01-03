@@ -1,5 +1,17 @@
 # Created by Aashish Adhikari at 10:04 AM 12/31/2020
 
+'''
+Time Complexity:
+O(s) + O(t)
+
+Space Complexity:
+O(n) since we do not know how many entries we might need in the hashmap since the set of the characters that can be used
+is not predefined in the question.
+
+
+'''
+
+
 class Solution(object):
     def isIsomorphic(self, s, t):
         """

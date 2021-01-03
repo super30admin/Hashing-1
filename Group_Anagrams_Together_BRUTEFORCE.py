@@ -18,7 +18,8 @@ After we are done iterating and storing, we return a list of lists.
 
 Since, we are storing all n words of average length k in the hashmap, we are thus creating O(n . k) auxiliary space while
 doing so. Hence, the space complexity is O (n . k)
-While returning, we create a new list and append the lists from the hash table into this new list.
+While returning, we create a new list and append the lists from the hash table into this new list. However, since this new list
+is the output, it is not considered as auxiliary space and thus not added to space complexity.
 
 
 

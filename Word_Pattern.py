@@ -1,5 +1,16 @@
 # Created by Aashish Adhikari at 10:04 AM 12/31/2020
 
+'''
+Time Complexity:
+Assuming the pattern and the string have the same length n, O(2n).
+
+Space Complexity:
+O(2n) assuming there are n distinct words to store and n distince characters to store..
+
+
+
+'''
+
 class Solution(object):
     def wordPattern(self, pattern, s):
         """
