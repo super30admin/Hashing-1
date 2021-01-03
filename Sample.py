@@ -5,6 +5,12 @@ class Solution:
     
     def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
         
+        """
+        make use of dictionary to group anagrams using sorted string as key and each items with same sorted values appended to a list
+        resulted in a list of groups; each item of subgroup having same characters
+        """
+        
+        
         if len(strs) == 0: return []
         d = {}
         for item in strs:
@@ -22,6 +28,13 @@ class Solution:
 class Solution:
     
     def isIsomorphic(self, s: str, t: str) -> bool:
+        
+        """
+        use of hash table (dictionary) subjected to definition of isomorphic strings
+        - create empty dictionary and update values 
+        - if key is already present, check if value is same, otherwise return "False"
+        """
+        
         sdict = {}; tdict = {}; result = True
         if len(s) != len(t): result = False
         for i in range(len(s)):
@@ -41,6 +54,10 @@ class Solution:
 class Solution:
     
     def wordPattern(self, pattern: str, s: str) -> bool:
+        
+        """
+        create 2 dictionaries and match key, value pair for each character coming from given set of words
+        """
         
         ssplit = s.split(" ")
         c_dict = {}; w_dict = {}
