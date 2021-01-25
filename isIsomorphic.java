@@ -1,4 +1,4 @@
-// Time Complexity : O(n*k)
+// Time Complexity : O(k) size of string
 // Space Complexity : O(1) hasmmap size is fixed 256 ascii size
 // Did this code successfully run on Leetcode : YES
 // Any problem you faced while coding this : NO
