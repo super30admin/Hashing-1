@@ -1,6 +1,9 @@
-# Given a pattern and a string str, find if str follows the same pattern.
+'''
+Given a pattern and a string str, find if str follows the same pattern.
 
-# Time complexity: O(nlogm) => O(n) for each letter/word + O(logm) for sorting values
+Time complexity: O(nlogm) => O(n) for each letter/word + O(logm) for sorting values
+Space complexity: O(2n)
+'''
 class Solution:
     def hasWordPattern(self, pattern, s):
         d1,d2 = {}, {}
