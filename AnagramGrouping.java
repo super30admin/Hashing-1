@@ -15,10 +15,12 @@ class AnagramGrouping {
 
             long primeValue = calculatePrimeValue(str);
 
+            // If the primeValue already exists, append the string to the corresponding array
             if(map.containsKey(primeValue)) {
                 map.get(primeValue).add(str);
             } else {
 
+                // else, create a new arraylist and append the string, and put the array in the map 
                 ArrayList<String> newValue = new ArrayList<>();
                 newValue.add(str);
                 map.put(primeValue, newValue);
@@ -26,6 +28,7 @@ class AnagramGrouping {
 
         }
 
+        // return the values as string arrays
         List<List<String>> result = new ArrayList<>();
         for (Long p : map.keySet()) {
             result.add(map.get(p));
