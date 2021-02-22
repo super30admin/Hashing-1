@@ -33,4 +33,35 @@ class IsomorphicStrings {
         return true;
 
     }
+//    Method - 2
+//    if (s.length() != t.length()) return false;
+//
+//    HashMap<Character, Character> StoTMap = new HashMap<>();
+//    HashMap<Character, Character> TtoSMap = new HashMap<>();
+//
+//
+//
+//        for (int i = 0; i < s.length(); i++) {
+//        char sch = s.charAt(i);
+//        char tch = t.charAt(i);
+//
+//        if (StoTMap.containsKey(sch)) {
+//            if (!StoTMap.get(sch).equals(tch))
+//                return false;
+//        }
+//        else {
+//            StoTMap.put(sch, tch);
+//        }
+//        if (TtoSMap.containsKey(tch)) {
+//            if (!TtoSMap.get(tch).equals(sch))
+//                return false;
+//        }
+//        else {
+//            TtoSMap.put(tch, sch);
+//        }
+//
+//    }
+//
+//        return true;
+
 }

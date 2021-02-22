@@ -31,4 +31,36 @@ class WordPattern {
         }
         return true;
     }
+    //Method - 2
+//    String[] words = s.split(" ");
+//        if (words.length != pattern.length()) return false;
+//
+//    HashMap<Character, String> PtoSMap = new HashMap<>();
+//    HashMap<String, Character> StoPMap = new HashMap<>();
+//
+//
+//
+//        for (int i = 0; i < pattern.length(); i++) {
+//        char p = pattern.charAt(i);
+//        String word = words[i];
+//
+//        if (PtoSMap.containsKey(p)) {
+//            if (!PtoSMap.get(p).equals(word))
+//                return false;
+//        }
+//        else {
+//            PtoSMap.put(p, word);
+//        }
+//        if (StoPMap.containsKey(word)) {
+//            if (!StoPMap.get(word).equals(p))
+//                return false;
+//        }
+//        else {
+//            StoPMap.put(word, p);
+//        }
+//
+//    }
+//
+//
+//        return true;
 }
