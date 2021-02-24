@@ -17,6 +17,9 @@
 //Note:
 //You may assume both s and t have the same length.
 
+// Time Complexity: O(N)
+// Space Complexity: O(N)
+
 public class Problem2 {
     public boolean isIsomorphic(String s, String t) {
         if (s.length() != t.length()) return false;
