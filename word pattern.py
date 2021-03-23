@@ -18,3 +18,5 @@ class Solution:
                 if patter_to_word[ch] != word:
                     return False
         return True
+    
+    #TC = O(n)
