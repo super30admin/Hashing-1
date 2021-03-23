@@ -10,6 +10,8 @@
 #     d2[value] = d2.get(value,[]) + [item] #indexing each alphabet in the string... e
 # print(d2)
 #
+
+
 class Solution:
     def isIsomorphic(self, s: str, t: str) -> bool:
         if len(s) != len(t):
@@ -29,3 +31,5 @@ class Solution:
         else:
             return False
 
+#TC = O(n)
+#SC = O(2)
