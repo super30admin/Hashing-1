@@ -3,8 +3,8 @@
 # if character is not mapped but word is already mapped -> return False
 # if character and word is not mapped, map character to word and add word to set
 
-# time complexity O(n) - n is length of string
-# space complexity constant - considering total of 255 characters
+# time complexity O(nk) - n is length of string and k is the average length of word in string array
+# space complexity constant - O(n) - n -> number unique characters in string
 def samePattern(string: str, line: str) -> bool:
     ch_dict = {}
     word_Set = set()

@@ -1,6 +1,6 @@
 #using two dictonaries
 #time complexity - O(n)
-#space complexity - constant map with max of 255 keys in each map
+#space complexity - O(n) - number of unique characters in string1
 def isIsomorphic(string1, string2):
     dict_ ={}
     dict2_ = {}
