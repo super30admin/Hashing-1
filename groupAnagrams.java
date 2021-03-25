@@ -1,7 +1,7 @@
 /*
 
-O(NK) - where N is the length of the string array and K is the average length of each string in the array
-Time - O(N) as every string in the input string array gets stored in the hash map once.
+Time complexity - O(NK) - where N is the length of the string array and K is the average length of each string in the array
+Space complexity - O(N) as every string in the input string array gets stored in the hash map once.
 */
 
 class Solution {
