@@ -3,13 +3,17 @@ Intuition:
 
 Method 1:Use 2 hashmaps. Check association for s to t and t to s. 
 #####################################################################
-Method 1
+Method 1: Using custom hashmaps
 Time Complexity : O(N), where N = length of s or t
 Space Complexity : 2*O(26) = O(1)
 #####################################################################
-Method 2
+Method 2: Using python dictionary as hashmaps
 Time Complexity : O(W), where W = number of words
-Space Complexity : O(W*C) * O(W*C) = 2*O(W*C)  = O(W*C) where W = number of words, C = average number of characeters in a word
+Space Complexity : 2*O(26) = O(1)
+#####################################################################
+Method 2: Using a hashmap and a hashset
+Time Complexity : O(W), where W = number of words
+Space Complexity : O(26) = O(1)
 #####################################################################
 """
 ######################

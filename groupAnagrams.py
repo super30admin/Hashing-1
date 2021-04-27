@@ -2,7 +2,7 @@
 Intuition: 
 
 Method 1:Use hashmap. Sort each word so seraching becomes easy. 
-Method 2:Use hashmap. Dont sort. 
+Method 2:Use hashmap. Dont sort. Use the hashvalue itself to search.
 For both techniques, to get the hashvalue of the word, multiple a prime form factor with the ASCII of the character.
 #####################################################################
 Method 1

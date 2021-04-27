@@ -4,11 +4,11 @@ Intuition:
 Method 1:Use hashmap. Check association for word to char and char to word. 
 For both techniques, to get the hashvalue of the word, multiple a prime form factor with the ASCII of the character.
 #####################################################################
-Method 1
-Time Complexity : O(N), where N = number of words
+Method 1: Using a 2 hashmaps
+Time Complexity : O(W), where N = number of words
 Space Complexity : O(W*C) * O(W*C) = 2*O(W*C)  = O(W*C) where W = number of words, C = average number of characeters in a word
 #####################################################################
-Method 2
+Method 2: Using a hashmap and a hashset
 Time Complexity : O(W), where W = number of words
 Space Complexity : O(W*C) * O(W*C) = 2*O(W*C)  = O(W*C) where W = number of words, C = average number of characeters in a word
 #####################################################################
