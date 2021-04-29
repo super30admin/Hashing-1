@@ -1,3 +1,6 @@
+//Time complexity: o(n)
+//Space complexity: o(1)
+
 class Solution {
     public boolean isIsomorphic(String s, String t) {
         if(s.length() != t.length()) return false;
