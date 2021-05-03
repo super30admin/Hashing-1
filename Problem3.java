@@ -1,5 +1,7 @@
 //Time- O(n)- n is the letters in the string s
-//Space- O(n)+o(k)- 
+//Space- O(n)+o(k)- k is size of pattern string
+//Passed in leetcode-yes
+//Issue faced- no
 
 class Solution { // input is pattern-abb, string- dog cat cat
     public boolean wordPattern(String pattern, String s) {
