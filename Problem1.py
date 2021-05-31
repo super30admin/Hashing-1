@@ -3,6 +3,9 @@
 # Did this code successfully run on Leetcode : Yes
 # Any problem you faced while coding this : No
 
+# sort the strings first and group them according to same key then add the vales to returning array
+
+
 class Solution:
     def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
         sortedStr = [sorted(i) for i in strs]
