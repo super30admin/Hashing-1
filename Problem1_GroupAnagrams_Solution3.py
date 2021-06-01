@@ -39,7 +39,7 @@ S30 SlackID : RN32MAY2021
 #-----------------
 # Time Complexity: 
 #-----------------
-# O(MNLogM): N items in input, M is max size of each input word
+# O(MN): N items in input, M is max size of each input word
 #------------------
 # Space Complexity: 
 #------------------
@@ -49,8 +49,8 @@ S30 SlackID : RN32MAY2021
 # Leet Code Performance: 
 #-----------------------
 # Ran Successfully?: Yes
-# Time             :  116 ms (26.64 %ile)
-# Space            :  17.2 MB (90.14 %ile)
+# Time             :  120 ms (21.14 %ile)
+# Space            :  16.9 MB (99.59 %ile)
 
 from typing import List
 
