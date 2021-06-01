@@ -1,5 +1,5 @@
 # Time Complexity : O(N)
-# Space Complexity : O(N)
+# Space Complexity : O(1) #26 chars
 # Did this code successfully run on Leetcode : YES
 # Any problem you faced while coding this : NO
 
@@ -14,7 +14,7 @@ class Solution:
                 if h[k]!=t[i]:
                     return False
             else:
-                if t[i] in h.values():
+                if t[i] in h.values():  
                     return False
                 h[k]=t[i]
         return True
