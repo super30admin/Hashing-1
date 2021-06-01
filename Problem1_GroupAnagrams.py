@@ -100,7 +100,7 @@ class Solution:
 
         return result
 
-obj = Solution(["eat","tea","tan","ate","nat","bat"])
-print(obj.groupAnagrams())
+obj = Solution()
+print(obj.groupAnagrams(["eat","tea","tan","ate","nat","bat"]))
 
 

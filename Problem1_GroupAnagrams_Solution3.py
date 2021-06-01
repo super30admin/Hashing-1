@@ -51,23 +51,29 @@ S30 SlackID : RN32MAY2021
 # Ran Successfully?: Yes
 # Time             :  116 ms (26.64 %ile)
 # Space            :  17.2 MB (90.14 %ile)
+
 from typing import List
 
 class Solution:
     def __init__(self):
         self.map = {}
         self.input_list = []
-
+        self.primes = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, \
+        43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101, 103]
+    
     def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
         self.input_list = strs
         for word in self.input_list:
-            key = "".join(sorted(word))
+            key = 1
+            for char in word:
+                key *= self.primes[ord(char)-ord('a')]
+
             if key in self.map:
                 self.map[key].append(word)
             else:
                 self.map[key] = [word]
+        
         result = []
-
         for key in self.map.keys():
             result.append(self.map[key])
 
@@ -75,4 +81,6 @@ class Solution:
 
 obj = Solution()
 print(obj.groupAnagrams(["eat","tea","tan","ate","nat","bat"]))
+
+
 
