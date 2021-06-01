@@ -8,6 +8,7 @@
  * 1. find hash code for each string. Count each character occurrence in the string and form a String as a hash.
  * 2. store strings with the key in the hashmap.
  * 3. return all values grouped by key.
+ * note: hash code can be a prime multiplication. prime multiplication will not collide like a-2,b-3,c-5...
  */
 
 
