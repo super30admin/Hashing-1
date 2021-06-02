@@ -1,5 +1,5 @@
 // Time Complexity : O(kn) k is no of chars in a string
-// Space Complexity : O(kn)
+// Space Complexity : O(1)  as we are returning map values as a result
 // Did this code successfully run on Leetcode : yes
 // Any problem you faced while coding this : no
 
@@ -20,31 +20,26 @@ import java.util.Map;
 
 public class GroupAnagrams {
 
-	public String hashCode(String str) {
-		int arr[] = new int[26];
-		Arrays.fill(arr, 0);
-		for (char c : str.toCharArray()) {
-			arr[c - 'a']++;
+	private int[] primes= new int[] {2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101};
+	
+	public long hashCode(String str) {
+		
+		long hash=1l;
+		
+		for(char c:str.toCharArray()) {
+			hash = hash*primes[c- 'a'];
 		}
-
-		StringBuilder result = new StringBuilder();
-		Arrays.stream(arr).forEach(i -> {
-			result.append(i).append("#");
-		});
-		return result.toString();
+		return hash;		
 	}
 
 	public List<List<String>> groupAnagrams(String[] strs) {
-		List<List<String>> result = new ArrayList<>();
-		Map<String, List<String>> map= new HashMap<>();
+		Map<Long, List<String>> map= new HashMap<>();
 		
 		Arrays.stream(strs).forEach(str -> {
 			map.computeIfAbsent(hashCode(str), k-> new ArrayList<String>()).add(str);
 		});
 		
-		map.entrySet().stream().forEach(entry-> result.add(entry.getValue()));;
-		
-		return result;
+		return new ArrayList<>(map.values());
 
 	}
 	

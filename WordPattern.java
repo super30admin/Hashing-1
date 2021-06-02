@@ -1,5 +1,5 @@
-// Time Complexity : O(N)
-// Space Complexity : O(N)
+// Time Complexity : O(N) N is the length of teh string
+// Space Complexity : O(N) N is the length of teh string
 // Did this code successfully run on Leetcode : yes
 // Any problem you faced while coding this : no
 
