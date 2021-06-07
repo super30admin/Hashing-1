@@ -6,17 +6,15 @@
 
 class Solution:
     def isIsomorphic(self, s: str, t: str) -> bool:
-        h = {}
-        
-        for i in range(len(s)):
-            k = s[i]
-            if k in h.keys():
-                if h[k]!=t[i]:
-                    return False
+        s2t = {}
+        t2s = {}
+
+        for i in range(len(t)):
+            if (s[i] in s2t.keys() and s2t.get(s[i])!=t[i]) or (t[i] in t2s.keys() and t2s.get(t[i])!=s[i]):
+                return False
             else:
-                if t[i] in h.values():  
-                    return False
-                h[k]=t[i]
+                s2t[s[i]] = t[i]
+                t2s[t[i]] = s[i]
         return True
 
 obj = Solution()
