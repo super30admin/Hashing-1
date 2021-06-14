@@ -1,10 +1,14 @@
-class groupAnagrams {
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+
+class GroupAnagrams {
     public List<List<String>> groupAnagrams(String[] strs) {
 
         //Space Complexity O(n)
-        //Time Comlexity O(n * l)
+        //Time Complexity O(n * l)
         if (strs == null || strs.length == 0) return new ArrayList<>();
-        HashMap<String, List<String>> map = new HashMap<>();
+        HashMap<Long, List<String>> map = new HashMap<>();
 
         for (String str : strs) {
             long primeProduct = primeProduct(str);

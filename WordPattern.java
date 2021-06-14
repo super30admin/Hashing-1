@@ -1,35 +1,39 @@
-class wordPattern {
-    public boolean wordPattern(String s, String words) {
+import java.util.HashMap;
+
+class WordPattern {
+    public boolean wordPattern(String pattern, String s) {
 
         //Time complexity (O(n))
         //Space complexity O(1)
-        String[] t = t.split(" ");
-        if (s.length() != t.length) return false;
-        HashMap<Character, String> sMap = new HashMap<>();
-        HashMap<String, Character> tMap = new HashMap<>();
+        String[] words = s.split(" ");
 
-        for (int i=0; i<s.length(); i++) {
-            char SChar = s.charAt(i);
-            String tChar = t[i];
+        if (pattern.length() != words.length) return false;
 
-            if (!sMap.containsKey(SChar)) {
-                sMap.put(SChar, tChar);
+        HashMap<Character, String> charMap = new HashMap<>();
+        HashMap<String, Character> wordMap = new HashMap<>();
+
+        for (int i=0; i<words.length; i++) {
+            char c = pattern.charAt(i);
+            String word = words[i];
+
+            if (!charMap.containsKey(c)) {
+                charMap.put(c, word);
             } else {
-                if (sMap.get(SChar) != tChar) {
+                if (!charMap.get(c).equals(word)) {
                     return false;
                 }
             }
 
-            if (!tMap.containsKey(tChar)) {
-                tMap.put(tChar, SChar);
+            if (!wordMap.containsKey(word)) {
+                wordMap.put(word, c);
             } else {
-                if (sMap.get(tChar) != SChar) {
+                if (!wordMap.get(word).equals(c)) {
                     return false;
                 }
             }
         }
 
         return true;
-        
+
     }
 }
