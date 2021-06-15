@@ -1,19 +1,12 @@
 class Solution:
-    def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
-        result= {}
-        # Using Dictionary
-        for word in strs:
-           # print (st)
-            key = "".join(sorted(word))
-           # print("key value is   ", key)
-
-            if key not in result:
-                result[key] = [word]
-                #print("result for new. ", words_dict)
-
+    def longestPalindrome(self, s: str) -> int:
+        in = set()
+        for letter in s:
+            if letter not in in:
+                in.add(letter)
             else:
-                result[key].append (word)
-                #print("result for exist . ", words_dict)
-
-
-        return result.values() 
+                in.remove(letter)
+        if len(in) != 0:
+            return len(s) - len(in) + 1
+        else:
+            return len(s)
