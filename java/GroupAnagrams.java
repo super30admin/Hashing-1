@@ -20,6 +20,12 @@
 
 
 // Your code here along with comments explaining your approach
+/*
+sort the characters of each string
+Map each sorted String as key and save the corresponsing string as value;
+if key exists, it adds the string to the existing List or else creates new arrayList for that paticular key
+*/
+
 class Solution {
     public List<List<String>> groupAnagrams(String[] strs) {
         if (strs == null || strs.length == 0) return new ArrayList();
