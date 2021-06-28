@@ -1,5 +1,5 @@
 #time-comp- O(n) as we are traversing at least once
-#space comp- O(n) as we are taking two hash maps ? not sure why it should be O(1)
+#space comp- O(1) as we are using ascii characters so maximum size of the dict will be fixed
 class Solution:
     def isIsomorphic(self, s: str, t: str) -> bool:
         d1={} #dictionary to store key-value for s
