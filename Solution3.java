@@ -1,5 +1,5 @@
-//Time complexity: O(N), where N is the number of words in s or the length of the pattern.
-//Space complexity: O(N)
+//Time complexity: O(N), where N is the length of the String s.
+//Space complexity: O(K), where K is the number of words in s. 
 
 import java.util.*;
 

@@ -1,5 +1,5 @@
 // Time complexity: O(N), where N is the length of string s. 
-// Space complexity: O(N).
+// Space complexity: O(1), since s and t consist of any valid ascii character.
 
 import java.util.*;
 
