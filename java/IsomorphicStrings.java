@@ -8,8 +8,8 @@
         All occurrences of a character must be replaced with another character while preserving the order of characters.No two characters may map to the same character,but a character may map to itself.
 
 
-// Time Complexity : O(N)
-// Space Complexity : O(N)
+// Time Complexity : O(N2) N square as we need to iterate through each char of the input string and map.containsValue(val) checks for all entries which is another O(N)
+// Space Complexity : O(1) as it can have only 256 possible ASCII characters
 // Did this code successfully run on Leetcode : yes
 // Any problem you faced while coding this : No
 
