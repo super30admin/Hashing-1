@@ -1,5 +1,5 @@
 # Hashing-1
-
+Shreyas Prakash
 ## Problem 1:
 Given an array of strings, group anagrams together.
 
