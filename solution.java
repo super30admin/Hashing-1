@@ -51,3 +51,78 @@ class Solution {
         
     }
 }
+
+// Word Pattern
+//TC O(n)
+// SC O(n)
+
+class Solution {
+    public boolean wordPattern(String pattern, String s) {
+        char char_arr[]=pattern.toCharArray();
+        String str_arr[]=s.split(" ");
+        if(char_arr.length!=str_arr.length){
+            return false;
+        }
+        HashMap<Character,String> pmap=new HashMap<>();
+        HashMap<String,Character> smap=new HashMap<>();
+        for(int i=0;i<pattern.length();i++){
+            char c=char_arr[i];
+            String str=str_arr[i];
+            if(pmap.containsKey(c)){
+                if(!str.equals(pmap.get(c))){
+                    return false;
+                }
+            }else{
+                pmap.put(c,str);
+            }
+            if(smap.containsKey(str)){
+                if(c!=smap.get(str)){
+                    return false;
+                }
+            }else{
+                smap.put(str,c);
+            }
+            
+        }
+        return true;
+        
+    }
+}
+
+
+//Group Anagrams
+//TC O(nk)
+//SC O(n)
+
+class Solution {
+    public List<List<String>> groupAnagrams(String[] strs) {
+        List<List<String>> result=new ArrayList<List<String>>();
+        HashMap<String,List<String>> hash=new HashMap<>();
+        int[] count=new int[26];
+        Arrays.fill(count,0);
+        for(int i=0;i<strs.length;i++){
+            
+            
+            String current=strs[i];
+            for(int j=0;j<current.length();j++){
+                count[(int)current.charAt(j)-(int)'a']++;
+                
+            }
+            String cnt_string=Arrays.toString(count);
+            Arrays.fill(count,0);
+            if(hash.containsKey(cnt_string)){
+                hash.get(cnt_string).add(current);
+            }else{
+                hash.put(cnt_string,new ArrayList<String>());
+                hash.get(cnt_string).add(current);
+            }
+            
+             
+        }
+        hash.forEach((k,v) ->
+            result.add(v));
+        
+        return result;
+        
+    }
+}
