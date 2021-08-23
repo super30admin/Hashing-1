@@ -1,7 +1,7 @@
 # Did this code successfully run on Leetcode : YES
 
 # TC: O(N) : one traversal simultaneously over s and t
-# SC: O(N) : N for mapping and N for values set
+# SC: O(1) : constant space: store all ASCII characters and a one-to-one mapping
 
 # mapping where key is s[i] and value is t[i]
 # values set to store all t[i] encountered till now
