@@ -1,3 +1,8 @@
+// TIME: O(n)
+// SPACE: O(n)
+// SUCCESS on LeetCode
+
+
 public class WordPattern {
     public boolean wordPattern(String pattern, String s) {
         Map<Character, String> patternMap = new HashMap<>();

@@ -1,3 +1,8 @@
+// TIME: O(nk)
+// SPACE: O(n)
+// SUCCESS on LeetCode
+
+
 class Solution {
     public List<List<String>> groupAnagrams(String[] strs) {
         Map<Double, List<String>> anagramList = new HashMap<>();
