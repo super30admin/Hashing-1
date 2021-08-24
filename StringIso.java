@@ -8,7 +8,7 @@ public class StringIso {
     public boolean checkIso(String a, String b) {
 
         HashMap<Character, String> hsa = new HashMap<>();
-        ArrayList<String> hsb = new ArrayList<>();
+        // ArrayList<String> hsb = new ArrayList<>();
         char[] aCharAr = a.toCharArray();
         String[] bStrArr = b.split(" ");
 
@@ -22,10 +22,10 @@ public class StringIso {
                         return false;
                     }
                 } else {
-                    if (hsb.contains(bStrArr[i]))
-                        return false;
+                    // if (hsb.contains(bStrArr[i]))
+                    // return false;
                     hsa.put(aCharAr[i], bStrArr[i]);
-                    hsb.add(bStrArr[i]);
+                    // hsb.add(bStrArr[i]);
                 }
             }
         }
@@ -37,6 +37,8 @@ public class StringIso {
 
         StringIso ic = new StringIso();
         System.out.println(ic.checkIso("abba", "dog cat cat dog"));
+        System.out.println(ic.checkIso("abba", "dog cat cat mad"));
+        System.out.println(ic.checkIso("abbc", "fry cat cat dog"));
 
     }
 }
