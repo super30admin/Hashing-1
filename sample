@@ -1,0 +1,110 @@
+//Problem 1 - 49. Group Anagrams
+
+class Solution {
+    public List<List<String>> groupAnagrams(String[] strs) {
+        List<List<String>> result = new ArrayList<>();//First, we create a result list.
+        Map<String,List<String>> map = new HashMap<>();//Then we create a map that points to a list of strings.
+        
+        for(String str: strs) {
+            char [] tempArray = str.toCharArray(); //In java, strings are immutable. So, we first convert it to a char array,
+            Arrays.sort(tempArray);//Then sort the char array lexicographically,
+            String sortedString = new String(tempArray);//And turn it back to a string.
+            
+            if(map.containsKey(sortedString)) {//Then we Check if it exists in the hashmap.
+                map.get(sortedString).add(str);//Then we get the sorted list and add it original arrayList,
+            }
+            else {
+                List<String> tempList = new ArrayList<>();//Else if its not in our map, we create a new list and call it tempList
+                result.add(tempList);//Then we add our string
+                tempList.add(str);//Then we add our string to the temporary list
+                map.put(sortedString, tempList);//Then we put the sorted string pointing to the tempList on the map.
+            }
+        }
+        return result;
+        
+    }
+    
+}
+
+//Time COmplexity: O(n*klogk)
+//Space Complexity: O(n)
+
+
+// Problem 2 - : 205. Isomorphic Strings
+
+class Solution {
+    public boolean isIsomorphic(String s, String t) {
+        if(s.length() != t.length()){ //First, check the length of the two strings and if they aren't the same, return false.
+            return false;
+        } 
+        
+        //Then we initialize a hashmap for the two strings
+        HashMap<Character, Character> sMap = new HashMap<>(); 
+        HashMap<Character, Character> tMap = new HashMap<>(); 
+        for(int i = 0; i < s.length(); i++){ //Then we iterate through every character in the strings.
+            char sChar = s.charAt(i); //char sChar represents the character in string s position i 
+            char tChar = t.charAt(i); //char tChar represents the character in string t position i 
+            if(sMap.containsKey(sChar)){ //if the map contains sChar,
+                if(sMap.get(sChar) != tChar){//Then we check if the value matches the current value in the map and if it doesn't we return false.
+                return false;
+             }
+                
+           }
+           else{
+                sMap.put(sChar, tChar); //add the key value pair to the map
+            }
+            
+            if(tMap.containsKey(tChar)) { //if the map contains tChar,
+                
+                if(tMap.get(tChar) != sChar){ //Then we check if the value matches the current value in the map and if it doesn't we return false.
+                    return false;
+                }       
+            }
+            else {
+                tMap.put(tChar, sChar); //add the key value pair to the map
+                
+            }
+            
+        }
+        return true; //After the iteration is complete, if all the strings pair with another correctly, it means we have an isomorphic string and the relationship is true.
+        
+    }
+}
+
+//Time Complexity: O(n)
+//Space Complexity: O(1)
+
+//NB: When you want to initialize two-sum in data staructures, hashmap is prefered than hashtables although they serve the same purpose.
+
+//Time Complexity: O(n)
+//Space Complexity: O(1)
+
+
+// Problem 3: 290. Word Pattern
+
+class Solution {
+    public boolean wordPattern(String pattern, String s) {
+        String[] words = s.split(" "); 
+        if(words.length != pattern.length()){
+            return false;
+        }
+        HashMap<Character, String> map = new HashMap();//Character would be the key while String would be the value. Here, we map a character to a specific word.
+        for(int i = 0; i < pattern.length(); i++){//Iterate through the current character in pattern
+            char currentCharacter = pattern.charAt(i);
+            if(map.containsKey(currentCharacter)) {
+                if(!map.get(currentCharacter).equals(words[i])){
+                    return false;
+                }
+            }else{
+                if(map.containsValue(words[i])){
+                    return false;
+                }
+                map.put(currentCharacter, words[i]);
+            }
+        }
+        return true;
+        
+    }
+}
+//Time Complexity: O()
+//Space Complexity: O() 
