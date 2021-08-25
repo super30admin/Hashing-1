@@ -1,5 +1,5 @@
 #time complexity: O(N*M) N- length of array M -length of string
-#space complexity: O(1)
+#space complexity: O(N)
 #Did this code successfully run on Leetcode : Yes
 #Any problem you faced while coding this : No
 
