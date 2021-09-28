@@ -1,0 +1,47 @@
+
+// TC = O(nk) // all the n values * k keys being stored
+
+// SC = O( n) , max n values being stored on hashMap
+
+class Solution{
+
+	public List<List<String>> groupAnagrams(String[] strs){
+
+		HashMap<Double, List<String>> hashMap = new HashMap<>();
+
+			for(String s : strs){
+	
+			double primeKey = calculatePrime(s);
+
+			if(!hashMap.containsKey(primeKey)){
+	
+				hashMap.put(primeKey, new ArrayList<>());
+			}
+
+			hashMap.get(primeKey).add(s);
+	}
+
+		return new ArrayList<>(hashMap.values());
+		
+	}
+	
+	private double calculatePrime(String s) {
+	
+		int[] primes = {2,3,5,7,11,13,17,19,23,29,31,37,41,43,47,53,59,67,71,73,79,83,89,97,101,103};
+		
+		// a = 65, ch -'a' = 65 - 65 = 0, 67 - 65 = 2
+		
+		double result = 1;
+		
+		for(int x = 0; x <s.length(); x++){
+		
+			result = result * primes[s.charAt(x) - 'a'];
+		}
+		
+		return result;
+	
+	}
+	
+
+}
+
