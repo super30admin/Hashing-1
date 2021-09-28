@@ -1,0 +1,30 @@
+class Solution {
+    public boolean isIsomorphic(String s, String t) {
+        HashMap<Character,Character> STMap =  new HashMap<>();
+        HashMap<Character,Character> TSMap =  new HashMap<>();
+        
+        for(int x=0;x<s.length();x++){
+            char charS= s.charAt(x);
+            char charT = t.charAt(x);
+        //s->t
+            if(STMap.containsKey(charS) && STMap.get(charS)!=charT ){
+                return false;
+            }
+            else{
+                STMap.put(charS,charT);
+            }
+        //t->s
+            if(TSMap.containsKey(charT) && TSMap.get(charT)!=charS){
+                return false;
+            }else{
+                TSMap.put(charT,charS);
+            }
+        }
+        return true;
+    }
+}
+
+//Time Complexiy : O(n) -- n is num of characters in string s for one loop
+//space complexity  : O(n) where n is the num of characters in one hashmap --- its 2n but it will be O(n) at last
+//ran succesfuly on leetcode
+//solved before class and made some correction in logic to make more optimized after class
