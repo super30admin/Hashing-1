@@ -1,8 +1,8 @@
 # 49. Group Anagrams
 # https://leetcode.com/problems/group-anagrams/
 
-# Time Complexity:
-# Space Complexity: 
+# Time Complexity: O(n*mlogm), n is length of input and m in length of each string
+# Space Complexity: O(n)
 
 class Solution:
     def sort(self, s):
