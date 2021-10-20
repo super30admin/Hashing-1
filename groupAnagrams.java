@@ -1,3 +1,6 @@
+//Time complexity : O(n) n is the length of strs
+//Space complexity :  O(n)
+
 class Solution {
     
     private String sortedString(String str){
