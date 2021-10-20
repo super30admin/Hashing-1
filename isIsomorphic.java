@@ -1,3 +1,6 @@
+//Time complexity : O(n) n is the length of s
+//Space complexity :  O(1) // since we will have 26 maximum characters
+
 class Solution {
     public boolean isIsomorphic(String s, String t) {
         
