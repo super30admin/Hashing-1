@@ -1,3 +1,6 @@
+//Time complexity : O(n) 
+//Space complexity :  O(n)
+
 class Solution {
     public boolean wordPattern(String pattern, String s) {
         
