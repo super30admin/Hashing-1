@@ -1,0 +1,32 @@
+//Time : O(nlogn)
+// Space: O(n)
+// LeetCode :Yes
+
+class Solution {
+     public  String findKey(String str)
+        {
+            char [] arr = str.toCharArray();
+            Arrays.sort(arr);
+            
+            return new String(arr);
+       }
+    public List<List<String>> groupAnagrams(String[] strs) {
+       HashMap<String, List<String>> map1 = new HashMap<>();
+       List<List<String>> result = new ArrayList<>();
+           for(int i=0;i<strs.length;i++)
+        {
+            String key = findKey(strs[i]);
+            if(map1.containsKey(key))
+            {
+                map1.get(key).add(strs[i]);
+            }
+            else
+            {
+                map1.put(key, new ArrayList<String>());
+                map1.get(key).add(strs[i]);
+            }
+        }
+        result.addAll(map1.values());
+        return result;
+    }
+}
