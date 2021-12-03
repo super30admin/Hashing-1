@@ -4,22 +4,30 @@
 #include <algorithm>
 
 using namespace std;
+// Time Complexity  --> O(n)
+// Space Complexity --> O(n)
 
 class Solution {
- // Time Complexity  --> O(n)
- // Space Complexity --> O(n)
 public:
-    vector<vector<string>> groupAnagrams(vector<string>& strs) {
-        map<string, vector<string>> m;
-        vector<vector<string>> result;
-        for(string s : strs){
-            string temp = s;
-            sort(temp.begin(),temp.end());
-            m[temp].push_back(s);
+    bool isIsomorphic(string s, string t) {
+        map<char,char> m1;
+        map<char,char> m2;
+        for(int i =0; i< s.size();i++){
+            if(m1.find(s[i]) != m1.end()){
+                if(m1.find(s[i])->second != t[i]){
+                    return false;
+                }
+            }else{
+                m1[s[i]] = t[i];
+            }
+            if(m2.find(t[i]) != m2.end()){
+                if(m2.find(t[i])->second != s[i]){
+                    return false;
+                }
+            }else{
+                m2[t[i]] = s[i];
+            }
         }
-       for(auto x = m.begin(); x!= m.end(); x++){
-           result.push_back(x->second);
-       }
-       return result;
+        return true;
     }
 };
