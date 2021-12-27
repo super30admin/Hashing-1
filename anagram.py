@@ -29,10 +29,10 @@ class Solution:
         dic = defaultdict()
 
         for x in strs:
-            #convert back the sorted char word to string
+            # this is a key, convert back the sorted char word to string
             sortedWord = "".join(sorted(x)) 
             if sortedWord not in dic:
-                #add to dictionary if key not in it, word as value
+                #add to dictionary if sortedword key not in it, word as value
                 dic[sortedWord] = [x]
             else: 
                 dic[sortedWord].append(x)
