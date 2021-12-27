@@ -1,3 +1,13 @@
+// Time Complexity : O(N mlogm) where N is the length of pattern and
+//                             m is the of individual string
+//                             - mlogm is time complexity for sorting it
+// Space Complexity : O(N * m) where N is the length of strings
+//                   and m for length of individual string
+// Did this code successfully run on Leetcode : yes
+// Any problem you faced while coding this : no
+
+
+
 import java.util.HashMap;
 import java.util.List;
 import java.util.ArrayList;
