@@ -4,7 +4,7 @@ class Solution {
     // Did this code successfully run on Leetcode : Yes
     // Any problem you faced while coding this : No
 
-    //Approach - create a map to store prime product of the characters in the string as the key and its anagram
+    //Approach - Create a map to store prime product of the characters in the string as the key and its anagram
     // as list of values. return map.values().
     public List<List<String>> groupAnagrams(String[] strs) {
         int len = strs.length;

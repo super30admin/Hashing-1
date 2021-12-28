@@ -1,6 +1,6 @@
 class Solution {
     // Time Complexity : O(n), where n is length of the string s or t.
-    // Space Complexity : O(1), constant space because the array size is always fixed and does not change with the input.
+    // Space Complexity : O(1), constant space complexity because the array size is always fixed and does not change with the input.
     // Did this code successfully run on Leetcode : Yes
     // Any problem you faced while coding this : No
 
