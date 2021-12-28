@@ -11,7 +11,7 @@ strs[i] consists of lowercase English letters.
 
 """
 
-# Time Complexity : O(1)
+# Time Complexity : O(n log k) where n is total length of list and k is average length of each string
 # Space Complexity : O(n*k) (as we might need whole hashmap in worst case)
 # Did this code successfully run on VSCode : Yes
 # Any problem you faced while coding this : No
@@ -35,7 +35,7 @@ class Solution:
                 sorted_list = "".join(sorted(i))
 
                 # Constraints
-                if len(i) >= 1 and len(i) <= 104 and i.islower() is True:
+                if len(i) >= 1 and len(i) <= 10000 and i.islower() is True:
                     # Once sorted key is found, compare it with the strings. If not matched, put in an empty list, else append to existing list
                     if sorted_list not in anagram:
 
