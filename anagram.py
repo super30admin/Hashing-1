@@ -11,7 +11,7 @@ strs[i] consists of lowercase English letters.
 
 """
 
-# Time Complexity : O(n*k) (if k is the length of characters in each string)
+# Time Complexity : O(1)
 # Space Complexity : O(n*k) (as we might need whole hashmap in worst case)
 # Did this code successfully run on VSCode : Yes
 # Any problem you faced while coding this : No
