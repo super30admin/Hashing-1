@@ -1,3 +1,8 @@
+// Time Complexity : O(n) where n represents the number of words in the string s
+// Space Complexity : O(m) where m is the number of unique characters in pattern and words in s.
+// Did this code successfully run on Leetcode : Yes
+// Any problem you faced while coding this : No Problem faced
+
 class Problem3 {
     public boolean wordPattern(String pattern, String s) {
         HashMap map_index = new HashMap();

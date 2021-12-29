@@ -1,3 +1,8 @@
+// Time Complexity : O(n klogk), where n is the length of strs, and k is the maximum length of a string in strs
+// Space Complexity : O(nk)
+// Did this code successfully run on Leetcode : Yes
+// Any problem you faced while coding this : No Problem faced
+
 class Problem1 {
     public List<List<String>> groupAnagrams(String[] strs) {
         if(strs.length ==0){
