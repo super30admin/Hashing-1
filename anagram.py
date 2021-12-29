@@ -25,6 +25,12 @@ class Solution:
             4. if not, take sorted word as key, add word as value
             5. loop through dict and print values
 
+
+            n = array, k = word length, k words is sorted by char then by 
+            insertion to hashmap is logm worst case
+            time compexity: O(N MLogM)
+            space: O(MN) 
+
         """
         dic = defaultdict()
 
