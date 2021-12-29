@@ -19,3 +19,16 @@ class Solution:
                 return False
 
         return True
+
+    def wordPattern(self, pattern: str, s: str) -> bool:
+        
+        def transform(ip_list):
+            map_ = {}
+            result = ""
+            for idx, val in enumerate(ip_list):
+                if val not in map_:
+                    map_[val] = idx
+                result = result + str(map_[val])
+            return result
+                
+        return transform(list(pattern)) == transform(s.split(" "))
