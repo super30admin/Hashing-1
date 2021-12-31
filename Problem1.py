@@ -1,5 +1,5 @@
 # Time Complexity: O(nk) -- where n is the length of the array and k is average length of strings in the array
-# Space Complexity: O(n)
+# Space Complexity: O(1)
 
 class Solution:
     
