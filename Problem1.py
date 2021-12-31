@@ -1,3 +1,6 @@
+# Time Complexity: O(nk) -- where n is the length of the array and k is average length of strings in the array
+# Space Complexity: O(n)
+
 class Solution:
     
     def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
