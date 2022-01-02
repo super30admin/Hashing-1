@@ -1,0 +1,35 @@
+// Time Complexity :O(n)
+// Space Complexity : O(1)
+// Did this code successfully run on Leetcode : Yes
+// Any problem you faced while coding this : No
+
+
+// Your code here along with comments explaining your approach
+//we need to map each letter to exact another one letter (so hashmap comes in)
+//and each already mapped letter should not be mapped t other letter..so we use that mapped key in other hashmap or hashset
+//i am using hashset here
+
+class Solution {
+    public boolean isIsomorphic(String s, String t) {
+       
+        HashMap<Character, Character> map= new HashMap<>();
+        HashSet<Character> set= new HashSet<>();
+        
+        for(int i=0; i<s.length(); i++){
+                char charS = s.charAt(i);
+                char charT = t.charAt(i);
+            if(!map.containsKey(charS) && !set.contains(charT)){
+                map.put(charS, charT);
+                  set.add(charT);
+                continue;   
+            }
+               if(!map.containsKey(charS) && set.contains(charT)){
+               return false;   
+            }
+               if(map.containsKey(charS) && map.get(charS) != charT){
+               return false;
+            }  
+        }
+        return true;
+    }
+}

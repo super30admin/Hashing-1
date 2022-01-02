@@ -1,0 +1,42 @@
+// Time Complexity :O(log n)
+// Space Complexity : O(1)
+// Did this code successfully run on Leetcode : Yes
+// Any problem you faced while coding this : No
+
+
+// Your code here along with comments explaining your approach
+//we take 2 hashmaps to maintin mapping from char to word and word to char
+// if there is mismatch we return false
+//one additinala thing is that we neet to convert string to array of words for comparison
+
+class Solution {
+    public boolean wordPattern(String pattern, String s) {
+        
+        HashMap<Character, String> map1 = new HashMap<>();
+        HashMap<String, Character> map2 = new HashMap<>();
+        String[] words = s.split(" ");
+        
+        if(pattern.length()!=words.length){
+            return false;
+        }
+        for(int i=0; i<words.length; i++){
+            char c = pattern.charAt(i);
+            String w = words[i];
+            
+            if(!map1.containsKey(c)){
+                if(map2.containsKey(w)){
+                    return false;
+                }else{
+                    map1.put(c,w);
+                    map2.put(w,c);
+                }
+            }else {
+                String wordAtKey = map1.get(c);
+                if(!wordAtKey.equals(w)){
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+}
