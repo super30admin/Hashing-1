@@ -1,3 +1,7 @@
+#Time Complexity: O(n)
+#Space Complexity: O(n)
+#Working on Leetcode: Yes
+
 class Solution:
     def helper(self, word):
         result, mapper, j = [],{},1
