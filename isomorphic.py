@@ -33,7 +33,7 @@ class Solution:
         for i in range(len(s)):
 
             # if strings not matching to the map, clearly not isomorphic
-            if(s[i] not in map2 or t[i] in map1) or (t[i] not in map2 or s[i] in map1):
+            if(s[i] not in map2 and t[i] in map1) or (t[i] not in map2 and s[i] in map1):
                 return False
             
             # if string s character is not mapped in the hashmap, map it. Same goes for string t
@@ -48,4 +48,7 @@ class Solution:
         # isomorphic
         return True
 
-        
+
+s = Solution()
+result = s.isIsomorphic("egg", "add")
+print(result)

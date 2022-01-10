@@ -5,13 +5,14 @@ All inputs will be in lowercase.
 
 Constraints:
 
-1 <= strs.length <= 104
+
+1 <= strs.length <= 10^4
 0 <= strs[i].length <= 100
 strs[i] consists of lowercase English letters.
 
 """
 
-# Time Complexity : O(n log k) where n is total length of list and k is average length of each string
+# Time Complexity : O(n*k) where n is total length of list and k is average length of each string
 # Space Complexity : O(n*k) (as we might need whole hashmap in worst case)
 # Did this code successfully run on VSCode : Yes
 # Any problem you faced while coding this : No
@@ -39,7 +40,7 @@ class Solution:
                     # Once sorted key is found, compare it with the strings. If not matched, put in an empty list, else append to existing list
                     if sorted_list not in anagram:
 
-                        anagram[sorted_list] = []
+                        anagram[sorted_list] = [i]
 
                     anagram[sorted_list].append(i)
                 
@@ -54,7 +55,7 @@ class Solution:
             return ("")
         
         #returning the value portion of the dictionary
-        return[list(value) for key, value in anagram.items()]
+        return list(anagram.values())
 
 s = Solution()
 result = s.groupAnagrams(["shirin", "rinshi", "inrshi", "iinrsh", "good", "oodg"])
