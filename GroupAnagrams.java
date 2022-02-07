@@ -2,7 +2,8 @@
 // Space Complexity : O(nk)
 // Did this code successfully run on Leetcode : Yes
     //https://leetcode.com/problems/group-anagrams/
-// Any problem you faced while coding this :
+// Any problem you faced while coding this : no
+//Aproach : Sorted the String and used it as key to store all the anagrams
 
 
 import java.util.*;

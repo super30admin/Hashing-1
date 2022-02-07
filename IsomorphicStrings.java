@@ -4,7 +4,8 @@ import java.util.Arrays;
 // Space Complexity : O(1)
 // Did this code successfully run on Leetcode : Yes
 //https://leetcode.com/problems/isomorphic-strings/
-// Any problem you faced while coding this :
+// Any problem you faced while coding this : no
+// Approach: Created two arrays of 256 size and stored the mapping for both s to t and t to s, checked for correctness
 
 public class IsomorphicStrings {
     public boolean isIsomorphic(String s, String t) {

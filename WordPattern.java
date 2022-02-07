@@ -5,7 +5,8 @@ import java.util.Map;
 // Space Complexity : O(m+n)
 // Did this code successfully run on Leetcode : Yes
 //https://leetcode.com/problems/word-pattern/
-// Any problem you faced while coding this :
+// Any problem you faced while coding this : No
+// Approach: maintained two hash maps for mapping pattern to String and vice versa, Checked both the maps for correctness
 public class WordPattern {
     public boolean wordPattern(String pattern, String s) {
         Map<Character, String> m1 = new HashMap<>();
