@@ -1,6 +1,5 @@
 / Time Complexity   : O(n)  
-//                  : Iterate n letters and 
-                    : sort (o (n))+o(log(n))=o(n) 
+//                  : Iterate n letters 
 
 // Space Complexity : O(2n+ 26) -> O(2n) 
 //                  : size of all strings

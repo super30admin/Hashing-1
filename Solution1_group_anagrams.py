@@ -1,5 +1,6 @@
 // Time Complexity : O(n)  
 //                 : Iterate n elements and sort the element
+//                   (o (n))+o(log(n))=o(n)
 // Space Complexity : O(n)
 //                  : Store n elements in dictionary
 // Did this code successfully run on Leetcode : Yes
