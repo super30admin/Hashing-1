@@ -4,7 +4,7 @@ import java.util.Map;
 // Time Complexity :O(n) where n is the length of string
 // Space Complexity : O(m+n)
 // Did this code successfully run on Leetcode : Yes
-//https://leetcode.com/problems/isomorphic-strings/
+//https://leetcode.com/problems/word-pattern/
 // Any problem you faced while coding this :
 public class WordPattern {
     public boolean wordPattern(String pattern, String s) {
