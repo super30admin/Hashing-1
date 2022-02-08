@@ -22,21 +22,22 @@ public class WordPattern {
             return false;
         }
 
-        HashMap<Character, String> map = new HashMap<>();
+        HashMap<Character, String> map1 = new HashMap<>();
+        HashMap<String, Character> map2 = new HashMap<>();
         char[] pArr = pattern.toCharArray();
 
         for(int i = 0; i<pattern.length(); i++){
-            if(map.containsKey(pArr[i])){
-                if(map.get(pArr[i]).equals(words[i])){
-                    continue;
-                }else{
+            if(map1.containsKey(pArr[i])){
+                if(!map1.get(pArr[i]).equals(words[i])){
                     return false;
                 }
-            }else if(map.containsValue(words[i])){
-                return false;
             }else{
-                map.put(pArr[i], words[i]);
+                if(map2.containsKey(words[i])){
+                    return false;
+                }
             }
+            map1.put(pArr[i], words[i]);
+            map2.put(words[i], pArr[i]);
         }
 
         return true;
