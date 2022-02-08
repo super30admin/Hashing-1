@@ -1,4 +1,5 @@
 import java.util.HashMap;
+import java.util.HashSet;
 
 /*
 Time Complexity : O(n)
@@ -17,6 +18,8 @@ true
 
  */
 public class IsomorphicStrings {
+
+    // Solution which might take O(n^2) because of the containsValue method
     public static boolean isIsomorphicStrings(String s, String t){
         HashMap<Character, Character> map = new HashMap<>();
         char[] sArr = s.toCharArray();
@@ -46,8 +49,29 @@ public class IsomorphicStrings {
         }
         return true;
     }
+    // Implementation using HashMap and HashSet
 
+    public static boolean isomorphicStrings(String s, String t){
+        HashMap<Character, Character> map = new HashMap<>();
+        HashSet<Character> set = new HashSet<>();
+        char[] sArr = s.toCharArray();
+        char[] tArr = t.toCharArray();
+
+        for(int i = 0; i<sArr.length; i++){
+            if(map.containsKey(sArr[i]) && (map.get(sArr[i])!= tArr[i])){
+                return false;
+            }
+            if(!map.containsKey(sArr[i]) && set.contains(tArr[i])){
+                return false;
+            }
+
+            map.put(sArr[i], tArr[i]);
+            set.add(tArr[i]);
+        }
+    return true;
+    }
     public static void main(String[] args){
         System.out.println("Strings are isomorphic: "+ isIsomorphicStrings("egg","add"));
+        System.out.println("Strings are isomorphic: "+ isomorphicStrings("egg","add"));
     }
 }
