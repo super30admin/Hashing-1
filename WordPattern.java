@@ -31,13 +31,15 @@ public class WordPattern {
                 if(!map1.get(pArr[i]).equals(words[i])){
                     return false;
                 }
-            }else{
-                if(map2.containsKey(words[i])){
+            }else if(map2.containsKey(words[i])){
+                if(pArr[i]!=map2.get(words[i])){
                     return false;
                 }
+            }else{
+                map1.put(pArr[i], words[i]);
+                map2.put(words[i], pArr[i]);
             }
-            map1.put(pArr[i], words[i]);
-            map2.put(words[i], pArr[i]);
+
         }
 
         return true;
