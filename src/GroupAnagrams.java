@@ -50,17 +50,23 @@ class FindAnagrams
 //        for(String str : strs)
 //        {
 //            Map<Character, Integer> innerMap = new HashMap<>();
-//            char[] chararr = str.toCharArray();
-//            for(int i=0; i<chararr.length; i++)
-//            {
-//                if(innerMap.containsKey(chararr[i]))
-//                {
-//                    int temp = innerMap.get(chararr[i]);
-//                    innerMap.put(chararr[i],temp+1);
-//                }
-//                else
-//                    innerMap.put(chararr[i],0);
+//
+//            for(int i=0; i<str.length(); i++){
+//                char ch = str.charAt(i);
+//                innerMap.put(ch, innerMap.getOrDefault(ch, 0) + 1);
 //            }
+//
+////            char[] chararr = str.toCharArray();
+////            for(int i=0; i<chararr.length; i++)
+////            {
+////                if(innerMap.containsKey(chararr[i]))
+////                {
+////                    int temp = innerMap.get(chararr[i]);
+////                    innerMap.put(chararr[i],temp+1);
+////                }
+////                else
+////                    innerMap.put(chararr[i],0);
+////            }
 //            if(!map.containsKey(innerMap))
 //                map.put(innerMap, new ArrayList<>());
 //            map.get(innerMap).add(str);
