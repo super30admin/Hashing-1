@@ -1,3 +1,6 @@
+#T(C) : O(N)
+#S(C) : O(L), L being the words in dict
+
 class Solution:
     def wordPattern(self, pattern: str, s: str) -> bool:
         hmap_p = {}
