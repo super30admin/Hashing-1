@@ -6,6 +6,9 @@
 //
 //        Note: All inputs will be in lowercase. The order of your output does not matter.
 
+// Time Complexity: O(n k log k)
+// Space Complexity: O(n)
+
 class Solution {
     public boolean isIsomorphic(String s, String t) {
 

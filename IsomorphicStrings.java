@@ -6,6 +6,9 @@
 //
 //        Example 3: Input: s = "paper", t = "title" Output: true Note: You may assume both s and t have the same length.
 
+// Time Complexity: O(1)
+// Space Complexxity: O(n)
+
 class Solution {
     public boolean isIsomorphic(String s, String t) {
 

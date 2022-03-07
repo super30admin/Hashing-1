@@ -10,7 +10,8 @@
 
 // Notes: You may assume pattern contains only lowercase letters, and str contains lowercase letters that may be separated by a single space.
 
-
+// Time Complexity : O(1)
+// Space Complexity: O(n)
 
 class Solution {
     public boolean wordPattern(String pattern, String s) {
