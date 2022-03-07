@@ -21,11 +21,11 @@ import java.util.List;
 import java.util.Map;
 
 public class Anagram {
-
+    static final int[] primeNums = {2,3,5,7,11,13,17,19,23,29,31,37,41,47,53,59,61,67,71,73,79,83,89,97};
     private static int calculateHash(String str){
         int hash = 0;
         for (int i = 0; i < str.length(); i++) {
-            hash += str.charAt(i);
+            hash += primeNums[str.charAt(i) - 'a'] * (str.charAt(i));
         }
         return hash;
     }
@@ -34,6 +34,7 @@ public class Anagram {
         Map<Integer, List<String>> map = new HashMap<>();
         for(String str : strs){
             int hash = calculateHash(str);
+            System.out.println(str+" : "+hash);
             map.computeIfAbsent(hash, k->new ArrayList<>());
             map.get(hash).add(str);
         }
