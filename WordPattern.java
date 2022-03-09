@@ -1,4 +1,4 @@
-// Time Complexity : O(n) n is length of the strings
+// Time Complexity : O(n) n is length of the string
 // Space Complexity : O(n) - space for map and set
 // Did this code successfully run on Leetcode : yes
 // Any problem you faced while coding this : no
