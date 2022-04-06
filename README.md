@@ -57,6 +57,6 @@ Output: false
 Notes:
 You may assume pattern contains only lowercase letters, and str contains lowercase letters that may be separated by a single space.
 
-
+// Problem1.java has O(nk) time complexity and space complexity O(nk)
 
 // Problem2.java has O(n) time complexity and space complexity O(1)
