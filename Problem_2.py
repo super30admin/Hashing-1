@@ -15,7 +15,10 @@ Example:
  s = "aggg" t = "fdde" --> False
 
 '''
-
+# Time Complexity : O(N) where N is len(input string)
+# Space Complexity : O(1) hash map only contains 26 ascii chars
+# Did this code successfully run on Leetcode : Yes
+# Any problem you faced while coding this : No
 
 ''' USING 2 hashmaps'''
 class Solution:
