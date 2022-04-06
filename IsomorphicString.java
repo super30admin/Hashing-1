@@ -1,3 +1,4 @@
+//Time complexity : O(N)
 class Solution {
     public boolean isIsomorphic(String s, String t) {
 
