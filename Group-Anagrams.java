@@ -1,26 +1,29 @@
-//time - O(n*klogk)
-//space - O(nk)
+//time - O(NK)
+//Space - O(NK)
 class Solution {
     public List<List<String>> groupAnagrams(String[] strs) {
         if(strs==null || strs.length==0) return null;
-        HashMap<String, List<String>> map = new HashMap();
-        List<List<String>> result = new ArrayList<>();
+        HashMap<Double, List<String>> map = new HashMap();
 
         for(int i=0; i<strs.length; i++){
             String str = strs[i];
-            char[] chars = str.toCharArray();
-            Arrays.sort(chars);
-            String sortedStr = String.valueOf(chars);
-            if(!map.containsKey(sortedStr)){
-                map.put(sortedStr, new ArrayList<String>());
+            Double primeProduct = getPrimeProduct(str);
+            if(!map.containsKey(primeProduct)){
+                map.put(primeProduct, new ArrayList<String>());
             }
-            map.get(sortedStr).add(str);
+            map.get(primeProduct).add(str);
         }
 
-        for(String str : map.keySet()){
-            result.add(map.get(str));
-        }
+        return new ArrayList<>(map.values());
+    }
 
+    private Double getPrimeProduct(String str){
+        int[] Primes = new int[]{2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101};
+        double result = 1;
+        for(int i=0; i<str.length(); i++){
+            char ch = str.charAt(i);
+            result = result * Primes[ch-'a'];
+        }
         return result;
     }
 }
