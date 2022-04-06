@@ -1,29 +1,32 @@
 class Solution {
 public:
-    int findMaxLength(vector<int>& nums) {
+    bool isIsomorphic(string s, string t) {
         
+        unordered_map<char,char> sMap;
+         unordered_map<char,char> tMap;
         
-        unordered_map<int,int> map;
-        map[0] = -1;
+        if(s.length() != t.length()) return false;
         
-        int maxx = 0;
-        int n  = nums.size();
-        int count = 0;
-        for(int i = 0;i<n;i++) {
+        for(int i = 0; i < s.length(); i++) {
             
-            if(nums[i] == 1) {
-                count++;
+            if(sMap.find(s[i]) == sMap.end()) {
+                sMap[s[i]] = t[i];
             } else {
-                count--;
+                if(sMap[s[i]] != t[i]){
+                    return false;
+                }
             }
             
-          if(map.find(count) == map.end()) {
-              map[count] = i;
-          } else {
-              maxx = max(maxx,i - map[count]);
-          }  
+            if(tMap.find(t[i]) == tMap.end()) {
+                tMap[t[i]] = s[i];
+            } else {
+                if(tMap[t[i]] != s[i]){
+                    return false;
+                }
+            }
         }
         
-        return maxx;
+        return true;
+        
     }
 };
