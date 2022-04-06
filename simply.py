@@ -1,22 +1,12 @@
 class Solution:
-    def isIsomorphic(self, X: str, Y: str) -> bool:
-        if len(X) != len(Y):
-            return False
+    def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
         d = {}
-        s = set()
-
-        for i in range(len(X)):
-            print(d)
-            print(s)
-            x = X[i]
-            y = Y[i]
-            if x in d:
-                if d[x] != y:
-                    return False
+        
+        for s in strs:
+            key = "".join(sorted(s))
+            if key in d:
+                d[key].append(s)
             else:
-                if y in s:
-                    return False
-            d[x] = y
-            s.add(y)
-
-        return True
+                d[key] = [s]
+                
+        return list(d.values())
