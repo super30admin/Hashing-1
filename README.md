@@ -60,3 +60,5 @@ You may assume pattern contains only lowercase letters, and str contains lowerca
 // Problem1.java has O(nk) time complexity and space complexity O(nk)
 
 // Problem2.java has O(n) time complexity and space complexity O(1)
+
+// Problem3.java has O(n) time complexity and space complexity O(n)
