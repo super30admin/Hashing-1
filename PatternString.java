@@ -1,5 +1,5 @@
 // Time Complexity : O(n)
-// Space Complexity : O(1) - since atmax the maps will contain only 26 elements
+// Space Complexity : O(n) - since string s will be split to a string array
 // Did this code successfully run on Leetcode : Yes
 // Any problem you faced while coding this : No
 
