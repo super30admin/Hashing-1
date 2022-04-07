@@ -1,6 +1,8 @@
 class Solution {
-    //following a runnins sum technique where count keep track of equal no. of 1 and 0 
-    // we store every unique count in hashmap, when same is encounted we subtract from already encountered save that in max and compare
+    //following a running sum technique where count keep track of equal no. of 1 and 0 
+    // i store every unique count in hashmap, when same is encounted i subtract from already encountered save that in max and compare
+
+
     public int findMaxLength(int[] nums) {
         if(nums == null || nums.length == 0) {
             return 0;
