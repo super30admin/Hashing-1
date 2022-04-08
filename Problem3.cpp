@@ -1,3 +1,9 @@
+
+
+//time complexity : o(n)  where n is size of parttern string.
+//space complexity : o(1);
+//Approach is we are using 2 hashMap to store the pattern  to string and string to pattern.
+
 class Solution {
 public:
     bool wordPattern(string pattern, string s) {
