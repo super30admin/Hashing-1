@@ -5,7 +5,7 @@
 
 
 // Your code here along with comments explaining your approach
-//https://leetcode.com/problems/isomorphic-strings/submissions/
+//https://leetcode.com/problems/group-anagrams/
 //one hashmap and 1 hash set
     public IList<IList<string>> GroupAnagrams(string[] strs) {
         
