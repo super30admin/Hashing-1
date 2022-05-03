@@ -16,6 +16,8 @@ Note:
 All inputs will be in lowercase.
 The order of your output does not matter.
 
+LeetCode : https://leetcode.com/problems/group-anagrams/
+
 ## Problem 2:
 Given two strings s and t, determine if they are isomorphic.
 Two strings are isomorphic if the characters in s can be replaced to get t.
@@ -34,6 +36,8 @@ Input: s = "paper", t = "title"
 Output: true
 Note:
 You may assume both s and t have the same length.
+
+LeetCode: https://leetcode.com/problems/isomorphic-strings/
 
 ## Problem 3:
 Given a pattern and a string str, find if str follows the same pattern.
@@ -56,3 +60,5 @@ Input: pattern = "abba", str = "dog dog dog dog"
 Output: false
 Notes:
 You may assume pattern contains only lowercase letters, and str contains lowercase letters that may be separated by a single space.
+
+LeetCode: https://leetcode.com/problems/word-pattern/
