@@ -1,4 +1,4 @@
-// O(w*n) | O(wn) where w is the number of words and n is the length of the longest word
+// O(w*n*log(n) | O(wn) where w is the number of words and n is the length of the longest word
 //First Perform a linear search over the given since we need to cover all the elements , so the search space
 // includes the whole array, And then we need to the maintain a hashmap where we need to keep a track of
 // the elements and find its pairing while performing the iteration
