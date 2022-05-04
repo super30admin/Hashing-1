@@ -1,5 +1,5 @@
 //Time Complexity for Solution 2 O(N * length of each string * 26) Since 26 is a small constant can be ignored. O(N*len of strings)
-//Space Complexity O(N)
+//Space Complexity O(NK)   N for the number of elements in the hashmap and K for the length of eahc string in array
 //leetcode: Yes.
 
 import java.util.ArrayList;

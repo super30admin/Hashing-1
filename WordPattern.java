@@ -1,5 +1,5 @@
 //Time Complexity: O(N)  //go through the entire pattern length
-//Space Complexity: O(N) // need to 2 extra HashMaps
+//Space Complexity: O(1) extra hashmaps will be only storing mapping for 26 charcaters so need to count them as it is a very small constant
 //Leetcode: Yes.
 
 
