@@ -1,3 +1,5 @@
+//time complexity:O(n)
+
 public class Anagrams {
     private long calculatedPrime(String s) {
 
