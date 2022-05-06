@@ -6,18 +6,17 @@
 class Solution:
     def isIsomorphic(self, s: str, t: str) -> bool:
         sMap = {}
-        tset = set()
+        tMap = {}
         if len(s) != len(t): return False
         for k,v in zip(s,t):
-            if k in  sMap.keys():
-                if sMap[k] != v:
-                    return False
+            if k not in  sMap.keys():
                 sMap[k] = v
-            elif v in tset:
+            elif sMap[k] != v:
                 return False
-            else:
-                sMap[k] = v
-                tset.add(v)
+            if v not in  tMap.keys():
+                tMap[v] = k
+            elif tMap[v] != k:
+                return False
         return True
             
         print(sMap)
