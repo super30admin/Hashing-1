@@ -3,17 +3,16 @@
 // Did this code successfully run on Leetcode : YES
 // Any problem you faced while coding this : NO
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
+import java.util.HashSet;
 
 public class Isomorphic {
     public boolean isIsomorphic(String s, String t) {
 
         HashMap<Character, Character> map = new HashMap<>();
 
-        //This list is used to keep track of already assigned elements
-        List<Character> assignedChar = new ArrayList<>();
+        //This Set is used to keep track of already assigned elements
+        HashSet<Character> set = new HashSet<>();
         for(int i = 0; i< s.length(); i ++){
             char ch = s.charAt(i);
             if(map.containsKey(ch)){
@@ -25,9 +24,9 @@ public class Isomorphic {
             }
             else{
                 //If the character is not in hashmap but the character in 't' has already assigned to other character then it is not Isomorphic
-                if(assignedChar.contains(t.charAt(i)))
+                if(set.contains(t.charAt(i)))
                     return false;
-                assignedChar.add(t.charAt(i));
+                set.add(t.charAt(i));
                 map.put(ch, t.charAt(i));
             }
         }

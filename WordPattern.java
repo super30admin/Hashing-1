@@ -3,14 +3,13 @@
 // Did this code successfully run on Leetcode : YES
 // Any problem you faced while coding this : NO
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
+import java.util.HashSet;
 
 class WordPattern {
     public boolean wordPattern(String pattern, String s) {
         HashMap<Character, String> map = new HashMap<>();
-        List<String> assignedStr = new ArrayList<>();
+        HashSet<String> set = new HashSet<>();
         String[] strs = s.split(" ");
         if(strs.length != pattern.length())
             return false;
@@ -24,9 +23,9 @@ class WordPattern {
             }
             else{
                 //If the String is not in hashmap but the String has already assigned to other String then return false
-                if(assignedStr.contains(strs[i]))
+                if(set.contains(strs[i]))
                     return false;
-                assignedStr.add(strs[i]);
+                set.add(strs[i]);
                 map.put(ch, strs[i]);
             }
         }
