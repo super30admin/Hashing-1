@@ -1,3 +1,5 @@
+#Time complexity:O(nklogk)
+#sapce complexity: O(n)
 class Solution:
     def groupAnagrams(self, strs):
         k=0

@@ -1,3 +1,5 @@
+#Time complexity:O(n)
+#sapce complexity: O(n)
 class Solution:
     def wordPattern(self, pattern: str, s: str) -> bool:
         dict1={}

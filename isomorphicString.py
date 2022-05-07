@@ -1,3 +1,5 @@
+#Time complexity:O(logn)
+#sapce complexity: O(n)
 class Solution:
     def isIsomorphic(self, s: str, t: str) -> bool:
         dict1={}
