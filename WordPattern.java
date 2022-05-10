@@ -1,7 +1,7 @@
 import java.util.HashMap;
 import java.util.HashSet;
 
-public class GroupWordAnagrams {
+public class WordPattern {
 
   public static boolean wordPattern(String pattern, String s) {
 
