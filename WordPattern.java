@@ -1,6 +1,7 @@
 import java.util.HashMap;
 import java.util.HashSet;
 
+//Time Complexity is O(n); Space Complexity will be in worst case O(n) or best case space will be length of string.
 public class WordPattern {
 
   public static boolean wordPattern(String pattern, String s) {
