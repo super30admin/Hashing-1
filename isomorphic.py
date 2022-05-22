@@ -1,3 +1,8 @@
+#Time Complexity O(1) also hash function required to map strings
+#Space Complexity O(N) 2 hashmaps
+#It successfully runs on leetcode
+#Approach: checking all the occurence of s to t and t to s are same both the ways or not
+
 def isIsomorphic(s, t):
     if len(s)!=len(t): return False
     shash={}
