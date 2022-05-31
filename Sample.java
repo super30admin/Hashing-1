@@ -93,7 +93,7 @@ class Solution {
     }
 }
 
-//****GROUP ANAGRAMS****
+//****GROUP ANAGRAMS:o(n)+o(klogk+k****
 //Time complexity: Length of array o(n), length of the string o(k), Sorting every string o(klogk) ::::::: o(n)+o(klogk+k);
 //Space complexity:0(1);
 //Leetcode runnable: Y;
@@ -119,7 +119,7 @@ class Solution {
     }
     
 }
-//****GROUP ANAGRAMS****
+//****GROUP ANAGRAMS:o(n*k)****
 //Time complexity:o(n*k) where n is length of given array and k is the max length of string in the array;
 //Space complexity:0(1)
 //Leetcode runnable: Y
