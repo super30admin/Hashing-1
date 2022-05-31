@@ -93,3 +93,29 @@ class Solution {
     }
 }
 
+//****GROUP ANAGRAMS****
+//Time complexity: Length of array o(n), length of the string o(k), Sorting every string o(klogk) ::::::: o(n)+o(klogk+k);
+//Space complexity:0(1);
+//Leetcode runnable: Y;
+//Any questions : No;
+
+class Solution {
+    public List<List<String>> groupAnagrams(String[] strs) {
+        HashMap<String, List<String>> map = new HashMap<>();
+        for(String s: strs)
+        {
+            char[] arr= s.toCharArray();
+            Arrays.sort(arr);
+            String sorted= String.valueOf(arr);
+            
+            if(!map.containsKey(sorted))
+            {
+                map.put(sorted, new ArrayList<>());
+            }
+            map.get(sorted).add(s);
+        }
+        
+        return new ArrayList<>(map.values());
+    }
+    
+}
