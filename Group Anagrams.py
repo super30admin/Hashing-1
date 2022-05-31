@@ -1,5 +1,5 @@
-""""// Time Complexity : O(nklogk)
-// Space Complexity :O(1)
+""""// Time Complexity : O(nk)
+// Space Complexity :O(n)
 // Did this code successfully run on Leetcode : Yes
 // Any problem you faced while coding this : No
 """
