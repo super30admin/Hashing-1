@@ -119,3 +119,40 @@ class Solution {
     }
     
 }
+//****GROUP ANAGRAMS****
+//Time complexity:o(n*k) where n is length of given array and k is the max length of string in the array;
+//Space complexity:0(1)
+//Leetcode runnable: Y
+//Any doubts: N
+
+class Solution {
+    public List<List<String>> groupAnagrams(String[] strs) {
+        HashMap<Double, List<String>> map = new HashMap<>();
+        for(String s: strs)
+        {
+            double prime= primeproduct(s);
+            
+            if(!map.containsKey(prime))
+            {
+                map.put(prime, new ArrayList<>());
+            }
+            map.get(prime).add(s);
+        }
+        
+        return new ArrayList<>(map.values());
+    }
+    
+    private double primeproduct(String s)
+    {
+    int[] primes={2,3,5,7,11,13,17,19,23,29,31,37,41,43,47,53,59,67,71,73,79,83,89,97,101,103};
+        double result=1;
+        
+        for(int i=0;i<s.length();i++)
+        {
+            char c=s.charAt(i);
+            result= result*primes[c - 'a'];
+        }
+        return result;
+    }
+    
+}
