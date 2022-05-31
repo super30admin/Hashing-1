@@ -1,3 +1,5 @@
+#Time complexity is O(nklogk)
+#space complexity is O(1)
 class Solution(object):
     def groupAnagrams(self, strs):
         """
