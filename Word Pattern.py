@@ -8,7 +8,7 @@ class Solution:
 
         PtoW, WtoP = {}, {}
         for i, j in zip(pattern, words):
-            if ((i in PtoW and PtoW[i] != j) or (j in WtoP and WtoP[j] != i)):
+            if ((i in PtoW and PtoW[i] != j) or (j in WtoP and WtoP[j] != i)): 
                 return False
             PtoW[i] = j
             WtoP[j] = i
