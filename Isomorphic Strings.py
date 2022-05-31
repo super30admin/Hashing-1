@@ -1,0 +1,29 @@
+""""// Time Complexity : O(1)
+// Space Complexity : O(n)
+// Did this code successfully run on Leetcode : Yes
+// Any problem you faced while coding this : No
+"""
+
+
+
+
+class Solution:
+    def isIsomorphic(self, s: str, t: str) -> bool:
+        sMap = {}
+        tMap = {}
+
+        for i in range(len(s)):
+            a = s[i]
+            b = t[i]
+
+            if a in sMap and sMap[a] != b:
+                return False
+            if b in tMap and tMap[b] != a:
+                return False
+
+            sMap[a] = b
+            tMap[b] = a
+
+        return True
+Obj=Solution()
+print(Obj.isIsomorphic('add','egg'))
