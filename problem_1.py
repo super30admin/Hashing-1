@@ -4,8 +4,6 @@
 # Any problem you faced while coding this : No
 #
 #
-
-
 class Solution:
     def key(self, str):
         k = {'a': 2, 'b': 3, 'c': 5, 'd': 7, 'e': 11, 'f': 13, 'g': 17, 'h': 19, 'i': 23, 'j': 29, 'k': 31, 'l': 37,
