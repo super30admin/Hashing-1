@@ -27,9 +27,9 @@ class Solution(object):
             if pattern[i] not in patternMap.keys() and sList[i] not in sMap.keys():
                 patternMap[pattern[i]]=sList[i]
                 sMap[sList[i]]=pattern[i]
-            elif pattern[i] in patternMap.keys() and patternMap[pattern[i]] != sList[i]:
+            elif pattern[i] in patternMap and patternMap[pattern[i]] != sList[i]:
                 return False
-            elif sList[i] in sMap.keys() and sMap[sList[i]] != pattern[i]:
+            elif sList[i] in sMap and sMap[sList[i]] != pattern[i]:
                 return False
         return True
             
