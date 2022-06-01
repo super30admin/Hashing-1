@@ -1,6 +1,6 @@
 class Solution {
     //Time complexity: O(n)
-    //Space complexity: O(n)
+    //Space complexity: O(1)
     public boolean isIsomorphic(String s, String t) {
         Map<Character,Character> sMap=new HashMap<>();
         Map<Character,Character> tMap=new HashMap<>();
