@@ -156,3 +156,64 @@ class Solution {
     }
     
 }
+
+
+//****WORD PATTERN****
+//Time Complexity:o(n)
+//Space Complexity:0(1)
+//Leetcode runnable:Y
+//Any problems faced: N 
+
+class Solution {
+    public boolean wordPattern(String pattern, String s) {
+        String[] word= s.split("\\s");
+        
+        HashMap<Character, String> pmap = new HashMap<>();
+        HashMap<String, Character> smap = new HashMap<>();
+        
+        
+        
+        int plen= pattern.length();
+        int wlen=word.length;
+        
+        if(plen!=wlen)
+        {
+            return false;
+        }
+        
+        for(int i=0;i<plen;i++)
+        {
+            char c= pattern.charAt(i);
+            String w=word[i];
+            
+            if(pmap.containsKey(c))
+            {
+                String copy= pmap.get(c);
+                if(!copy.equals(w))
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                pmap.put(c, w);
+            }
+            
+            if(smap.containsKey(w))
+            {
+                char x= smap.get(w);
+                if(x!=c)
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                smap.put(w, c);
+            }
+        }
+       return true;  
+    }
+    
+    
+}
