@@ -1,5 +1,5 @@
 //Time Complexity - O(n)
-//space Complexity - O(1)
+//space Complexity - O(n)
 
 class Solution {
     public List<List<String>> groupAnagrams(String[] strs) {
