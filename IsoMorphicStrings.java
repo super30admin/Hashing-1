@@ -1,6 +1,6 @@
 /*
   Time Complexity :- O(N)
-  Space Complexity :- O(1)
+  Space Complexity :- O(N)
   Approach :- Create 2 hashmaps for character mapping of S to T and T to S. Compare the characters     one by one in hashmap...and if the character has already mapped to a different character, return     false
 */
 class IsoMorphicStrings {
