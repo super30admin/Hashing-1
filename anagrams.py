@@ -1,3 +1,7 @@
+# Time Complexity : O(Nk) where N is the length of input array as we iterate over it, and k is the average length of each string we process to get the prime product
+# Space Complexity : 
+# 49. Group Anagrams
+
 class Solution:
     def groupAnagrams(self, strs):
         # Base case
