@@ -1,4 +1,4 @@
-# Time Complexity: O(nklogk); n is size of the list, k is the average length of the string in the list
+# Time Complexity: O(nk); n is size of the list, k is the average length of the string in the list
 # Space Complexity: O(n); for hash map
 # Successful run on leet code: yes
   '''
