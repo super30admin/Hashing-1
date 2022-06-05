@@ -1,5 +1,5 @@
 # Time Complexity : O(Nk) where N is the length of input array as we iterate over it, and k is the average length of each string we process to get the prime product
-# Space Complexity : 
+# Space Complexity : O(N) space required for the the group dictionary
 # 49. Group Anagrams
 
 class Solution:
