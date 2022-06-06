@@ -1,9 +1,16 @@
 #290. Word Pattern
 """
-Time Complexity :
-Space Complexity :
-Success in Leetcode? :
-Any problem faced? :
+Time Complexity : O(n)
+Space Complexity : O(1)
+Success in Leetcode? : YES
+Any problem faced? : NO
+
+Strings are Isomorphic only if s is isomorphic with t and vice-versa.
+To check s is isomorphic with t, we use hashmap. key = char from s and value = char from t at same index
+as that of s. If there is a conflict, then return false.
+Using property of hashmap that keys are unique and search is done in O(1)
+Same as isomorphic strings but here we are making key value of pairs of char : string and string:char
+instead og char: char
 """
 
 class Solution:
