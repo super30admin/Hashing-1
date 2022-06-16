@@ -1,3 +1,5 @@
+# TC and SC: Both solutions have linear time O(n) and space of O(n) as well
+
 # https://leetcode.com/problems/word-pattern/
 class Solution:
     def wordPattern(self, pattern: str, s: str) -> bool:

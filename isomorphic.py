@@ -8,9 +8,16 @@ and add t[i] to tMap with its correspnding letter s[i]
 if the letter is already in the hashmap - check if value for map[s[i]] == t[i] if not return False
 also if map[t[i]] != s[i] then return False
 
+TC O(n) Linear time as we only loop over string one time 
+SC O(2n) as we have 2 hashmaps and possibly we may store all chars in both of them so drop constant = O(n)
+
 1HashMap and HashSet:
 for every letter s[i] in string s - add it to hashMap and corresponding letter t[i]
 and add t[i] to hashSet
+
+TC O(n) Linear time as we only loop over string one time 
+SC O(2n) as we have 1 HashMap and 1 HashSet and possibly we may store all chars in both of them so drop constant = O(n)
+
 """
 
 # Approach 1: 
