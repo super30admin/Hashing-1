@@ -1,5 +1,5 @@
 //Time Complexity- O(nklogk)  //Where klogk is for sorting the string and n is the no of strings
-//Space Complexity- O(1)
+//Space Complexity- O(n)
 //Successfully ran on leetcode
 
 
