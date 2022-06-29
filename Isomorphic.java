@@ -1,5 +1,5 @@
 //Time Complexity- O(n)
-//Space COmplexity- O(1)
+//Space Complexity- O(1)
 //Successfully ran on leetcode
 
 import java.util.HashMap;
