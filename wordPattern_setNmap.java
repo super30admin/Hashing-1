@@ -1,5 +1,8 @@
 //Time Complexity: O(n)
 //Space Complexity : O(n)
+//Approach -  hashmap and set
+//Did your code run on leetcode : yes
+
 class Solution {
     public boolean wordPattern(String pattern, String s) {
         HashMap<Character, String> charMap = new HashMap<>();
