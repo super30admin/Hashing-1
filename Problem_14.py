@@ -1,5 +1,5 @@
 # Time Complexity : O(n) as we process through each character in pattern and words
-# Space Complexity : O(n) for the two dictionaries
+# Space Complexity : O(1) # Auxiliary space is 2 * O(26) which is constant
 # Did this code successfully run on Leetcode : Yes
 # Any problem you faced while coding this : No
 
