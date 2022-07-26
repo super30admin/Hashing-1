@@ -1,3 +1,8 @@
+// Time Complexity : O(n)
+// Space Complexity : 0(n) 
+// Did this code successfully run on Leetcode : Yes
+// Any problem you faced while coding this : no
+
 class Solution {
     public boolean wordPattern(String pattern, String s) {
         Map<Character,String> pMap = new HashMap<>();
