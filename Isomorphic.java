@@ -1,27 +1,34 @@
-// Time Complexity :0(logn)
-// Space Complexity : 0(1)
+// Time Complexity :0(n) no of characters in the s or t
+// Space Complexity : 0(mn) 
 // Did this code successfully run on Leetcode :yes
 // Any problem you faced while coding this : no
 
 
 class Solution {
-    public int findPeakElement(int[] nums) {
-        if(nums == null || nums.length == 0) return 0;  
-        int low= 0;
-        int high = nums.length-1;
-        while(low <= high){            
-        int mid = low + (high-low)/2;
-            if((mid==0 || nums[mid] > nums[mid-1])
-               && (mid == nums.length-1 || nums[mid] > nums[mid+1]))
-                return mid;
-            else if(mid>0 && nums[mid-1] >nums[mid]){
-                high= mid-1;
+    public boolean isIsomorphic(String s, String t) {
+        
+        if(s.length() != t.length()) return false;
+        
+        HashMap<Character,Character> sMap = new HashMap<>();
+        HashSet<Character> tSet = new HashSet<>();
+        
+        for(int i=0;i<s.length();i++){
+            
+        char sChar = s.charAt(i);
+        char tChar = t.charAt(i);
+            
+            if(sMap.containsKey(sChar)){
+                if(sMap.get(sChar) != tChar) return false;
+            } else{
+                if(tSet.contains(tChar)) return false;
+                    else{
+                sMap.put(sChar,tChar);
+                tSet.add(tChar);
+                    }
             }
-            else{
-                low= mid+1;
-            }
+
         }
-        return 0;
+        
+          return true;
     }
-}
 }
