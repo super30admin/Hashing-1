@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-class Solution {
+class Solution1 {
     public List<List<String>> groupAnagrams(String[] strs) {
         // Unoptimized version
         // HashMap<String, List<String>> map = new HashMap<>();
