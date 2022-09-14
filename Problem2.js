@@ -1,5 +1,5 @@
 //Time: O(n), Space: O(1)
-
+//Ran Successfully on leetCode - solution accepted
 var isIsomorphic = function(s, t) {
     let hash_map = new Map()
     for(let i=0;i<s.length;i++){

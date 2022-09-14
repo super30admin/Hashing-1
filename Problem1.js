@@ -1,5 +1,5 @@
 //Time: O(nk), Space: O(nk)
-
+//Ran Successfully on leetCode - solution accepted
 var groupAnagrams = function(strs) {
     let hash_map ={};
     for(let i=0; i<strs.length; i++){
