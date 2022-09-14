@@ -1,4 +1,4 @@
-//approach2 - Two Hashmap
+//approach1 - Two Hashmap
 //Time - O(n) - look up time for strings
 //Space - O(1) - character at most are 100 so, even taking 2 hashmap will just make it constant only. 
 
@@ -35,6 +35,84 @@ class Solution {
              }      
         }
         
+        return true;
+    }
+}
+
+//Approach - one Hashmap
+
+//approach - value lookup time is greater than approach 1. 
+// time- O(n)
+//space - O(1)
+
+class Solution {
+    public boolean isIsomorphic(String s, String t) {
+        if(s.length() != t.length()) return false;
+        if(s == null || t == null) return true;
+        
+        HashMap<Character, Character> map = new HashMap<>();
+        
+        for(int i=0; i<s.length(); i++)
+        {
+            if(map.containsKey(s.charAt(i)))
+            {
+                if(map.get(s.charAt(i)) != t.charAt(i))
+                {
+                    return false;
+                }
+            }
+            else{
+                if(map.containsValue(t.charAt(i)))
+                    return false;
+                else
+                    map.put(s.charAt(i) , t.charAt(i));
+            }
+        }
+        return true;
+    }
+}
+
+
+//approach 3: get two arrays for individual strings. 
+// for the in sarray' sschar's index, put tchar value nd same way for tarray/ 
+// now just like Hashmap, do lookup, here lookup will be easy compared to Hashmap as we dont do hashing and all.
+//TIme - O(n) - to traverse through string characters. 
+//Space - O(1)
+//Jut a note --  We always cosider Hashmap lookup time (hashing functions) as O(1)!
+
+class Solution {
+    public boolean isIsomorphic(String s, String t) {
+        if(s.length() != t.length()) return false;
+        if(s == null || t == null) return true;
+        
+        char[] sa = new char[100];
+        char[] ta = new char[100];
+        
+        for(int i =0; i < s.length(); i++)
+        {
+            char schar = s.charAt(i);
+            char tchar = t.charAt(i);
+            
+            //cehck for sarray
+            if(sa[schar- ' ']!= 0)
+            {
+                //check if it's tmap
+                if(sa[schar- ' '] != tchar) return false;
+            }
+            else 
+            {
+                sa[schar - ' '] = tchar;
+            }
+            //check for tarray
+            if(ta[tchar - ' '] != 0)
+            {
+                if(ta[tchar - ' '] != schar) return false;
+            }
+            else
+            {
+                ta[tchar -' '] = schar;
+            }
+        }
         return true;
     }
 }
