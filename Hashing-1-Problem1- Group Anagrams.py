@@ -1,5 +1,5 @@
 """
-S30 FAANMG Problem #12 {Medium}
+ FAANMG Problem #12 {Medium}
 
 Problem 1
 49. Group Anagrams

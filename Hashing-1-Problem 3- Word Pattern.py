@@ -1,5 +1,5 @@
 """
-S30 FAANMG Problem #14 {Easy}
+ FAANMG Problem #14 {Easy}
 
 
 Problem 3

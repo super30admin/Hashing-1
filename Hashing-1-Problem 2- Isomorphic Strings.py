@@ -1,5 +1,5 @@
 """
-S30 FAANMG Problem #13 {Easy}
+ FAANMG Problem #13 {Easy}
 
 
 Problem 2
@@ -14,8 +14,8 @@ Constant Space of alphabets
 Did this code successfully run on Leetcode : Yes
 
 
-two hashmaps are used to cehck if :
-    - All he occurrences of a character which must be replaced with another character 
+two hashmaps are used to check if :
+    - All the occurrences of a character which must be replaced with another character 
       while preserving the order of characters. 
     - No two characters may map to the same character, but a character may map to itself.
         
