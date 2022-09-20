@@ -1,5 +1,7 @@
 // TC: O(n)
-// SC: O(1)
+// SC: O(n)
+// Solved on Leetcode
+// No problems faced
 class Solution {
     public boolean wordPattern(String pattern, String s) {
         String[] strArr = s.split(" ");
