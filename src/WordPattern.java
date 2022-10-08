@@ -3,8 +3,8 @@ import java.util.HashMap;
 public class WordPattern {
     public boolean wordPattern(String pattern, String s) {
 
-
-        HashMap<Character, String> map = new HashMap<>();
+        HashMap<String, Integer> smap = new HashMap<>();
+        HashMap<Character, Integer> map = new HashMap<>();
 
         String[] arr = s.split(" ");
 
@@ -12,19 +12,21 @@ public class WordPattern {
             return false;
         }
 
-        for( int i=0; i<pattern.length(); i++ ){
 
-            if( !map.containsKey(pattern.charAt(i))){
-                map.put(pattern.charAt(i), arr[i]);
+        for( int i=0; i<arr.length; i++ ){
+
+            char c = pattern.charAt(i);
+            String word = arr[i];
+
+            if( !map.containsKey(c)){
+                map.put(c,i);
             }
 
-        }
+            if( !smap.containsKey(word)){
+                smap.put(word,i);
+            }
 
-        for( int i =0; i< arr.length; i++){
-
-            if( map.get(pattern.charAt(i)).equals(arr[i])){
-                continue;
-            }else{
+            if( !map.get(c).equals(smap.get(word))){
                 return false;
             }
 
