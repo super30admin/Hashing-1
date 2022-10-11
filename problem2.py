@@ -1,5 +1,5 @@
 # Time Complexity: O(n)
-# we record the position in the dictionary and if the positions are different
+# Aproach: we record the position in the dictionary and if the positions are different
 # we return false
 class Solution:
     def isIsomorphic(self, s: str, t: str) -> bool:
