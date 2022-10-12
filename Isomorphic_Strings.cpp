@@ -6,27 +6,25 @@ Any problem you faced while coding this : no
 */
 class Solution {
 public:
-    int longestPalindrome(string s) {
-        int ans=0;
-        bool f = false;
-        unordered_map<char, int> mp;
-        for(char i: s){
-            if(mp.find(i)!=mp.end()){
-                mp[i]++;
+    bool isIsomorphic(string s, string t) {
+        unordered_map<char, char> s1;
+        unordered_map<char, char> s2;
+        for(int i = 0; i< s.size(); i++){
+            if(s1.find(s[i])!=s1.end()){
+                if(s1[s[i]]!=t[i]){
+                return false;
+                }
+            } else {
+                s1[s[i]]=t[i];
             }
-            else mp[i]++;
-        }
-        for(auto i: mp){
-            if(i.second%2==0){
-                ans+=i.second;
-            }
-            else if(!f){
-                ans+=i.second;
-                f = true;
-            } else{
-                ans = ans + i.second - 1;
+            if(s2.find(t[i])!=s2.end()){
+                if(s2[t[i]]!=s[i]){
+                return false;
+                }
+            } else {
+                s2[t[i]]=s[i];
             }
         }
-        return ans;
+        return true;
     }
 };
