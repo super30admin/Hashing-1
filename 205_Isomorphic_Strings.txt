@@ -1,0 +1,36 @@
+// Time Complexity : o( n)
+// Space Complexity : o(m) number of unique characters in the string
+// Did this code successfully run on Leetcode : yes
+// Any problem you faced while coding this : no
+
+
+// Your code here along with comments explaining your approach
+/*
+*  Use two hash maps one for s to t mapping and other for t to s mapping.
+*  Check if the key already exits and matches the corresponding character on the second string
+*
+* */
+
+class Solution {
+    public boolean isIsomorphic(String s, String t) {
+        HashMap<Character, Character> map1 = new HashMap<>();
+        HashMap<Character, Character> map2 = new HashMap<>();
+
+        if(s.length()!=t.length()){
+            return false;
+        }
+
+        for(int i = 0; i < s.length(); i++){
+            if(!map1.containsKey(s.charAt(i)) && !map2.containsKey(t.charAt(i))){
+                map1.put(s.charAt(i), t.charAt(i));
+                map2.put(t.charAt(i), s.charAt(i));
+            }
+            else if( (map1.containsKey(s.charAt(i)) && map1.get(s.charAt(i)) != t.charAt(i) )
+                    || (map2.containsKey(t.charAt(i)) && map2.get(t.charAt(i)) != s.charAt(i))){
+                return false;
+            }
+        }
+
+        return true;
+    }
+}
