@@ -1,0 +1,65 @@
+// APPROACH 1
+// Time complexity : O(N * MlogM) where N is the size of strs and M is the longest length of strs[i]
+// Space Complexity : O(N)
+// Did this code successfully run in leetcode : Yes
+// Any problems faced : No
+/*
+In this approach, the sorted part of a string will be the key and all the strings whose sorted string matches with that key will be the value
+*/
+
+
+// class Solution {
+// public:
+//     vector<vector<string>> groupAnagrams(vector<string>& strs) {
+//         vector<vector<string>> res;
+
+//         unordered_map<string, vector<string>> mp;
+//         for(int i = 0; i < strs.size(); i++) {
+//             vector<string> v;
+//             string temp = "";
+//             temp = strs[i];
+//             sort(temp.begin(), temp.end());
+//             mp[temp].push_back(strs[i]);
+//         }
+//         unordered_map<string, vector<string>> :: iterator it;
+//         for(it = mp.begin(); it != mp.end(); it++) {
+//             res.push_back(it -> second);
+//         }
+//         return res;
+//     }
+// };
+
+
+
+//APPROACH 2
+// Time complexity : O(N * M) where N is the size of strs and M is the longest length of strs[i]
+// Space Complexity : O(N) if all strings are anagrams
+// Did this code successfully run in leetcode : Yes
+// Any problems faced : No
+// Approach
+/*
+works on the logic that product of prime numbers will be unique
+each character is assigned a different prime number
+and all the strings will be the value of a key whose prime product matches
+*/
+
+class Solution {
+public:
+    vector<vector<string>> groupAnagrams(vector<string>& strs) {
+        unordered_map<double, vector<string>> mp;
+        vector<int> primes = vector<int> ({2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101, 103});
+        vector<vector<string>> res;
+        for(int i = 0; i < strs.size(); i++) {
+            double primeProd = 1;
+            for(int j = 0; j < strs[i].size(); j++) {
+                primeProd *= (primes[strs[i][j] - 'a']);
+            }
+            mp[primeProd].push_back(strs[i]);
+        }
+        unordered_map<double, vector<string>> :: iterator it;
+        for(it = mp.begin(); it != mp.end(); it++) {
+            res.push_back(it -> second);
+        }
+        return res;
+    }
+};

@@ -1,0 +1,48 @@
+// using hashmap and hashset
+// Time Complexity : O(N * K) where N is the length of pattern and K is the size of the string
+// Space Complexity : O(N)
+// Did this code successfully run in leetcode : Yes
+// Any problems faced while codeing : No
+// words in s are separated and stored in a hashset, each character in pattern in mapped to a word in s in // hashmap
+
+class Solution {
+public:
+    bool wordPattern(string pattern, string stri) {
+        unordered_map<char, string> smap;
+        unordered_set<string> tset;
+
+        vector<string> s;
+
+        string str = "";
+        
+        for(int i = 0; i < stri.size(); i++) {
+            if(stri[i] == ' ') {
+                s.push_back(str);
+                str = "";
+            } else {
+                str += stri[i];
+            }
+        }
+        s.push_back(str);
+
+        if(s.size() != pattern.size()) {
+            return false;
+        }
+
+        for(int i = 0; i < pattern.size(); i++) {
+            if(smap[pattern[i]] == "") {
+                if(!(tset.find(s[i]) != tset.end())) {
+                    smap[pattern[i]] = s[i];
+                    tset.insert({s[i]});
+                } else {
+                    return false;
+                }
+            } else {
+                if(smap[pattern[i]] != s[i]) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+};
