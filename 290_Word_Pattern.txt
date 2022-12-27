@@ -1,0 +1,43 @@
+// Time Complexity : o( n)
+// Space Complexity : o(m) number of unique characters/strings in pattern/string
+// Did this code successfully run on Leetcode : yes
+// Any problem you faced while coding this : no
+
+
+// Your code here along with comments explaining your approach
+/*
+*  Use two hash maps one for s to pattern mapping and other for pattern to s mapping.
+*  Check if the key already exits and matches the corresponding character on the second string
+*
+* */
+
+
+class Solution {
+    public boolean wordPattern(String pattern, String s) {
+        
+        
+        String strs[] = s.split(" ");
+        if(pattern.length() !=strs.length)
+            return false;
+        
+        HashMap<Character, String> map = new HashMap<>(); 
+        HashMap< String, Character> map2 = new HashMap<>(); 
+        for(int i =0; i< pattern.length(); i++){
+            if(!map.containsKey(pattern.charAt(i))  && !map2.containsKey(strs[i])){
+                map.put(pattern.charAt(i), strs[i]);
+                map2.put(strs[i], pattern.charAt(i));
+            }
+            
+            
+            else if( (map.containsKey(pattern.charAt(i)) && 
+                    !map.get(pattern.charAt(i)).equals(strs[i])  )
+                    || 
+                    (map2.containsKey(strs[i]) && 
+                    !map2.get(strs[i]).equals(pattern.charAt(i)) )){
+                return false;
+            }
+        }
+        
+        return true; 
+    }
+}

@@ -1,0 +1,32 @@
+// Time Complexity : o( nk)
+// Space Complexity : o(nk)
+// Did this code successfully run on Leetcode : yes
+// Any problem you faced while coding this : no
+
+
+// Your code here along with comments explaining your approach
+/*
+*  create a count array of the string. Use this as the hash map key to find anagrams.
+* */
+
+class Solution {
+    public List<List<String>> groupAnagrams(String[] strs) {
+        HashMap<String, List<String>> map = new HashMap<>();
+        
+        for(String s : strs){
+            char[] chArr = new char[26]; 
+            for(char c : s.toCharArray()){
+                chArr[c-'a']++;
+            }
+            String keyStr = String.valueOf(chArr);
+            
+            if(!map.containsKey(keyStr)){
+                map.put(keyStr, new ArrayList<String>());
+            }
+            map.get(keyStr).add(s);
+            
+        }
+        
+        return new ArrayList<>(map.values());
+    }
+}
