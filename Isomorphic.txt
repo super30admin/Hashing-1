@@ -1,0 +1,36 @@
+# // Time Complexity : O(n)
+# // Space Complexity : O(n)
+# // Did this code successfully run on Leetcode : Yes
+# // Any problem you faced while coding this : No
+
+'''
+Check if length of both strings are equal or if both strings are of length 1 
+Create a hashmap. Iterate over the array of strings, if the hashmap already has a entry for the character in s that is already mapped to a different value in t then return false
+If the hashmap already has a character of string t mapped to a different character in string s, then return false else assign the value of character t to the hashmap key 
+
+'''
+ def isIsomorphic(self, s, t):
+        """
+        :type s: str
+        :type t: str
+        :rtype: bool
+        """
+
+        if len(s) != len(t):
+            return False;
+        if len(s)<=1:
+            return True;
+        
+        hmap = {}
+
+        for i in range(len(s)):
+            if hmap.has_key(s[i]):
+                if hmap[s[i]] != t[i]:
+                    return False;
+            else:
+                if t[i] in hmap.values():
+                    return False
+                else:
+                    hmap[s[i]]=t[i]
+
+        return True;
