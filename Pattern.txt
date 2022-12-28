@@ -1,0 +1,29 @@
+# // Time Complexity : O(n)
+# // Space Complexity : O(n)
+# // Did this code successfully run on Leetcode : Yes
+# // Any problem you faced while coding this : No
+
+
+'''
+Check if the length of the pattern and the string are the same
+Create a dictionary . Iterate over the pattern ,if the pattern already exists but has a different value ,return false
+Else assign the value to the dictionary
+Return true if the length of the dictionary values match the no of the strings in the dictionary value
+'''
+ def wordPattern(self, pattern, s):
+        """
+        :type pattern: str
+        :type s: str
+        :rtype: bool
+        """
+        a = s.split()
+        if len(a) != len(pattern):
+            return False
+        dic = {}
+        for i in range(len(pattern)):
+            if pattern[i] in dic:
+                if dic[pattern[i]] != a[i]:
+                    return False
+            else:
+                dic[pattern[i]] = a[i]
+        return len(dic.values()) == len(set(dic.values()))

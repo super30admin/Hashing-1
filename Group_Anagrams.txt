@@ -1,0 +1,26 @@
+# // Time Complexity : O(n klogk)
+# // Space Complexity : O(n)
+# // Did this code successfully run on Leetcode : Yes
+# // Any problem you faced while coding this : No
+
+//Create a dictionary
+//Iterate over the array of strings and then sort the string 
+//Take the sorted string as the key and the original string as its value
+//If the sorted string already exists ,append  the original string to the values
+//Return the list of the values which is the group of anagrams
+
+    def groupAnagrams(self, strs):
+        """
+        :type strs: List[str]
+        :rtype: List[List[str]]
+        """
+        result = {}
+        for str in strs:
+            # list can not be key in a dict so choose tuple
+            item = tuple(sorted(list(str)))
+            if item not in result:
+                result[item] = []
+                result[item].append(str)
+            else:
+                result[item].append(str)
+        return list(result.values())
