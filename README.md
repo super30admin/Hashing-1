@@ -18,6 +18,10 @@ Note:
 All inputs will be in lowercase.
 The order of your output does not matter.
 
+## Solution:
+Use **sorted()** function in **for** loop to go through all items in list. Than if sorted() returns same result append it as a list to a list.
+
+
 ## Problem 2:
 Given two strings s and t, determine if they are isomorphic.
 Two strings are isomorphic if the characters in s can be replaced to get t.
