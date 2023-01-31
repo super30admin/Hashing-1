@@ -1,5 +1,5 @@
-// Time Complexity : O(N) where is N is the number of strings in array
-// Space Complexity : O(1)
+// Time Complexity : O(NK) where is N is the number of strings in array and k is the max length of a string in the array
+// Space Complexity : O(NK)
 // Did this code successfully run on Leetcode : Yes
 // Any problem you faced while coding this : None
 
