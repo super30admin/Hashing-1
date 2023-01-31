@@ -1,4 +1,4 @@
-// Time Complexity : O(n) where n is number of strings, k is length of each string
+// Time Complexity : O(n)
 // Space Complexity : O(256) = O(1)
 // Did this code successfully run on Leetcode : yes
 // Any problem you faced while coding this : no
