@@ -1,6 +1,6 @@
 #Time Complexity : O(N), N being the length of string.
 #Space Complexity : O(N), because a dictionary was created with the values. 
-#Did this code successfully run on Leetcode : No leetcode link found. 
+#Did this code successfully run on Leetcode : Yes.
 #Any problem you faced while coding this : I got a little stuck when testing regarding
 #the tuples and sets, and just general debugging. Forgot to return a value in to_set 
 #function.  

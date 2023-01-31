@@ -6,29 +6,30 @@
 #And I had to change set to tuples to add to dictionary. 
 
 #Your code here along with comments explaining your approach in three sentences only
-'''Created a dictionary with key being the tuple of the word but in alphabetical order. 
-Then, for each word, place the word in array of values corresponding to the key. 
+'''Created a dictionary with key being a unique number representing all the letters
+in the word. Then, for each key, place the word in array of values corresponding to the key. 
 '''
-def group_anagrams(array):
-    dictionary = {}
-    for a in array:
-        # create a set with letter of each word. 
-        a_set = set()
-        for i in a:
-            a_set.add(i)
-        #turn set into a tuple. 
-        a_tuple = tuple(a_set)
-        #create a dictionary where tuple is key. 
-        if a_tuple in dictionary:
-            dictionary[a_tuple].append(a)
-        else:
-            dictionary[a_tuple] = []
-            dictionary[a_tuple].append(a)
-    result = []
-    #place dictionary values into an array. 
-    for value in dictionary.values():
-        result.append(value)
-    return result
-a = ["eat", "tea", "tan", "ate", "nat", "bat"]
-print(group_anagrams(a))
+class Solution:
+    def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
+        array = strs
+        dictionary = {}
+        primes = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101]
+        for a in array:
+            # create a unique key with prime numbers. 
+            key = 1
+            for i in range(len(a)):
+                value = ord(a[i])
+                first = ord('a')
+                key = key*primes[value-first]
+            #create a dictionary where previous key is the key. 
+            if key in dictionary.keys():
+                dictionary[key].append(a)
+            else:
+                dictionary[key] = []
+                dictionary[key].append(a)
+        result = []
+        #place dictionary values into an array. 
+        for value in dictionary.values():
+            result.append(value)
+        return result
             
