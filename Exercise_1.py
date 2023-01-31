@@ -1,6 +1,6 @@
 #Time Complexity : O(N), N being the total number letters in array.
 #Space Complexity : O(N), because a dictionary was created with the values. 
-#Did this code successfully run on Leetcode : No leetcode link found. 
+#Did this code successfully run on Leetcode : Yes
 #Any problem you faced while coding this : I had done a similar one previously
 #so did not run into as much problems. I did have to search how to add in a set. 
 #And I had to change set to tuples to add to dictionary. 
