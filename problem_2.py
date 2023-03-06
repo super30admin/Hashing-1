@@ -1,5 +1,5 @@
 # Time Complexity: O(n)
-# Space Complexity: O(n)
+# Space Complexity: O(1) as we have only 26 key value pairs
 
 
 class Solution:
