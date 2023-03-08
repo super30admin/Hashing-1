@@ -1,0 +1,41 @@
+//time complexity : O(n)
+//space complexity : O(n)
+class IsomorphicStrings {
+    public boolean isIsomorphic(String s, String t) {
+
+        if(s.length()==0 || t.length()==0){
+            return false; 
+        }
+
+        HashMap<Character, Character> sMap = new HashMap<>();
+        HashMap<Character, Character> tMap = new HashMap<>();
+
+        for(int i=0; i<s.length(); i++){
+            char schar = s.charAt(i);
+            char tchar = t.charAt(i);
+
+            //check in first hasmap
+            //key doesnot exist
+            if(!sMap.containsKey(schar)){
+                sMap.put(schar, tchar);
+            }
+
+            //key exists: check whether tchar is equal or not
+            else{
+               if( sMap.get(schar)!=tchar){
+                  return false;
+                }
+            }
+             if(!tMap.containsKey(tchar)){
+                tMap.put(tchar, schar);
+            }
+            else{
+             if( tMap.get(tchar)!=schar){
+                  return false;
+                }
+            }
+            }
+            return true;
+        }
+       
+    }
