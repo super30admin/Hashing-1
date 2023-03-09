@@ -13,8 +13,8 @@ class Solution:
         groups = {}
 
         for i in strs: #n
-		# Note: is sorting is used to get hashmap key, then TC is n + klogk
-            # sortedStr = "".join(sorted(list(i))) #logk
+		# Note: if sorting is used to get hashmap key, then TC is n + klogk
+            # sortedStr = "".join(sorted(list(i))) #klogk
             # if sortedStr not in groups: #k
             #     groups[sortedStr] = [i]
             # else:
