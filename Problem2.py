@@ -1,3 +1,7 @@
+#create two dictionaries to keep track if characters frequency in s and t. If t can be obtained from s by replacing characters, then the 
+# frequency should be same for s and t. Dictionary values are compared to verify.
+
+
 s = "paper"
 t = "title"
 dict1 = {}
