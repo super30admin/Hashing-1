@@ -1,5 +1,5 @@
 s = "paper"
-t = "tiblk"
+t = "title"
 dict1 = {}
 for char in s:
     if(char in dict1.keys()):
