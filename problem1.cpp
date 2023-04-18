@@ -1,6 +1,9 @@
 // Time Complexity : O(nk)
 // Space Complexity : O(n)
 // Did this code successfully run on Leetcode : Yes
+// We use a map with key as double and value as vector of string, we make use of prime numbers and make a key from them.
+// We push the string in vector with the help of key. we get all anagrams into a vector.
+// at last we store them into a vector of vector of strings and return it.
 
 class Solution {
 public:
@@ -30,4 +33,5 @@ public:
         }
         return result;
     }
+
 };
