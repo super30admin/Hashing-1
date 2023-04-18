@@ -1,7 +1,7 @@
 // Time Complexity: O(n)
 // Space Complexity: O(n)
 // Did this code successfully run on Leetcode : Yes
-// We use only one map in this solution.
+// We use only one HashMap in this solution.
 // We need to maintain mappings from string t to string t and also from t to s. So we
 //  add "s_" and "t_" before a key while adding in the map from s and t respectively.
 //  if "s_"+key exists in map, we check if value = t[i] 
@@ -10,35 +10,33 @@
 
 
 
+
 class Solution {
-public:
-    bool isIsomorphic(string s, string t) {
-        int n = s.size();
-        int m = t.size();
-        if(n != m) return false;
-        unordered_map<string, string> mp;
-        for(int i = 0; i < n; i++)
+    public boolean isIsomorphic(String s, String t) {
+        if(s.length()!=t.length()) 
         {
-            string str = s.substr(i,1);
-            string ttr = t.substr(i,1);
-            if(mp.find("s_" + str ) != mp.end())
-            {
-                if(mp["s_" + str]!= ttr)
-                {
+            return false;
+        }
+        HashMap<String,String>Map = new HashMap<>();
+        for(int i=0;i<s.length();i++)
+        {
+            String str = s.substring(i,i+1);
+            String ttr = t.substring(i,i+1);
+            if(Map.containsKey("s_"+str)){
+                if(!Map.get("s_"+str).equals(ttr)){
                     return false;
                 }
             }
-            
-            else if(mp.find("t_" + ttr) != mp.end() && mp["t_" + ttr] != str)
+            else if(Map.containsKey("t_" + ttr ) && !Map.get("t_" + ttr ).equals(str))
             {
                 return false;
             }
-            else
-            {
-                mp["s_" + str ] = ttr;
-                mp["t_" + ttr] = str;
+            else{
+                Map.put("s_" + str, ttr);
+                Map.put("t_"+ ttr , str);
             }
         }
         return true;
+
     }
-};
+}
