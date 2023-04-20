@@ -2,12 +2,14 @@
 // Space Complexity :   
 // Did this code successfully run on Leetcode : No 
 // Any problem you faced while coding this : YES
-//This approach was discusses in the class, but not coded, I tried to implement but got stuck
+//This approach was discusses in the class, I tried to implement but got stuck
 // thinking all these funtion call to repalcr, remove takes time internally and fails for multiple test case due to 
 //s_ = s_.replace(String.valueOf(sChar), "");
 //t_ = t_.replace(String.valueOf(tChar), "");
 
-
+//Last Executed Input
+//s ="qwertyuiop[]asdfghjkl;'\\zxcvbnm,./"
+//t = "',.pyfgcrl/=aoeuidhtns-\\;qjkxbmwvz"
 // Your code here along with comments explaining your approach
 
 import java.util.HashMap;
