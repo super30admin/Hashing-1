@@ -1,7 +1,7 @@
 /*
 
 // Time Complexity : O(N) // string length
-// Space Complexity : O(N) // to store the words
+// Space Complexity : O(1) // to store the words
 // Did this code successfully run on Leetcode : Yes
 // Any problem you faced while coding this :
 the edge cases where the length of pattern and number of
