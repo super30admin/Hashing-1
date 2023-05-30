@@ -1,7 +1,7 @@
 /*
 
 // Time Complexity : O(n) // length of the string
-// Space Complexity : O(N) // cause extra space for the string size 
+// Space Complexity : O(1) // cause extra space for the string size 
 // Did this code successfully run on Leetcode : Yes
 // Any problem you faced while coding this :
 Important to know that <key,value> pair is unique . Its one to one function.
