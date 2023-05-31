@@ -5,7 +5,9 @@
 
 
 // Your code here along with comments explaining your approach
-/* we can implement using 2 hashmaps , just 1 hashmap + 1hashset, 2 char arrays with same space and time complexity */
+/* we can implement using 2 hashmaps , just 1 hashmap + 1hashset, 2 char arrays with same space and time complexity .
+ * Implemented with 2 char arrays
+*/
 class Solution {
     public boolean isIsomorphic(String s, String t) {
         //base case check if length are same
