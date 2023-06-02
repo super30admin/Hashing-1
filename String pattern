@@ -1,0 +1,35 @@
+//time and space complexity - O(n)
+//ran on leetcode
+
+
+class Solution {
+    public boolean wordPattern(String pattern, String s) {
+        String [] words = s.split(" ");
+        HashMap <Character,String> map= new HashMap<>();
+        
+        if (words.length!=pattern.length()){
+            return false;
+        }
+      
+        for (int i=0;i<words.length;i++){
+            if (map.containsKey(pattern.charAt(i))==false){
+                if (map.containsValue(words[i])){
+                    return false;
+                }
+                else {
+                    map.put(pattern.charAt(i),words[i]);
+                }
+            }
+            else{
+                String check= map.get(pattern.charAt(i));
+                String check2= words[i];
+                if (check.equals(check2)){
+                    continue;
+                }
+                else{return false;}
+            }
+        }
+        return true;
+
+    }
+}
