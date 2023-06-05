@@ -1,5 +1,5 @@
-// Time Complexity : O(n^2)
-// Space Complexity : O(m*n)
+// Time Complexity : O(n)
+// Space Complexity : O(m + n)
 // Did this code successfully run on Leetcode : yes
 
 #include <bits/stdc++.h>
