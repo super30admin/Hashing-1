@@ -1,5 +1,5 @@
-// Time Complexity :
-// Space Complexity :
+// Time Complexity :  O(n * k log k) where n is the total number of characters in all strings and k is the maximum string length
+// Space Complexity : O(m) where m is the number of unique anagram groups
 // Did this code successfully run on Leetcode : Yes
 // Any problem you faced while coding this : No
 
