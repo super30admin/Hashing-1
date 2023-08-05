@@ -1,3 +1,6 @@
+//Time Complexity = O(NLlogL)
+//SpaceComplexity = O(N)
+//Method: sort each string and put it in hashmap along with its' respective anagrams as value and sorted string as key. Return all values as ArrayList
 class Solution {
     public List<List<String>> groupAnagrams(String[] strs) {
         if(strs.length==0) return new ArrayList();
