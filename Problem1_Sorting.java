@@ -1,3 +1,10 @@
+// N = Total number of words
+// K = Average length of each word
+// Time Complexity : O(NKlogK)
+// Space Complexity : O(Nk)
+// Did this code successfully run on Leetcode : Yes
+// Any problem you faced while coding this : No
+
 class Solution {
     public String sortString(String input) {
         char[] temp = input.toCharArray();
