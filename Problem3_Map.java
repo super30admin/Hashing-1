@@ -1,3 +1,13 @@
+// Time Complexity : O(N)
+// Space Complexity : O(1)
+// Did this code successfully run on Leetcode : Yes
+// Any problem you faced while coding this : No
+
+/*
+Maintain two hashmaps to save the key value pair of the strings and compare if a given key is present with different value 
+in the hashmap. If yes then the string is not isomporphic
+*/
+
 class Solution {
     public boolean wordPattern(String pattern, String s) {
         String[] words = s.split(" ");
