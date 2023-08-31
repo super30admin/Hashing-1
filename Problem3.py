@@ -3,6 +3,9 @@
 2. Traverse through the pattern and if the character is not present in the dictionary, add into it.
 3. If the character exists and value in dictionary doesnt match to string OR the string already belongs to another letter of pattern return False.
  If there's a succesful traversal of entire pattern return True.
+
+Time Complexity: O(n)
+Space Complexity: O(n)
 '''
 
 pattern = "abba"
