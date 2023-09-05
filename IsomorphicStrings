@@ -1,0 +1,31 @@
+class IsomorphicStrings {
+  public boolean isIsomorphic(String s, String t) {
+    // Check if the lengths of the two input strings are different
+    if (s.length() != t.length())
+      return false; // They cannot be isomorphic if their lengths differ
+
+    HashMap<Character, Character> sMap = new HashMap<>(); // Create a HashMap for mapping characters from string s to t
+    HashMap<Character, Character> tMap = new HashMap<>(); // Create a HashMap for mapping characters from string t to s
+
+    for (int i = 0; i < s.length(); i++) {
+      char sChar = s.charAt(i); // Get the current character from string s
+      char tChar = t.charAt(i); // Get the current character from string t
+
+      // Check if sChar has already been mapped to a different character in s
+      if (!sMap.containsKey(sChar))
+        sMap.put(sChar, tChar); // If not, create a mapping from sChar to tChar
+      else if (sMap.get(sChar) != tChar)
+        return false; // If a different mapping exists, the strings are not isomorphic
+
+      // Check if tChar has already been mapped to a different character in t
+      if (!tMap.containsKey(tChar))
+        tMap.put(tChar, sChar); // If not, create a mapping from tChar to sChar
+      else if (tMap.get(tChar) != sChar)
+        return false; // If a different mapping exists, the strings are not isomorphic
+    }
+    return true; // If no conflicts were found, the strings are isomorphic
+  }
+}
+
+//Time Complexity: O(N)
+//Space Complexity: O(1)
