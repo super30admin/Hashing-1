@@ -49,3 +49,40 @@ class Solution {
         return true;
     }
 }
+
+// Approach 2 
+
+class Solution_2 {
+    public boolean isIsomorphic(String s, String t) {
+        if(s.length() != t.length()){
+            return false;
+        }
+        HashMap<Character, Character> s_map = new HashMap<>();
+        HashMap<Character, Character> t_map = new HashMap<>();
+
+        int len = 0;
+        while(len < s.length()){
+            if(s_map.containsKey(s.charAt(len))){
+                if(t_map.containsKey(t.charAt(len))){
+                    if(t_map.get(t.charAt(len)) != s.charAt(len)){
+                        return false;
+                    }
+                }
+                else{
+                    return false;
+                }
+            }
+            else{
+                if(!t_map.containsKey(t.charAt(len))){
+                    s_map.put(s.charAt(len),t.charAt(len));
+                    t_map.put(t.charAt(len),s.charAt(len));
+                }
+                else{
+                    return false;
+                }
+            }
+            len++;
+        }
+        return true;
+    }
+}
