@@ -1,5 +1,5 @@
-// Time Complexity : O(logn)
-// Space Complexity : O(n)
+// Time Complexity : O(n)
+// Space Complexity : O(1)
 // Did this code successfully run on Leetcode : Yes https://leetcode.com/problems/isomorphic-strings/submissions/1043608225/
 // Any problem you faced while coding this : No
 
