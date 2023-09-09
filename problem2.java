@@ -1,4 +1,4 @@
-// Determine if strings are isomorphic https://github.com/Harshit-Chouksey/Hashing-1
+// Determine if strings are isomorphic 
 
 // Time Complexity : O(s.length)
 // Space Complexity : O(1)
