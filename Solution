@@ -1,0 +1,90 @@
+1. isomorphic strings
+Time Complexity: length of string
+Space Complexity: O(1) constant
+
+class Solution:
+    def isIsomorphic(self, s: str, t: str) -> bool:
+        #base
+        if(s==None and t==None): return True
+        if(s==None or t==None): return False
+        if(len(s) != len(t)): return False
+
+        #logic
+        sMap = {}
+        tMap = {}
+
+        for i in range(len(s)):
+            if(sMap.get(s[i]) != None):
+                if(sMap[s[i]]!=t[i]): return False
+            else:
+                sMap[s[i]] = t[i]
+            if(tMap.get(t[i]) != None):
+                if(tMap[t[i]]!=s[i]): return False
+            else:
+                tMap[t[i]] = s[i]
+        print(sMap)
+        print(tMap)
+        return True
+
+
+2. group-anagrams
+Time Complexity: O(nk)
+Space Complexity: O(n)
+
+class Solution:
+    primeprod = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101]
+    def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
+        sMap = {}
+        n = len(strs)
+        for i in range(n): #n
+            prod = self.getPrimeProduct(strs[i]) #k
+            if prod in sMap:
+                sMap[prod].append(strs[i])
+            else:
+                sMap[prod] = [strs[i]]
+        result = []
+        for lists in sMap:
+            result.append(sMap[lists])
+        return result
+    
+    def getPrimeProduct(self,str):
+        product = 1
+        value = 0
+        for i in range(len(str)):
+            value = self.primeprod[ord(str[i])-ord('a')]
+            product *= value
+        return product
+
+        
+3. Word Pattern
+Time Complexity: length of string
+Space Complexity: O(1) constant
+
+class Solution:
+    def wordPattern(self, pattern: str, s: str) -> bool:
+        sMap = {}
+        pMap = {}
+        pat = list(pattern)
+        string = s.split(' ')
+        if len(pat) != len(string):
+            return False
+        for i in range(len(pat)):
+            if pat[i] in sMap:
+                if sMap[pat[i]]!= string[i]:
+                    return False
+            else:
+                sMap[pat[i]] = string[i]
+            
+        for i in range(len(string)):
+            if string[i] in pMap:
+                if pMap[string[i]]!= pat[i]:
+                    return False
+            else:
+                pMap[string[i]] = pat[i]
+        return True
+        
+
+
+
+            
+        
