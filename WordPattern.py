@@ -1,3 +1,4 @@
+
 class Solution:
     def wordPattern(self, pattern, s):
         mapi = {}
@@ -14,8 +15,9 @@ class Solution:
                 mapi[c] = i
             if p not in mapi:
                 mapi[p] = i
-            # print(mapi)
+
             if mapi[p] != mapi[c]:
                 return False
         return True
+    
         
