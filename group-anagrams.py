@@ -1,5 +1,5 @@
-# Time Complexity : O(N)
-# Space Complexity : O(N)
+# Time Complexity : O(N*K*LogK)
+# Space Complexity : O(N*K)
 # Did this code successfully run on Leetcode : Yes
 # Any problem you faced while coding this : No
 
