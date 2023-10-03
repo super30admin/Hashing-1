@@ -1,3 +1,9 @@
+# TC : O(m+n)
+# SC : O(m+n+k)
+    # m is the length of the string s, n is the length of the string pattern, 
+    # k is the total length of the words stored in the dictionaries.
+
+# Approach - 
 
 def wordPattern(pattern: str, s: str) -> bool:
     words = s.split(" ")
