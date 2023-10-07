@@ -3,7 +3,7 @@
 class Solution:
     def wordPattern(self, pattern: str, s: str) -> bool:
 
-        # SC: if pattern has too many letters, each letter could map to a different word so smap can be O(n). but since smap and pmap should map to each other , this wouldn't go more than O(26). IF they do, its a conflict and we return.
+        # SC: if pattern has too many letters, each letter could map to a different word so smap can be O(n). however, even in worst case all words in smap should map to all letters in pmap and pmap only could have 26 letters. so SC for pmap & (smap also) should be O(1)
         sMap = {}
         pMap = {}  # SC : O(26) i.e. constant O(1)
 
