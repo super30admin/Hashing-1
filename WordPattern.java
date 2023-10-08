@@ -1,5 +1,11 @@
 import java.util.HashMap;
 
+// T.C -> O(n)
+// S.C -> O(n)
+
+// Does it pass LC: Yes
+// Checking mappings in both the maps every word and character at a time.
+
 public class WordPattern {
 
     public static boolean wordPattern(String pattern, String s) {

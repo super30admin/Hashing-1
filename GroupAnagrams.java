@@ -2,7 +2,11 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
+// T.C -> O(n(klogk))
+// S.C -> O(n)
 
+// Does it pass LC: Yes
+// grouping anagrams based on the sorted keys -> as for every word sorted key would be same
 public class GroupAnagrams {
 
     public static List<List<String>> groupAnagramsfn(String[] strs) {

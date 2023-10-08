@@ -1,4 +1,9 @@
 import java.util.HashMap;
+// T.C -> O(n)
+// S.C -> O(n)
+
+// Does it pass LC: Yes
+// Checking mappings in both the maps
 
 class IsomorphicStrings {
 
