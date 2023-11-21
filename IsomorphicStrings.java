@@ -1,6 +1,6 @@
 import java.util.Arrays;
 //T.C O(n)
-//S.C O(n)
+//S.C O(1) Constant space of Arrays of 256 length
 // Did this code successfully run on Leetcode : yes (https://leetcode.com/problems/isomorphic-strings/)
 // Any problem you faced while coding this : -
 
