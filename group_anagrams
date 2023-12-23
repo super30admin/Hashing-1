@@ -1,0 +1,27 @@
+#Time Complexity:- O(nk)
+#Space Complexity:- O(n) 
+class Solution:
+    def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
+        if not strs:
+            return []  # If the input list is empty, return an empty list.
+
+        def primeProduct(s):
+            # Define a list of prime numbers corresponding to each alphabet letter.
+            primes = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101, 103]
+            result = 1  # Initialize the result to 1.
+
+            # Calculate the product of prime numbers for each character
+            for c in s:
+                result *= primes[ord(c) - ord('a')]  # Convert character to a prime number
+
+            return result
+
+        map_dict = {}  # Initialize an empty dictionary to store anagrams.
+
+        for s in strs:
+            primeproduct = primeProduct(s)  # Calculate the prime product for the current string.
+            if primeproduct not in map_dict:
+                map_dict[primeproduct] = []  # If it's a new prime product, create an empty list.
+            map_dict[primeproduct].append(s)  # Append the string to the list corresponding to its prime product.
+
+        return list(map_dict.values())  # Return the values (anagram groups) as a list.
