@@ -22,4 +22,3 @@ class Solution:
                 mask.append(i)
 
         return mask
-
