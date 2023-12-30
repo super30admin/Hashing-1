@@ -1,0 +1,34 @@
+Problem Statement : Group anagrams together
+Time Complexity : O(n^2)
+Space Complexity : O(1)
+Did this code successfully run on Leetcode : yes
+Any problem you faced while coding this : no
+
+Your code here along with comments explaining your approach in three sentences only :
+We have assigned prime number to each alphabet so we get a unique product for same combination of characters
+Hashmap contains the key as primeproduct and value as the list of strings who's prime product is primeproduct
+We check the prime product for each string and check if the product exists in the hashmap
+If yes, we add the string to the list of strings
+If no, we create new list at that value in the hashmap and add it
+
+Problem Statement : Isomorphic Strings
+Time Complexity : O(n)
+Space Complexity : O(1)
+Did this code successfully run on Leetcode : yes
+Any problem you faced while coding this : no
+
+Your code here along with comments explaining your approach in three sentences only :
+We create a hashmap for string s with key as char in string s and the value mapped to it in as char in string t.
+and a hashset of characters in string t
+Iterate through the strings, check if the hashmap has character of string s.
+If yes we check if the value is same as that in the hashset t, if not the strings are not isomorphic
+If no, we check if the value exits in the tset, if no we put the value in hashmap and hashset
+
+Problem Statement : Word Pattern
+Time Complexity : O(n)
+Space Complexity : O(1)
+Did this code successfully run on Leetcode : yes
+Any problem you faced while coding this : no
+
+Your code here along with comments explaining your approach in three sentences only :
+Same as Isomorphic Strings, but instead of string s in hashmap we store the words as key
