@@ -1,0 +1,39 @@
+T.C : o(n)
+class Solution {
+    public boolean wordPattern(String pattern, String s) {
+    
+        if (pattern == null || s == null)
+            return false;
+
+       
+
+        HashMap<Character, String> map = new HashMap<>();
+        String[] words = s.split(" ");
+        if(words.length != pattern.length()) return false;
+        HashSet<String> set = new HashSet<>();
+
+        for (int i = 0; i < pattern.length(); i++) {
+
+            char s1 = pattern.charAt(i);
+            String t1 = words[i];
+            if (!map.containsKey(s1)) {
+
+                if (set.contains(t1)) {
+                    return false;
+                } else{
+                    map.put(s1, t1);
+                    set.add(t1);
+                }
+            } else {
+                if (!map.get(s1).equals(t1)) {
+                   
+                    return false;
+                   }   
+            }
+
+        }
+
+        return true;
+
+    }
+}
