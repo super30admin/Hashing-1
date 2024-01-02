@@ -1,0 +1,27 @@
+The time complexity of the given groupAnagrams method is O(N * K * log K), where N is the number of strings in the input array strs, and K is the maximum length of any string in the array
+
+class Solution {
+    public List<List<String>> groupAnagrams(String[] strs) {
+
+        HashMap<String, List<String>> map = new HashMap<>();
+
+        for(String str : strs){
+
+            char[] charArray = str.toCharArray();
+            //sort the string
+            Arrays.sort(charArray);
+            
+            String sorted = String.valueOf(charArray);
+            //check if string is present
+            if(!map.containsKey(sorted)){
+                map.put(sorted, new ArrayList<>());
+            }
+           
+                map.get(sorted).add(str);
+            
+        }
+
+        return new ArrayList<>(map.values());
+        
+    }
+}
