@@ -1,0 +1,23 @@
+class Solution(object):
+    def wordPattern(self, pattern, s):
+        """
+        :type pattern: str
+        :type s: str
+        :rtype: bool
+        """
+        my_dict1 = {}
+        my_dict2 = {}
+        S = s.split()
+        if len(S) != len(pattern):
+            return False
+        for x in range(len(S)):
+            if (pattern[x] not in my_dict1) and (S[x] not in my_dict2):
+                my_dict1[pattern[x]]=S[x]
+                my_dict2[S[x]]=pattern[x]
+            elif (pattern[x] in my_dict1) and (my_dict1[pattern[x]] != S[x]):
+                return False
+            elif (S[x] in my_dict2) and my_dict2[S[x]] != pattern[x]:
+                return False
+        return True
+
+        
