@@ -1,0 +1,35 @@
+# Group Anagrams
+# Approach - Hashing
+#This hashing approach assigns prime numbers to characters, creating a unique hash for each word based on the product of these primes. Anagrams share the same hash. The time complexity is O(N * K), where N is the length of the input list, and K is the maximum length of a string.
+
+class Solution(object):
+    def groupAnagrams(self, strs):
+        """
+        :type strs: List[str]
+        :rtype: List[List[str]]
+        """
+        def calculate_hash(word):
+            primes = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101]
+            hash_value = 1
+            for char in word:
+                hash_value *= primes[ord(char) - ord('a')]
+            return hash_value
+
+        # Create a dictionary to store anagrams
+        anagrams = {}
+
+        # Iterate through each word in the input list
+        for word in strs:
+            # Calculate the hash for the word
+            key = calculate_hash(word)
+            
+            # Append the word to the corresponding group in the dictionary
+            if key in anagrams:
+                anagrams[key].append(word)
+            else:
+                anagrams[key] = [word]
+
+        # Convert the values of the dictionary to a list to get the final result
+        result = list(anagrams.values())
+
+        return result
