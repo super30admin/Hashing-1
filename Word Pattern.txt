@@ -1,0 +1,22 @@
+class Solution:
+    def wordPattern(self, pattern: str, s: str) -> bool:
+        list=s.split(" ")
+        if len(pattern) !=len(list):
+            return False
+        patternmap={}
+        wordmap={}
+        for i in range(len(pattern)):
+            patternchar=pattern[i]
+            word=list[i]
+            if patternmap.get(patternchar) !=None:
+                if patternmap[patternchar] !=word:
+                    return False
+            else:
+                patternmap[patternchar] =word
+            if wordmap.get(word) !=None:
+                if wordmap[word]!= patternchar:
+                    return False
+                else:
+                    wordmap[word]= patternchar
+        return True
+

@@ -1,0 +1,35 @@
+class Solution:
+    def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
+        if strs==None or len(strs)==0 :
+            return []
+        Map={}
+        for astr in strs:
+            sortedString=tuple(sorted(astr))
+            if Map.get(sortedString)==None:
+                Map[sortedString]=[]
+            Map[sortedString].append(astr)
+        return Map.values()
+
+# TC=nk O(logk)
+# SC=O(n)        
+
+class Solution:
+    def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
+        if strs==None or len(strs)==0 :
+            return []
+        Map={}
+        for astr in strs:
+            sortedString=self.getHashedValue(astr)
+            if Map.get(sortedString)==None:
+                Map[sortedString]=[]
+            Map[sortedString].append(astr)
+        return Map.values()
+    def getHashedValue(self,s:str) -> int:
+        primes=[2 ,3,5,7,11,13,17,19,23,29,31,37,41,43,47,53,59,61,67,71,73,79,83,89,97,101,103]
+        result =1
+        for i in range(len(s)):
+            c=s[i]
+            result=result* primes[ord(c)-ord('a')]
+        return result
+TC-O(nk)
+SC-o(n)
