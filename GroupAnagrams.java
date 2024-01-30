@@ -1,8 +1,10 @@
-// Time complexity: O(n * mlogm); n = total number of strings; m = average length of string; mlogm is the time complexity to sort the string
-// Space complexity: O(n): Hashmap size
-/* Approach: We put the sorted strings as keys in hashmap and store the original keys in an array as a value of that key.
- * Finally, iterate the hashmap and append the values to the result list.
- */
+// Time complexity: O(n*k) where n = number of elements and k is average length of each element. Reason: We are iterating over the list and then
+// iterating over each string to get the prime product
+// Space complexity: O(n*k) where n is the number of strings and k = average length of string.
+/* Approach: Product of prime numbers is unique! So, if we map each character from a-z to a prime number. Product of bat and tab should be the same.
+* Using this logic, we iterate the strings and if the prime product does not exist in the hashmap, we store it using the prime product as the key.
+* If the key already exists, we append the string to the array. Hence, resulting in group of anagrams. 
+*/
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -10,30 +12,42 @@ import java.util.HashMap;
 import java.util.List;
 
 class GroupAnagrams {
+    // first 26 prime numbers
+    int[] primeNumbers = new int[] { 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79,
+            83, 89, 97, 101 };
+
     public List<List<String>> groupAnagrams(String[] strs) {
-        // hashmap key = string; value = arraylist of strings
-        HashMap<String, ArrayList<String>> map = new HashMap<String, ArrayList<String>>();
-        List<List<String>> res = new ArrayList<>();
+        // using double as primeProduct of a long string can result in integer overflow
+        HashMap<Double, ArrayList<String>> map = new HashMap<Double, ArrayList<String>>();
 
         for (int i = 0; i < strs.length; i++) {
-            // sorting the key
-            char[] chars = strs[i].toCharArray();
-            Arrays.sort(chars);
-            String sorted = new String(chars);
-            // checking if the sorted key exists in the hashmap
-            // creating an array at the key if key does not exist
-            if (!map.containsKey(sorted)) {
-                ArrayList<String> newArr = new ArrayList<String>();
-                map.put(sorted, newArr);
+            String str = strs[i];
+            double primeProduct = primeProduct(str);
+            // if primeProduct exists in the array that means there is an anagram for the -
+            // - current string
+            if (map.containsKey(primeProduct)) {
+                map.get(primeProduct).add(str);
+            } else {
+                map.put(primeProduct, new ArrayList<String>(Arrays.asList(str)));
             }
-            map.get(sorted).add(strs[i]);
         }
 
-        // iterating the hashmap
-        for (String key : map.keySet()) {
-            res.add(map.get(key));
-        }
+        return new ArrayList<List<String>>(map.values());
+    }
 
-        return res;
+    // this ensures if there is a string with same characters, they will have the
+    // same product always
+    // as product of prime numbers is always unique
+    public double primeProduct(String str) {
+        double product = 1;
+        for (int i = 0; i < str.length(); i++) {
+            // a = 0th index; b=1st index and so on z = 25th index
+            product = product * primeNumbers[str.charAt(i) - 'a'];
+        }
+        return product;
+    }
+
+    public static void main(String[] args) {
+
     }
 }

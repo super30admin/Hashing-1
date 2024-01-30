@@ -1,7 +1,7 @@
 // Time complexity: O(n) where n = length of the string s or t
-// Space complexity: O(n): where n = Hashmap and hashset size whichever is bigger
+// Space complexity: O(1) as hashmap/hashset's max size can only be 26 as we are getting lowercase ascii values
 /* Approach: We maintain a hashmap for the mappings and a hashset for the already mapped values. We begin iterating, if the mapping already exists
-* and is not the same as the value of char in t string, then we return false as one element cant have two mappings.
+* and is not the same as the value of char in 't' string, then we return false as one element cant have two mappings.
 * Another edge case to keep in mind is that no two elements can map to the same char. So, we keep track of the mapped elements in a set.
 * If there is a new char which is not already in the map trying to point to a char which is in the set, this means two elements are trying to
 * point to the same char.
