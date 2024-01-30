@@ -6,7 +6,7 @@ import java.util.Set;
 //Time Complexity - O(n) => s.length()
 // Space Complexity - O(n) => n=length of pattern (HashMap keys)
 
-public class WordPattern {
+public class WordPatternMapSet {
     class Solution {
         public boolean wordPattern(String pattern, String s) {
             Map<Character, String> patternToStringMap = new HashMap<>();
