@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Map;
 
 // Time Complexity - O(n klogk) n=Size of array k=Avg size of string
-// Space complexity - O(n) 
+// Space complexity - O(n) Map of size n
 
 // Constraints:
 // 1 <= strs.length <= 10^4
