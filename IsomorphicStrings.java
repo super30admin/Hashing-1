@@ -6,24 +6,21 @@ public class IsomorphicStrings {
 	public static boolean isIsomorphic(String s, String t) {
 		HashMap<Character, Character> s_map = new HashMap<>();
 		HashMap<Character, Character> t_map = new HashMap<>();
-		char[] s_array = s.toCharArray();
-		char[] t_array = t.toCharArray();
-
-		for (int i = 0; i < s_array.length; i++) {
-			if (!s_map.containsKey(s_array[i])) {
-				s_map.put(s_array[i], t_array[i]);
-				if(!t_map.containsKey(t_array[i]))
-					t_map.put(t_array[i], s_array[i]);
+		if (s.length() != t.length())
+			return false;
+		for (int i = 0; i < s.length(); i++) {
+			char key = s.charAt(i);
+			char value = t.charAt(i);
+			if (!s_map.containsKey(key)) {
+				s_map.put(key, value);
+				if (!t_map.containsKey(value))
+					t_map.put(value, key);
 				else
 					return false;
-			}
-			else {
-				char value1 = s_map.get(s_array[i]);//d
-				if (value1 != t_array[i]) {
+			} else {
+				if (s_map.get(key) != value)
 					return false;
-				}
 			}
-
 		}
 		return true;
 	}
