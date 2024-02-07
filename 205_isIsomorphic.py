@@ -19,10 +19,8 @@ class Solution:
                     return False
             else:
                 tMap[j] = i
-        return True
+        return True  # class Solution:
 
 
-å
-# class Solution:
 #     def isIsomorphic(self, s: str, t: str) -> bool:
 #         return [*map(s.index, s)] == [*map(t.index, t)]
