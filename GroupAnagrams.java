@@ -1,5 +1,5 @@
-// Time Complexity : O(n * m )
-// Space Complexity : O(1)
+// Time Complexity : O(n * m ) [n: elements in strs array; m: characters of each str in the strs array]
+// Space Complexity : O(n * m)
 // Did this code successfully run on Leetcode : yes
 
 // Any problem you faced while coding this : Yes, I was getting TLE Initially i was using Brute force with nested for loops
@@ -123,7 +123,13 @@ public class GroupAnagrams {
 
     private double primeProducts(String s) {
         double result = 1;
-        int primeArray[] = generateNPrimeNUmbersArray(27  );
+        // int primeArray[] = generateNPrimeNUmbersArray(27);
+        int primeArray[] = new int [] {2, 3, 5, 7, 11,
+            13, 17, 23, 29, 31,
+            37, 41, 43, 47, 53,
+            59, 61, 67, 71, 73,
+            79, 83, 89, 97, 101,
+            103};
         for(int i = 0; i <= s.length() - 1; i++) {
             char c = s.charAt(i);
             result *= primeArray[c - 'a'];
