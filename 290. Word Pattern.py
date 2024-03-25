@@ -20,4 +20,7 @@ class Solution(object):
             elif s_map[s_split[i]] != pattern[i]:
                 return False
         return True
-        
+
+#Time Complexity: O(max(m,n)) 
+#Space Complexity: O(max(m,n))
+#m is length of pattern and n is length of s
