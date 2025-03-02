@@ -1,0 +1,32 @@
+class Solution {
+    public boolean wordPattern(String pattern, String s) {
+        
+        char[] cArr= pattern.toCharArray();
+        String[] sArr = s.split(" ");
+        HashMap<Character,String> CSMap = new HashMap<>();// Chartacter -> String mapping (pattern char --> word map)
+        HashMap<String,Character> SCMap = new HashMap<>(); // String--> Character mapping (word Map --> pattern map)
+        if(cArr.length!=sArr.length) return false;
+        for(int i=0;i<cArr.length;i++){
+        
+            if(CSMap.containsKey(cArr[i]) && !CSMap.get(cArr[i]).equals(sArr[i])){ //check char to string mapping
+                return false;
+            }
+            else{
+                CSMap.put(cArr[i],sArr[i]);
+            }
+            
+            if(SCMap.containsKey(sArr[i]) && !SCMap.get(sArr[i]).equals(cArr[i])){ //check string to char mapping
+                return false;
+            }
+            else{
+                SCMap.put(sArr[i],cArr[i]);
+            }
+        }
+        return true;
+    }
+}
+
+//time Complexity : O(N) -- only one iteration of any one string characters
+//Speace Complexity : O(n) -- because we can define as a length n and there are 2 hashmap so O(2n)~O(n)
+//ran successfuly on leetcode
+//prioblem faced while comparing string used != which only compare reference not values so some test cases were failing. After using equals method code worked fine.
