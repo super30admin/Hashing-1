@@ -1,0 +1,45 @@
+// TC = O(n)
+
+// SC = O( k + k ) = O(2k) = O(k)
+
+class Solution {
+    public boolean wordPattern(String pattern, String s) {
+        
+        HashMap<Character, String> map_char = new HashMap<>();
+		HashMap<String, Character> map_word = new HashMap<>();
+		
+		String[] words = s.split(" ");
+
+        if (words.length != pattern.length())
+            return false;
+
+		
+		for(int x = 0; x < words.length;x++){
+		
+			char charPattern = pattern.charAt(x);
+			String w = words[x];
+			
+			// S -> T
+			
+			if(map_char.containsKey(charPattern) && !map_char.get(charPattern).equals(w))
+				return false;
+			else {
+				
+				map_char.put(charPattern, w);
+				}
+				
+				
+			// T -> S
+			
+			if(map_word.containsKey(w) && !map_word.get(w).equals(charPattern))
+				return false;
+			else 
+				
+				map_word.put(w, charPattern);
+			
+			}
+		
+		return true;
+        
+    }
+}
