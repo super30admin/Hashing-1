@@ -1,0 +1,40 @@
+class Solution {
+    public boolean isIsomorphic(String s, String t) {
+        // hashMap the <Key, Values> for both Strings 
+        Map<Character,List<Integer>> sMap = new HashMap<>();
+        char[] character = s.toCharArray() ;
+        for(int i=0; i< character.length ; i++){
+            if(!sMap.containsKey(character[i])) sMap.put(character[i], new ArrayList());
+            sMap.get(character[i]).add(i);
+        }
+        
+        Map<Character,List<Integer>> tMap = new HashMap<>();
+        char[] charactert = t.toCharArray() ;
+        for(int i=0; i< charactert.length ; i++){
+            if(!tMap.containsKey(charactert[i])) tMap.put(charactert[i], new ArrayList());
+            tMap.get(charactert[i]).add(i);
+        }
+        
+
+    		//loop character 
+			//getKeyS & get KeyT
+			//store values in Array list
+            for(int i=0; i< character.length ; i++) {
+                char sKey = character[i];
+                char tKey = charactert[i];
+                List<Integer> indexeS = new ArrayList<>(sMap.get(sKey));
+                List<Integer> indexeT = new ArrayList<>(tMap.get(tKey));
+                if(!indexeS.equals(indexeT)) return false ;
+            }
+
+
+
+        // if(sMap.size()!=tMap.size()) return false;
+        // // Iterate over first array to and check the Value from first Map  mathces with the coresponding index - character's value in the Second Map 
+        // for(int i=0; i< character.length ; i++){
+        //     if(sMap.get(character[i]) != tMap.get(t.charAt(i)) ) return false; 
+        // }
+        
+        return true;
+    }
+}

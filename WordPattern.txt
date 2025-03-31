@@ -1,0 +1,28 @@
+class Solution {
+    public boolean wordPattern(String pattern, String s) {
+        // if  .. String s 
+        // in .. follows the String pattern - needs to be searched & validated 
+        // then use  .. HashMap 
+        // Identify the key or K,V pair 
+        // if key exists  
+            // check if match in String(i) , Pattern KEy(i) not match return false
+            
+        // if string not found OK then ASSOCIATE <String , pattern char >
+            // else check Key  
+        HashMap mapping = new HashMap<>();
+        char[] ch = pattern.toCharArray();
+        String[] strArr = s.split(" ");
+        if(strArr.length != ch.length) return false;
+        for(int i = 0; i< strArr.length; i++){
+
+            if(!mapping.containsKey(strArr[i])){
+                mapping.put(strArr[i], i) ;
+            } 
+            if(!mapping.containsKey(pattern.charAt(i))){
+                mapping.put(pattern.charAt(i), i) ;
+            }
+            if(!mapping.get(strArr[i]).equals(mapping.get(pattern.charAt(i)))) return false;
+        }
+        return true;
+    }
+}
