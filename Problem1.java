@@ -1,6 +1,6 @@
 import java.util.*;
 
-// Time Complexity : O(n * k log k) where n is the number of strings and k is the maximum length of a string
+// Time Complexity : O(n * (k log k + k)) where n is the number of strings and k is the maximum length of a string
 // Space Complexity : O(n * k) for storing the anagrams in a HashMap
 // Did this code successfully run on Leetcode : Yes
 // Any problem you faced while coding this : No
