@@ -1,0 +1,38 @@
+// Time Complexity : O(n)
+// Space Complexity : O(N)
+// Did this code successfully run on Leetcode : Yes
+// Any problem you faced while coding this : None
+
+// Your code here along with comments explaining your approach
+I followed a similar approach to the last problem, except I thought it would be more efficient to create two maps instead of using the same one and clearing it. This time I mapped the pattern letters to words and the words to pattern letters. If they
+are truly 1:1, then two hashmaps should ensure that. If one word maps to one character and that character maps to that same word, that means we have a match, but if one of those things is not satisfied, then we don't have a match and can return false.
+
+class Solution {
+    public boolean wordPattern(String pattern, String s) {
+        String[] sArr = s.split(" ");
+        if(sArr.length!=pattern.length()){
+            return false;
+        }
+        HashMap<Character, String> charToWord = new HashMap<>();
+        HashMap<String, Character> wordToChar = new HashMap<>();
+
+        for(int i=0; i<pattern.length(); i++){
+            String word = sArr[i];
+            char c = pattern.charAt(i);
+
+            if(!charToWord.containsKey(c)){
+                charToWord.put(c, word);
+            }
+
+            if(!wordToChar.containsKey(word)){
+                wordToChar.put(word, c);
+            }
+
+            if(!charToWord.get(c).equals(word) || !wordToChar.get(word).equals(c)){
+                return false;
+            }
+        }
+
+        return true;
+    }
+}

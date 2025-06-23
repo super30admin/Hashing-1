@@ -1,0 +1,31 @@
+// Time Complexity : O(N)
+// Space Complexity : O(N)
+// Did this code successfully run on Leetcode : yes
+// Any problem you faced while coding this : Initially I tried to map only from String t to String s, but that would make one of the strings isomorphic and not the other, so it took me some time to find out I had to map both ways.
+
+// Your code here along with comments explaining your approach
+I created a map mapping characters from String s to String t, then I would check if each character in String s is mapping to more than one character in t. If it is, then I would return false, otherwise I would add a new mapping to the map if the letter
+in String s hasn't been seen before. After that, I cleared the map and did the same for String t to String s so that the mapping both ways would be checked and we can return the proper result.
+
+class Solution {
+    public boolean isIsomorphic(String s, String t) {
+        Map<Character, Character> matches = new HashMap<>();
+        for(int i=0; i<s.length(); i++){
+            if(matches.keySet().contains(s.charAt(i)) && (t.charAt(i)!=matches.get(s.charAt(i)))){
+                return false;
+            } else {
+                matches.put(s.charAt(i), t.charAt(i));
+            }
+        }
+
+        matches.clear();
+        for(int i=0; i<t.length(); i++){
+            if(matches.keySet().contains(t.charAt(i)) && (s.charAt(i)!=matches.get(t.charAt(i)))){
+                return false;
+            } else {
+                matches.put(t.charAt(i), s.charAt(i));
+            }
+        }
+        return true;
+    }   
+}
