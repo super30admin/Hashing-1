@@ -1,0 +1,29 @@
+class Solution {
+    public boolean wordPattern(String pattern, String s) {
+        String words[] = s.split(" ");
+        //if length of pattern not equal to no. of words, return false
+        if(words.length != pattern.length()){
+            return false;
+        }
+        HashMap<Character,String> map = new HashMap<Character,String>();
+        Set<String> set = new HashSet<>();
+        for(int i =0; i< words.length;i++){
+            //for every letter in pattern, mapping corresponding word in words in map and adding the word in set 
+            if(!map.containsKey(pattern.charAt(i))){
+                map.put(pattern.charAt(i), words[i]);
+                //if letter is not in map but corresponding word is already in set, it is mapped other letter, so return false
+                if(set.contains(words[i])){
+                    return false;
+                }
+                set.add(words[i]);
+            }
+            else{
+                //if letter is present but value is not the corresponding word, return false
+                if(!map.get(pattern.charAt(i)).equals(words[i])){
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+}

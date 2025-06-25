@@ -1,0 +1,31 @@
+class Solution {
+    //logic: Product of 2 prime numbers is always unique
+    public List<List<String>> groupAnagrams(String[] strs) {
+        //if strs is empty, return empty list
+        if(strs.length == 0){
+            return new ArrayList<List<String>>();
+        }
+        HashMap<Double, List<String>> re = new HashMap<>();
+        for(int i=0;i< strs.length; i++){
+            String s = strs[i];
+            //For each string, we are fing prime product which will be unique and mapping them to that value
+            double product = primeProduct(s);
+            //if that value is not present in hashmap, putting it or mapping that string to existing key
+            if(!re.containsKey(product)){
+                re.put(product, new ArrayList<String>() );
+            }
+            re.get(product).add(s);
+        }
+        return new ArrayList<>(re.values());
+    }
+
+    public double primeProduct(String s){
+        //In this method, we are assinging each character to a prime number and for each string we calculate the product of all character's assigned prime number which will be same for anagrams and returning the product
+        double product = 1;
+        int[] primes = {2,  3,  5,  7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101};
+        for(int i=0; i<s.length();i++){
+            product = product * primes[s.charAt(i) - 'a'];
+        }
+        return product;
+    }
+}

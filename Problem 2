@@ -1,0 +1,29 @@
+class Solution {
+    public boolean isIsomorphic(String s, String t) {
+        if(s.length() != t.length()){
+            return false;
+        }
+        //Each character from t or s can only map with one charater in t or s
+        HashMap<String, Character> st = new HashMap<>();
+        for(int i=0;i< s.length(); i++){
+            //For each charater in s, we are adding "s_" in front and adding that as key to corresponding letter in t and same for t string to
+            String sKey = "s_" + s.charAt(i);
+            String tKey = "t_" + t.charAt(i);
+            //if the adding key is already present, then checking the value is same as t char or not, if not return false 
+            if(st.containsKey(sKey)){
+                if(st.get(sKey) != t.charAt(i)){
+                    return false;
+                }
+            }
+            if(st.containsKey(tKey)){
+                if(st.get(tKey) != s.charAt(i)){
+                    return false;
+                }
+            }
+            //not present, adding it with value as corresponding char of t or s as value 
+            st.put(sKey, t.charAt(i));
+            st.put(tKey, s.charAt(i));
+        }
+        return true;
+    }
+}
