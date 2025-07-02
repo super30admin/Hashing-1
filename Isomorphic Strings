@@ -1,0 +1,36 @@
+//time : O(n)
+//space:O(1)
+// we will iterate through first string and will map it to char in the 2nd string, if a char is not mapped to 2nd char in the 2nd string that means it is not ismorphic, we will be checking other way around too.
+class Solution {
+    public boolean isIsomorphic(String s, String t) {
+        int sl = s.length();
+        int tl = t.length();
+        if(sl!=tl)return false;
+        HashMap<Character,Character> sMap =new HashMap<>();
+        HashMap<Character,Character>tMap = new HashMap<>();
+        for(int i =0;i<sl;i++){
+            char sChar =s.charAt(i);
+            char tChar =t.charAt(i);
+            if(sMap.containsKey(sChar)){
+                //value of schar is different
+                if(sMap.get(sChar)!=tChar){
+                    return false;
+                }
+            }else{
+                    sMap.put(sChar,tChar);
+                }
+            if(tMap.containsKey(tChar)){
+                //value of schar is different
+                if(tMap.get(tChar)!=sChar){
+                    return false;
+                }
+            }else{
+                    tMap.put(tChar,sChar);
+                }
+
+        }
+        return true;
+
+
+    }
+}
