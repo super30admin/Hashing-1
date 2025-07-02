@@ -1,0 +1,41 @@
+
+// Did this code successfully run on Leetcode :yes
+// Any problem you faced while coding this : no
+//Time Complexity: O(n)
+//Space Complexity: O(n)
+//Split the input string into words and check if its length matches the pattern length.
+//Use two hash maps to create a one-to-one mapping: pattern char → word and word → pattern char.
+//Traverse the pattern and words together, and return false if any mapping is inconsistent; otherwise, return true.
+import java.util.*;
+
+public class PatternMatcher {
+
+    public boolean wordPattern(String pattern, String str) {
+        String[] words = str.split(" ");
+
+        if (pattern.length() != words.length) return false;
+
+        Map<Character, String> charToWord = new HashMap<>();
+        Map<String, Character> wordToChar = new HashMap<>();
+
+        for (int i = 0; i < pattern.length(); i++) {
+            char c = pattern.charAt(i);
+            String word = words[i];
+
+            // Check char -> word mapping
+            if (charToWord.containsKey(c)) {
+                if (!charToWord.get(c).equals(word)) return false;
+            } else {
+                charToWord.put(c, word);
+            }
+
+            // Check word -> char mapping
+            if (wordToChar.containsKey(word)) {
+                if (wordToChar.get(word) != c) return false;
+            } else {
+                wordToChar.put(word, c);
+            }
+        }
+
+        return true;
+    }
