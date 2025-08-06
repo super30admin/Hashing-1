@@ -1,0 +1,25 @@
+# I created 2 hashmaps: 1 for character mapping and 1 for word mapping
+# Then I created a s_arr list by splitting the s string and checked if the length of s_arr and pattern were the same
+# Lastly, I checked if the hashmaps dont have any conflicts where the correct character is not matched to the correct word
+
+class Solution:
+    def wordPattern(self, pattern: str, s: str) -> bool:
+        map_char = {}
+        map_word = {}
+
+        s_arr = s.split(" ")
+
+        if len(s_arr) != len(pattern):
+            return False
+        
+        for c,w in zip(pattern, s_arr):
+            if c not in map_char:
+                if w in map_word:
+                    return False
+                else: 
+                    map_char[c] = w
+                    map_word[w] = c
+            else:
+                if map_char[c] != w:
+                    return False
+        return True

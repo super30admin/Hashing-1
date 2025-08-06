@@ -1,0 +1,16 @@
+# First I created a hashmap named res
+# I iterated through the strs list and sorted each string alphabetically and used the sorted version as an unique identifier
+# Then I appended the original strings with the list associated with its sorted key and return the value of the hashmap
+
+class Solution:
+    def groupAnagrams(self, strs):
+        res = {}  
+        for s in strs:
+            sorted_s = "".join(sorted(s)) 
+            
+            if sorted_s not in res:
+                res[sorted_s] = []
+            
+            res[sorted_s].append(s)
+            
+        return list(res.values())

@@ -1,0 +1,31 @@
+// First I created 2 hashmaps to store the values of strings s and t
+// For each pair, the s and t characters are mapped in both s to t and reverse order (t to s) order
+// If a character in either string has conflicting mapping, false is returned
+
+class Solution {
+    public boolean isIsomorphic(String s, String t) {
+        HashMap<Character, Character> sMap = new HashMap<>();
+        HashMap<Character, Character> tMap = new HashMap<>();
+
+        for(int i = 0; i < s.length(); i++){
+            char sChar = s.charAt(i);
+            char tChar = t.charAt(i);
+
+            if(sMap.containsKey(sChar)){
+                if(sMap.get(sChar) != tChar) return false;
+            }
+            else{
+                sMap.put(sChar, tChar);
+            }
+
+            if(tMap.containsKey(tChar)){
+                if(tMap.get(tChar) != sChar) return false;
+            }
+            else{
+                tMap.put(tChar, sChar);
+            }
+        }
+        return true;
+
+    }
+}
