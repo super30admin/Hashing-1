@@ -1,6 +1,9 @@
 # Hashing-1
 Explain your approach in **three sentences only** at top of your code
 
+I group words by sorting their characters, since anagrams will share the same sorted string as a key.
+A HashMap is used where each key is the sorted word and the value is a list of its anagrams.
+Finally, I return all the grouped lists from the map as the result.
 
 ## Problem 1:
 Given an array of strings, group anagrams together.
@@ -17,6 +20,38 @@ Output:
 Note:
 All inputs will be in lowercase.
 The order of your output does not matter.
+
+##Solution 
+class Solution {
+    public List<List<String>> groupAnagrams(String[] strs) {
+        HashMap <String,List<String>> anagram = new HashMap<>();  //creating hashmap
+        for (String s : strs){ // am looping through each word in input 
+        char[] array = s.toCharArray();// am converting words to character array
+        Arrays.sort(array); //am sorting it so that am making all the words to be same 
+        String key = new String(array);// am creating an object to convert it back to string and maping in to key 
+
+            // If the key does not exist in the map, create a new list for it
+            if (!anagram.containsKey(key)) {
+                anagram.put(key, new ArrayList<String>());
+            }
+
+            // Add the current word to the corresponding list
+            anagram.get(key).add(s);
+        
+
+        }
+        return new ArrayList<List<String>>(anagram.values());
+
+       
+
+        
+    }
+}
+Time complexity: O(n.m)
+m = total number of input string given 
+n = average length of strs
+
+Space Complexity: O(n * m) 
 
 ## Problem 2:
 Given two strings s and t, determine if they are isomorphic.
