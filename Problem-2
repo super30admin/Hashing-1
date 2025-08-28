@@ -1,0 +1,28 @@
+// Time Complexity : O(n.k), n -> number of strings, k-> max length of a string 
+// Space Complexity : O(n.k)
+
+// Build a hash function which calculates the index using prime products
+// Anagrams will have same hash index 
+// Store this in hash map with key as hash index and value as the list of anagrams
+
+class Solution {
+    public List<List<String>> groupAnagrams(String[] strs) {
+        Map<Double, List<String>> map = new HashMap<>();
+        for(String str : strs) {
+            double hashValue = findHash(str);
+            if(!map.containsKey(hashValue))
+                map.put(hashValue, new ArrayList<>());
+            map.get(hashValue).add(str); 
+        }
+        return new ArrayList<>(map.values());
+    }
+
+    private Double findHash(String str) {
+        int[] primes = new int[]{2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101};
+        double product = 1;
+        for(char ch : str.toCharArray()) {
+            product = product * primes[ch - 'a'];
+        }
+        return product;
+    }
+}

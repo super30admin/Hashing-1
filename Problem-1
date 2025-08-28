@@ -1,0 +1,39 @@
+// Time Complexity : O(n)
+// Space Complexity : O(1)
+
+// Create a hash map to store the mapping of characters in string s to t
+// Create a hash set to store characters in t that have been mapped before
+// If there is an existing mapping check if it is to the same character mapped before
+// Otherwise check if target character is present in set
+
+class Solution {
+    public boolean isIsomorphic(String s, String t) {
+        int sLen = s.length();
+        int tLen = t.length();
+        if(sLen != tLen) {
+            return false;
+        }
+
+        Map<Character, Character> sMap = new HashMap<>();
+        Set<Character> tSet = new HashSet<>();
+
+        for(int i = 0; i < sLen; i++) {
+            char sChar = s.charAt(i);
+            char tChar = t.charAt(i);
+            // check if mapping exists
+            if(sMap.containsKey(sChar)) { 
+                // check mapping consistency
+                if(sMap.get(sChar) != tChar)
+                    return false;
+            }
+            else {
+                // check if target already exists
+                if(tSet.contains(tChar))
+                    return false;
+                sMap.put(sChar, tChar);
+                tSet.add(tChar);
+            }
+        }
+        return true;
+    }
+}

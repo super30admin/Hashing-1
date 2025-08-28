@@ -1,0 +1,33 @@
+// Time Complexity : O(n) 
+// Space Complexity : O(1)
+
+// Create a hash map to store the mapping of characters in string pattern to words in string s
+// Create a hash set to store words in s that have been mapped before
+// If there is an existing mapping check if it is to the same word mapped before
+// Otherwise check if target word is present in set
+
+class Solution {
+    public boolean wordPattern(String pattern, String s) {
+        String[] words = s.split(" ");
+        if(pattern.length() != words.length)
+            return false;
+
+        Map<Character, String> map = new HashMap<>();
+        Set<String> set = new HashSet<>();
+        int i = 0;
+        for(char ch : pattern.toCharArray()) {
+            if(!map.containsKey(ch)) {
+                if(set.contains(words[i]))
+                    return false;
+                map.put(ch, words[i]);
+                set.add(words[i]);
+            } 
+            else {
+                if(!map.get(ch).equals(words[i]))
+                    return false;
+            }
+            i++;
+        }
+        return true;
+    }
+}
