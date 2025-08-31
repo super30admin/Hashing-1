@@ -1,0 +1,22 @@
+class Solution:
+    def isIsomorphic(self, s, t):
+        if len(s) != len(t):
+            return False
+
+        s_to_t = {}
+        used_t = set()
+
+        for i in range(len(s)):
+            sc = s[i]
+            tc = t[i]
+
+            if sc in s_to_t:
+                if s_to_t[sc] != tc:
+                    return False
+            else:
+                if tc in used_t:          # only block new reuse of a t-char
+                    return False
+                s_to_t[sc] = tc
+                used_t.add(tc)
+
+        return True
