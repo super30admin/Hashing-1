@@ -1,0 +1,19 @@
+class Solution(object):
+    def wordPattern(self, pattern, s):
+
+        words=s.split()
+        if len(words)!=len(pattern):
+            return False
+        PtoWord={}
+        WordtoP={}
+        for i in range (len(pattern)):
+            ch=pattern[i]
+            w=words[i]
+            if(ch in PtoWord and PtoWord[ch]!=w):
+                return False
+            if(w in WordtoP and WordtoP[w]!=ch):
+                 return False
+            PtoWord[ch]=w
+            WordtoP[w]=ch
+        
+        return True
