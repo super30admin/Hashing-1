@@ -17,6 +17,9 @@ Output:
 Note:
 All inputs will be in lowercase.
 The order of your output does not matter.
+* What is anagram? length is same , chars arranged in diff order.
+* Sorting technique - sprt the string. Keep the sorted string as key & all the rest strings in arraylist.
+* Prime products technique - each a-z is assigned a prime number. Prind products isthe unique value which is the key, when product is same put in that arraylist
 
 ## Problem 2:
 Given two strings s and t, determine if they are isomorphic.
@@ -36,6 +39,10 @@ Input: s = "paper", t = "title"
 Output: true
 Note:
 You may assume both s and t have the same length.
+
+* What is isomorphic? - When every char of 1st string can be replaced by chars in 2nd string.
+* Use 2 hashmap - if char key exists in 1st string then it should be mapped to the same char as that og char in 2nd string
+* Internally hashmap use arrays -  smap[schar - ' '] - Since s and t consist of any valid ascii character & space is first valid ascii char
 
 ## Problem 3:
 Given a pattern and a string str, find if str follows the same pattern.
