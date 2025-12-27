@@ -1,0 +1,39 @@
+Time complexity = O(n) where n is the number of char in the patter
+Space complexity = O(n) where n is the number of char in the pattern 
+
+class Solution {
+public:
+    bool wordPattern(string pattern, string s) {
+        unordered_map<char, string> um;
+        unordered_set<string> us;
+
+        stringstream ss(s);
+        string temp;
+        vector<string> tempv;
+        while (getline(ss, temp, ' '))
+        { 
+            cout << "temp:" << temp << endl;
+            tempv.push_back(temp);
+        }
+        
+        if (pattern.length() != tempv.size())
+            return false;
+        
+        for (int i=0; i<pattern.length(); i++)
+        {
+            if (um.find(pattern[i]) == um.end())
+            {
+                if (us.find(tempv[i]) != us.end())
+                    return false;
+
+                um[pattern[i]] = tempv[i];
+                us.insert(tempv[i]);
+            }
+            else if (um[pattern[i]] != tempv[i])
+            {
+                return false;
+            }
+        }
+        return true;
+    }
+};
