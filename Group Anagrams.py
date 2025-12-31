@@ -1,12 +1,11 @@
 class Solution:
     def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
-        dict={}
+        map={}
 
-        for s in strs:
-            sortstrs=''.join(sorted(s))
-            if sortstrs not in dict:
-                dict[sortstrs]=[]
+        for i in range(len(strs)):
+            if (''.join(sorted(strs[i]))) not in map:
+                map[''.join(sorted(strs[i]))]=[strs[i]]
+            else:
+                map[''.join(sorted(strs[i]))].append(strs[i])
 
-            dict[sortstrs].append(s)
-
-        return list(dict.values())
+        return list(map.values())
