@@ -1,0 +1,89 @@
+//Way1
+//Travel through the given input. While iterating, identify the previous occurance of those word and pattern in the existing map. If occurred, check whether they are matching with the current word and pattern or not. If not, return false. Else, store them in map and set for further tracking.
+
+//TC: n*(O(1)+m) --> n*m --> n is total number of words. m is avg length of string i.e., length of given string
+//SC: 2(n*m) --> n*m
+class Solution {
+    public boolean wordPattern(String pattern, String s) {
+        Map<Character,String> map = new HashMap<>();
+        Set<String> set=new HashSet<>();
+
+        String[] arr=s.split(" ");
+
+        int n=pattern.length(),m=arr.length;
+        if(n!=m) return false;
+
+        for(int i=0;i<n;i++){
+            char ch=pattern.charAt(i);
+            if(map.containsKey(ch)){
+                String curr=map.get(ch);
+                if(!(curr.equals(arr[i]))){
+                    return false;
+                }
+            }else{
+                if(set.contains(arr[i])){
+                    return false;
+                }
+
+                map.put(ch,arr[i]);
+                set.add(arr[i]);
+            }
+        }
+
+        return true;
+        
+    }
+}
+
+//Way2
+//Travel through the given input. While iterating, identify the previous occurance of those word and pattern in the existing map. If occurred, check whether they are matching with the current word and pattern or not. If not, return false. Else, store them in map and set for further tracking.
+
+//TC: n*(O(1)) -->  --> n is total number of words. m is avg length of string i.e., length of given string
+//SC: 2(n*m) --> n*m
+import java.math.BigInteger;
+class Solution {
+    public boolean wordPattern(String pattern, String s) {
+        Map<Character,String> map = new HashMap<>();
+        Set<BigInteger> set=new HashSet<>();
+
+        String[] arr=s.split(" ");
+
+        int n=pattern.length(),m=arr.length;
+        if(n!=m) return false;
+
+        for(int i=0;i<n;i++){
+            char ch=pattern.charAt(i);
+            
+            if(map.containsKey(ch)){
+                String curr=map.get(ch);
+                if(!(curr.equals(arr[i]))){
+                    return false;
+                }
+            }else{
+                String str=arr[i];
+                BigInteger hash=generateHash(str);
+                if(set.contains(hash)){
+                    return false;
+                }
+
+                map.put(ch,arr[i]);
+                set.add(hash);
+            }
+        }
+
+        return true;
+        
+    }
+
+    private BigInteger generateHash(String str){
+        int[] arr=new int[]{2,3,5,7,11,13,17,19,23,29,31,37,41,43,47,53,59,61,67,71,73,79,83,89,97,101};
+        BigInteger result=BigInteger.ONE;
+
+        for(char ch:str.toCharArray()){
+            int n=arr[ch-'a'];
+            result=result.multiply(BigInteger.valueOf(n));
+        }
+
+        return result;
+    }
+}
