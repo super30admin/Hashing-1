@@ -19,7 +19,7 @@ public class IsomorphicString {
         char[] charArrayOne = s.toCharArray();
         char[] charArrayTwo = t.toCharArray();
 
-        if (charArrayOne.length != charArrayOne.length) {
+        if (charArrayOne.length != charArrayTwo.length) {
             return false;
         }
         for (int i=0; i<charArrayOne.length; i++) {
