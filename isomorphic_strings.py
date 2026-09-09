@@ -1,0 +1,113 @@
+'''
+205 Isomorphic strings
+https://leetcode.com/problems/isomorphic-strings/description/
+
+Given two strings s and t, determine if they are isomorphic. Two strings are isomorphic if the characters in s can be replaced to get t. All occurrences of a character must be replaced with another character while preserving the order of characters. No two characters may map to the same character but a character may map to itself.
+
+Example 1: Input: s = "egg", t = "add" Output: true
+
+Example 2: Input: s = "foo", t = "bar" Output: false
+
+Example 3: Input: s = "paper", t = "title" Output: true Note: You may assume both s and t have the same length.
+
+Assume there are N characters in s and t
+
+Solution:
+    1. Brute Force: At each index i, note the character c1 = s[i] and character c2 = t[i]. Now, check if this (c1,c2) pair has already been encountered at a previous index j. We can do this by traversing to the left (j = i-1, i-2, ..., 0) and checking:
+    if s[j] == c1:
+        yes: if t[j] == c2.
+             yes: proceed to the next character in s (i++)
+        no:  return False (not isomorphic)
+    Since for each i, 0<=i<=N-1, we traverse j=0,..,i-1, the time complexity is O(N^2).
+    Time: O(N^2), Space: O(1)
+    https://youtu.be/nwquszD1l4Y?t=4467
+
+    2. Hashing using two maps:
+    We use two hashmaps, one each for s and t. For hash_s, the keys are the characters in s and the corresponding values are chars in t. For hash_t, the keys are the characters in t and the corresponding values are chars in s. Why can't we use only one hashmap instead of two? Ans: To establish bijection.
+    Eg. s = eggd, t = adda, then hash_s = {e:a,g:d,d:a} (assume only one hash map). Thus, given s, we can generate t. But if the s,t pair has to be isomorphic, given t, we should be able to generate s.
+    For each char in t, we read the value in hash_s and output the corresponding key.  Thus, for the value a, we have two keys
+    s and d (hash_s[s] = a, hash_s[d] = a). We are unable to choose which key to select because of the many-to-one mapping (e->a, d->a). Hence, the mapping is not a bijection and consequently the strings are not isomorphic.
+    Time: O(N), Space: O(26) = O(1)
+    https://youtu.be/nwquszD1l4Y?t=3617
+
+    (Note: Space is not O(N) because the size of the hash map is restricted to the no. of lowercase letters in the string which is not dependent on the length of the string)
+
+    3. Hashing using a single map:
+    Maintain a hash map from characters in s to t, and a hash set of consisting of characters in t that have been already mapped.
+    Read a pair of characters (c1, c2) - one each from s and t.
+    If c1 not in hmap:
+        - map it to c2. (But we do not know if this is a unique map)
+        - check if hash set contains c2 already.
+            - yes: c2 was already mapped to something else. Not isomorphic
+            - no: add c2 to hash set
+    If c1 already in hmap:
+        check if the corresponding value matches the current char in target string, i.e. hmap[c1] == c2. If not, it is not isomorphic.
+
+    Time: O(N), Space: O(26) = O(1)
+    https://www.youtube.com/watch?v=PR4lOSZv7w0
+
+'''
+def isomorphic_1(s, t):
+    N = len(s)
+    assert N == len(t), "both strings are not of the same length"
+    map_s, map_t = {}, {}
+    for c1,c2 in zip(s,t):
+        if c1 in map_s:
+            if map_s[c1] != c2:
+                return False
+        else:
+            map_s[c1] = c2
+
+        if c2 in map_t:
+            if map_t[c2] != c1:
+                return False
+        else:
+            map_t[c2] = c1
+    return True
+
+
+def isomorphic_2(s, t):
+    N = len(s)
+    assert N == len(t), "both strings are not of the same length"
+    hmap, hset = {}, set()
+    for c1, c2 in zip(s, t): # O(N)
+        if c1 not in hmap:
+            # new key, add it to hash map
+            hmap[c1] = c2
+            # this key mapped to a unique value?
+            if c2 not in hset:
+                # k-v pair is unique
+                hset.add(c2)
+            else:
+                # new key mapped to duplicate value
+                return False
+        else: # not a new key
+            # since key is not new, check
+            # if corresp. value matches the char in target string
+            if hmap[c1] != c2:
+                return False
+    return True
+
+
+def run_isomorphic():
+    s1, s2 = "egg", "add"
+    print(f"{s1} and {s2} are isomorphic? {isomorphic_1(s1,s2)}")
+    print(f"{s1} and {s2} are isomorphic? {isomorphic_2(s1,s2)}")
+
+    s1, s2 = "eggd", "adda"
+    print(f"{s1} and {s2} are isomorphic? {isomorphic_1(s1,s2)}")
+    print(f"{s1} and {s2} are isomorphic? {isomorphic_2(s1,s2)}")
+
+    s1, s2 = "eggd", "addn"
+    print(f"{s1} and {s2} are isomorphic? {isomorphic_1(s1,s2)}")
+    print(f"{s1} and {s2} are isomorphic? {isomorphic_2(s1,s2)}")
+
+    s1, s2 = "foo", "bar"
+    print(f"{s1} and {s2} are isomorphic? {isomorphic_1(s1,s2)}")
+    print(f"{s1} and {s2} are isomorphic? {isomorphic_2(s1,s2)}")
+
+    s1, s2 = "paper", "title"
+    print(f"{s1} and {s2} are isomorphic? {isomorphic_1(s1,s2)}")
+    print(f"{s1} and {s2} are isomorphic? {isomorphic_2(s1,s2)}")
+
+run_isomorphic()
